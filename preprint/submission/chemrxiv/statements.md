@@ -7,7 +7,7 @@ Copy these verbatim into the ChemRxiv submission form. They match the manuscript
 All analysis code, frozen result artefacts, figure-generation scripts and the
 machine-readable result set are available at
 https://github.com/RahulRoktim/admet-semantic-eligibility and archived at
-[[ZENODO_DOI]]. Reproduction is offered at two levels. Level 1 regenerates every
+https://doi.org/10.5281/zenodo.22765692. Reproduction is offered at two levels. Level 1 regenerates every
 number, table and figure from committed, redistributable artefacts,
 deterministically and without network access; a reproduction gate independently
 recomputes each previously published benchmark metric and aborts if any value

@@ -1,5 +1,5 @@
 {
-  "_note": "Draft Zenodo deposition metadata. NOT uploaded. Double-bracketed fields require author input (see USER_INPUT_REQUIRED.md). Zenodo's GitHub integration populates most of this automatically from the release; this file is the authoritative text to paste or verify.",
+  "_note": "Deposition metadata for the Zenodo draft that actually exists. Mirrors Zenodo deposition 22765692, an UNPUBLISHED draft with a reserved version DOI. Double-bracketed fields still require author input (see USER_INPUT_REQUIRED.md). Verified against the live draft; keep in sync.",
   "metadata": {
     "upload_type": "software",
     "title": "What survives? Semantic eligibility, distribution shift and metric interpretation in external validation of ADMET predictors",
@@ -8,7 +8,7 @@
     "language": "eng",
     "creators": [
       {
-        "name": "Roktim, Rahul Reza",
+        "name": "Roktim, Md. Rahul Reza",
         "affiliation": "Department of Pharmacy, Daffodil International University, Dhaka, Bangladesh",
         "orcid": "0009-0003-6518-0495"
       }
@@ -26,47 +26,49 @@
       "drug discovery",
       "ADMET-AI"
     ],
-    "license": "mit",
-    "_license_note": "Zenodo accepts one licence identifier. MIT covers the code, which is the primary deposit type. The manuscript, figures, tables and derived results are CC BY 4.0 (CONTENT_LICENSE.md); external datasets retain their own upstream licences and are not relicensed (DATA_LICENSES.md). State this in the description or in an additional-notes field if the deposit form allows one.",
+    "_license_note": "The production Zenodo interface accepted TWO licence entries, so both are recorded on the draft: Creative Commons Attribution 4.0 International and the MIT License. This is not a blanket licence over everything in the package. Project-authored code is MIT (LICENSE). The manuscript, figures, tables and derived original content are CC BY 4.0 (CONTENT_LICENSE.md). Third-party datasets retain their own upstream terms and are not relicensed (DATA_LICENSES.md, THIRD_PARTY_LICENSES.md). Ten upstream-derived training-reference tables are excluded from redistribution entirely. Neither licence entry applies to third-party material.",
     "access_right": "open",
     "related_identifiers": [
       {
         "identifier": "https://github.com/RahulRoktim/admet-semantic-eligibility",
         "relation": "isSupplementTo",
         "resource_type": "software",
-        "scheme": "url"
-      },
-      {
-        "identifier": "10.1093/bioinformatics/btae416",
-        "relation": "references",
-        "resource_type": "publication-article",
-        "scheme": "doi",
-        "_note": "ADMET-AI, the model evaluated"
-      },
-      {
-        "identifier": "10.1021/acs.jcim.3c00160",
-        "relation": "references",
-        "resource_type": "publication-article",
-        "scheme": "doi",
-        "_note": "Biogen Computational-ADME public set"
-      },
-      {
-        "identifier": "10.1038/s41589-022-01131-2",
-        "relation": "references",
-        "resource_type": "publication-article",
-        "scheme": "doi",
-        "_note": "Therapeutics Data Commons"
-      },
-      {
-        "identifier": "10.1093/nar/gkad1004",
-        "relation": "references",
-        "resource_type": "publication-article",
-        "scheme": "doi",
-        "_note": "ChEMBL"
+        "scheme": "url",
+        "_note": "Repository root. No v1.0.0-preprint tag exists yet; this may become the tagged release URL immediately before publication."
       }
     ],
     "grants": [],
     "_funding_note": "No funding recorded. If a grant applies, add it here and update the manuscript Funding section.",
-    "notes": "Ten reconstructed Therapeutics Data Commons reference tables are deliberately excluded from this deposit because their upstream licensing provenance could not be established with confidence. Their SHA-256 hashes and full reconstruction instructions are included so the excluded inputs can be rebuilt from their official source and verified. No reported result depends on their redistribution. See DATA_LICENSES.md and preprint/REPRODUCE.md."
+    "notes": "Ten reconstructed Therapeutics Data Commons reference tables are deliberately excluded from this deposit because their upstream licensing provenance could not be established with confidence. Their SHA-256 hashes and full reconstruction instructions are included so the excluded inputs can be rebuilt from their official source and verified. No reported result depends on their redistribution. See DATA_LICENSES.md and preprint/REPRODUCE.md.",
+    "doi": "10.5281/zenodo.22765692",
+    "doi_url": "https://doi.org/10.5281/zenodo.22765692",
+    "_doi_note": "Reserved version DOI for v1.0.0-preprint. The manuscript cites this specific version so a reader retrieves this exact artefact. The concept DOI is not used.",
+    "_creator_note": "Renders as Md. Rahul Reza Roktim. Family name Roktim; given names Md. Rahul Reza.",
+    "licenses": [
+      "cc-by-4.0",
+      "mit"
+    ],
+    "custom": {
+      "code:codeRepository": "https://github.com/RahulRoktim/admet-semantic-eligibility",
+      "code:programmingLanguage": [
+        "Python"
+      ]
+    },
+    "references": [
+      "Swanson K, Walther P, Leitz J, et al. ADMET-AI: a machine learning ADMET platform for evaluation of large-scale chemical libraries. Bioinformatics. 2024. doi:10.1093/bioinformatics/btae416",
+      "Fang C, Wang Y, Grater R, et al. Prospective validation of machine learning algorithms for absorption, distribution, metabolism, and excretion prediction: an industrial perspective. J Chem Inf Model. 2023. doi:10.1021/acs.jcim.3c00160",
+      "Huang K, Fu T, Gao W, et al. Artificial intelligence foundation for therapeutic science. Nat Chem Biol. 2022. doi:10.1038/s41589-022-01131-2",
+      "Zdrazil B, Felix E, Hunter F, et al. The ChEMBL Database in 2023: a drug discovery platform spanning multiple bioactivity data types and time periods. Nucleic Acids Res. 2024. doi:10.1093/nar/gkad1004"
+    ],
+    "_references_note": "Supporting works, recorded as references rather than as related_identifiers: this deposit does not stand in a cites/supplements relationship to them at the identifier level."
+  },
+  "_deposition": {
+    "instance": "https://zenodo.org (production)",
+    "deposition_id": 22765692,
+    "record_id": 22765692,
+    "draft_url": "https://zenodo.org/uploads/22765692",
+    "status": "draft",
+    "submitted": false,
+    "_note": "Concept record id 22765691 exists but its concept DOI is minted only on publication and is deliberately not recorded or cited here."
   }
 }

@@ -1,14 +1,12 @@
 {
   "artifact_id": "preprint-v1.0.0-final-audit",
-  "generated_at_utc": "2026-09-15T08:29:25Z",
-  "commit": "5425a41e8c3055967b2c84353a6b37c88c6c3d19",
-  "manuscript_words_excluding_references": 4820,
-  "checks_run": 17,
+  "generated_at_utc": "2026-09-15T10:16:23Z",
+  "commit": "f562bd4e1646d4aa56f54a74bc81ab45d562cc0b",
+  "manuscript_words_excluding_references": 4822,
+  "checks_run": 19,
   "checks_failed": 0,
   "overall": "PASS",
-  "unresolved_author_fields": [
-    "ZENODO_DOI"
-  ],
+  "unresolved_author_fields": [],
   "checks": [
     {
       "check": "every_number_matches_generated_artefacts",
@@ -37,10 +35,8 @@
     {
       "check": "placeholders_are_declared_author_fields",
       "status": "PASS",
-      "detail": "1 unresolved author-supplied field(s); tracked in USER_INPUT_REQUIRED.md",
-      "evidence": [
-        "ZENODO_DOI"
-      ]
+      "detail": "0 unresolved author-supplied field(s); tracked in USER_INPUT_REQUIRED.md",
+      "evidence": null
     },
     {
       "check": "no_retired_or_outdated_values",
@@ -105,7 +101,19 @@
     {
       "check": "repository_urls_point_to_public_export",
       "status": "PASS",
-      "detail": "107 released files scanned; repository-code is https://github.com/RahulRoktim/admet-semantic-eligibility",
+      "detail": "109 released files scanned; repository-code is https://github.com/RahulRoktim/admet-semantic-eligibility",
+      "evidence": null
+    },
+    {
+      "check": "author_metadata_consistent",
+      "status": "PASS",
+      "detail": "author recorded as Md. Rahul Reza Roktim (Roktim, Md. Rahul Reza), ORCID 0009-0003-6518-0495",
+      "evidence": null
+    },
+    {
+      "check": "zenodo_doi_consistent",
+      "status": "PASS",
+      "detail": "reserved version DOI 10.5281/zenodo.22765692 used consistently; no placeholder, concept or foreign Zenodo DOI present",
       "evidence": null
     },
     {

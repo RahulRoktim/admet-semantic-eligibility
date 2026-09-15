@@ -1,16 +1,18 @@
 # Outstanding items before submission
 
-Author metadata is resolved. **Two deferred fields remain, both created at the
-same moment and neither able to exist before then.**
+Author metadata is resolved. The Zenodo DOI is resolved. **One deferred field
+remains.**
 
-| Placeholder | Becomes available at | Appears in |
+| Placeholder | Status | Appears in |
 | --- | --- | --- |
-| `[[ZENODO_DOI]]` | the Zenodo deposit, created from the GitHub release | manuscript title page, submission statements, `CITATION.cff` |
-| `[[RELEASE_DATE]]` | the same deposit | `CITATION.cff`, Zenodo metadata draft |
+| Zenodo DOI | **Resolved** to `10.5281/zenodo.22765692` | recorded; the placeholder is gone |
+| `[[RELEASE_DATE]]` | Outstanding until public release | `CITATION.cff`, Zenodo metadata draft, release checklist |
 
-**The manuscript itself contains exactly one placeholder, `[[ZENODO_DOI]]`.**
-`[[RELEASE_DATE]]` appears only in metadata templates and instructions, never in
-publication text.
+**The manuscript now contains no placeholder at all.** The DOI placeholder token
+is deliberately not written out anywhere in this repository any more, because
+`check_doi_consistency.py` treats any occurrence of it as a release blocker. `[[RELEASE_DATE]]` appears
+only in metadata templates and instructions, never in publication text, and is
+the single allowed pre-release placeholder.
 
 The GitHub release URL needs no placeholder: the repository URL is already
 written out in full.
@@ -23,17 +25,22 @@ This exits non-zero while any placeholder remains. Run it immediately before
 ChemRxiv submission; passing is the mechanical guarantee that no placeholder
 reaches the posted preprint.
 
-## Where the DOI goes
+## Where the DOI went
 
-Insert it in all five places at once (release checklist step 6):
+The reserved Zenodo **version** DOI `10.5281/zenodo.22765692` (deposition 22765692, still an
+unpublished draft) is now recorded in:
 
 - `preprint/manuscript/manuscript.md` — title page
 - `preprint/submission/chemrxiv/manuscript.md` — submission copy
 - `preprint/submission/chemrxiv/statements.md` — Data and code availability
-- `preprint/submission/chemrxiv/zenodo_metadata.json` — also `[[RELEASE_DATE]]`
-- `preprint/CITATION.cff` — add `doi:` and `date-released:`
+- `preprint/submission/chemrxiv/zenodo_metadata.json` — deposition metadata
+- `preprint/CITATION.cff` — `doi:`
 
-Then regenerate the freeze record, because the manuscript hash changes:
+The concept DOI is deliberately **not** used: the paper cites the specific
+version so a reader retrieves this exact reproducibility artefact.
+`preprint/analysis/check_doi_consistency.py` enforces all of this.
+
+The freeze record was regenerated because the manuscript hash changed:
 
     PYTHONPATH=backend python preprint/analysis/write_scientific_freeze.py
 

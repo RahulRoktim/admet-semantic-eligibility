@@ -32,8 +32,8 @@ regenerate; 66/66 byte-identical after regeneration; 26 tests pass; final audit
 ## ✅ Step 3a — Author metadata *(done)*
 
 Author, affiliation, corresponding email and ORCID are populated throughout. The
-only placeholder left in publication text is `[[ZENODO_DOI]]`, which cannot exist
-before step 5.
+only placeholder left anywhere is `[[RELEASE_DATE]]`, which cannot exist before
+the release itself. The Zenodo DOI is already inserted.
 
 ---
 
@@ -94,7 +94,7 @@ download.
 
 ## ⬜ Step 6 — Insert the DOI and release URL
 
-Replace `[[ZENODO_DOI]]` in:
+Done: the reserved version DOI `10.5281/zenodo.22765692` is inserted in:
 
 - `preprint/manuscript/manuscript.md` (title page)
 - `preprint/submission/chemrxiv/statements.md`

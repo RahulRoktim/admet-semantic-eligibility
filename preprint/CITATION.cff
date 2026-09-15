@@ -8,8 +8,7 @@ message: >-
 type: software
 authors:
   - family-names: Roktim
-    given-names: Rahul Reza
-    # Supply before release; see USER_INPUT_REQUIRED.md
+    given-names: Md. Rahul Reza
     affiliation: "Department of Pharmacy, Daffodil International University, Dhaka, Bangladesh"
     orcid: "0009-0003-6518-0495"
     email: "roktim2311091058@diu.edu.bd"
@@ -27,12 +26,15 @@ keywords:
   - cheminformatics
   - reproducibility
 version: 1.0.0-preprint
-license: MIT
+license:
+  - MIT
+  - CC-BY-4.0
 license-url: "https://github.com/RahulRoktim/admet-semantic-eligibility/blob/main/LICENSE"
 repository-code: "https://github.com/RahulRoktim/admet-semantic-eligibility"
 # Code is MIT. The manuscript, figures, tables and derived result artefacts are
 # CC BY 4.0 (CONTENT_LICENSE.md). External datasets keep their own upstream
 # licences and are not relicensed (DATA_LICENSES.md).
-# Added after the Zenodo deposit (release checklist step 5):
-#   doi: "[[ZENODO_DOI]]"
+doi: "10.5281/zenodo.22765692"
+# Reserved Zenodo version DOI for v1.0.0-preprint (deposition 22765692).
+# date-released is added at the moment of public release:
 #   date-released: "[[RELEASE_DATE]]"

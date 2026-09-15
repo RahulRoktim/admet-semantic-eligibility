@@ -22,6 +22,8 @@ for candidate in (str(REPO_ROOT), str(REPO_ROOT / "backend")):
         sys.path.insert(0, candidate)
 
 from preprint.analysis import (  # noqa: E402
+    check_author_metadata,
+    check_doi_consistency,
     check_repository_urls,
     core,
     release_package,
@@ -202,6 +204,26 @@ def run(audit: Audit) -> dict[str, Any]:
               f"{url_report['files_scanned']} released files scanned; "
               f"repository-code is {url_report['public_repository_url']}",
               url_failures or None)
+
+    # 14c. Author metadata. The honorific is easy to drop and two prepared
+    # files had already dropped it.
+    author_report = check_author_metadata.run()
+    author_failures = (author_report["truncated_author_forms"]
+                       + author_report["declared_field_problems"]
+                       + author_report["foreign_identifiers"])
+    audit.add("author_metadata_consistent", author_report["passed"],
+              f"author recorded as {author_report['rendered_name']} "
+              f"({author_report['inverted_name']}), ORCID {author_report['orcid']}",
+              author_failures or None)
+
+    # 14d. Zenodo DOI. The author has another deposit, and this one also has a
+    # concept record; either could be substituted without looking wrong.
+    doi_report = check_doi_consistency.run()
+    doi_failures = check_doi_consistency.redacted_failures(doi_report)
+    audit.add("zenodo_doi_consistent", doi_report["passed"],
+              f"reserved version DOI {doi_report['expected_doi']} used consistently; "
+              f"no placeholder, concept or foreign Zenodo DOI present",
+              doi_failures or None)
 
     # 15. Freeze record consistency.
     freeze = json.loads((REPO_ROOT / "preprint/results/scientific_freeze.json").read_text(encoding="utf-8"))

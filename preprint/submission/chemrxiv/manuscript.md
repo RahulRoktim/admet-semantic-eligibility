@@ -11,7 +11,7 @@
 **Version:** v1.0.0-preprint
 
 **Code and data:** https://github.com/RahulRoktim/admet-semantic-eligibility —
-archived at [[ZENODO_DOI]]
+archived at https://doi.org/10.5281/zenodo.22765692
 
 **Licences:** code MIT; manuscript, figures and tables CC BY 4.0; external
 datasets retain their own upstream licences and are not relicensed by this work.

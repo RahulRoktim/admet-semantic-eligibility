@@ -9,8 +9,8 @@ statistical method, figure or table has changed since
 Any future change requires an entry here stating what changed, why, which
 hashes in the freeze record are invalidated, and who authorised it.
 
-One non-scientific correction has been made since the freeze and is recorded
-below. It changed the manuscript hash in the freeze record and nothing else.
+Two non-scientific corrections have been made since the freeze and are recorded
+below. Both changed the manuscript hash in the freeze record and nothing else.
 
 ---
 
@@ -133,3 +133,79 @@ Two bare private commit identifiers remain recorded in
 `preprint/SCIENTIFIC_FREEZE.md` as deliberate provenance. They are hashes, not
 locations: they name no repository and resolve to nothing outside the private
 object database.
+
+---
+
+## RESOLVED — reserved Zenodo DOI and corrected publication metadata
+
+**Status: applied before the public release. Authorised by the author on
+2026-09-15.**
+
+### What changed
+
+A Zenodo draft deposition was created on production Zenodo (deposition 22765692)
+and a **version** DOI was reserved: `10.5281/zenodo.22765692`. The record remains
+an unpublished draft. Three publication-metadata changes follow from it.
+
+**1. The reserved DOI was inserted.** It replaces the former placeholder in the
+manuscript title page, the ChemRxiv manuscript copy, the ChemRxiv data and code
+availability statement, `preprint/CITATION.cff` and the Zenodo metadata source.
+The concept DOI is deliberately not used anywhere: the paper cites the specific
+version so that a reader retrieves the exact artefact the reported numbers came
+from.
+
+**2. The author's name was corrected.** Two prepared files had dropped the
+honorific: the Zenodo metadata source recorded the inverted name without it, and
+`CITATION.cff` split the name so that the given-names field omitted it. Both now
+read `Roktim, Md. Rahul Reza`, rendering as **Md. Rahul Reza Roktim**, which is
+the name on the manuscript and on the ORCID record. Nothing else in the
+repository used a truncated form.
+
+The truncated spellings are deliberately not written out here, because
+`check_author_metadata.py` treats any occurrence of one in a released file as a
+failure — including an occurrence in this explanation.
+
+**3. Licensing metadata now records two licences.** The prepared metadata
+asserted that "Zenodo accepts one licence identifier" and specified MIT alone.
+That assertion was wrong for the production interface, which accepted both
+**CC BY 4.0** and **MIT**, and both are recorded on the draft and in the local
+source. This is not a blanket licence over the package: project-authored code is
+MIT, original manuscript and derived content are CC BY 4.0, third-party datasets
+retain their own upstream terms and are not relicensed, and the ten
+upstream-derived training-reference tables are excluded from redistribution
+altogether. Neither licence entry applies to third-party material.
+
+### New guards
+
+Two checks were added, each wired into `final_audit.py` and covered by its own
+negative controls:
+
+| Guard | Fails when |
+| --- | --- |
+| `preprint/analysis/check_doi_consistency.py` | a DOI digit is altered, the placeholder returns, the concept DOI is substituted, the DOI of the author's other Zenodo deposit is used, a DOI URL points elsewhere, or the DOI is missing where it belongs |
+| `preprint/analysis/check_author_metadata.py` | the honorific is dropped, either citation-metadata file disagrees with the canonical values, or a foreign ORCID or corresponding email appears |
+
+The DOI guard ignores `[[RELEASE_DATE]]`, which is the single placeholder
+allowed before release.
+
+### Effect on the scientific record
+
+None. Publication metadata only.
+
+| Freeze record group | Effect |
+| --- | --- |
+| `results` block SHA-256 | Unchanged |
+| `compatibility` block SHA-256 | Unchanged |
+| Figure hashes | Unchanged |
+| Table hashes | Unchanged |
+| Compatibility-matrix hash | Unchanged |
+| Manuscript hash | **Invalidated and regenerated** — DOI text only |
+
+No cohort definition, compatibility decision, statistical method, figure, table
+or reported number was touched. The Level 1 pipeline was re-run and its hard
+reproduction gate reported `ALL_PUBLISHED_METRICS_REPRODUCED`.
+
+Neither the other deposit's DOI nor this deposit's concept DOI is written out
+anywhere in the repository. The guard knows both, and any appearance of either
+in a released file is a release blocker — so naming them here would itself be
+one.
