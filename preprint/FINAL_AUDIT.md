@@ -1,8 +1,8 @@
 # Final release audit
 
 **Overall:** PASS  
-**Generated:** 2026-09-15T10:37:32Z  
-**Commit:** `be418093f2f54c4dd6785b2240bd5725bf394c2a`  
+**Generated:** 2026-09-15T10:43:09Z  
+**Commit:** `9b5e1673fe76800d4d72d63df2ab76120eff30d0`  
 **Manuscript length:** 4822 words excluding references  
 **Checks:** 19 run, 0 failed
 

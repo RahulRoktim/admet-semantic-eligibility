@@ -27,11 +27,11 @@
   "counts": {
     "DERIVED_RESULT": 22,
     "ORIGINAL_CONTENT": 35,
-    "PROJECT_CODE": 47,
+    "PROJECT_CODE": 48,
     "THIRD_PARTY_REDISTRIBUTABLE": 2,
     "UPSTREAM_REFERENCE_ONLY": 2
   },
-  "public_release_file_count": 108,
+  "public_release_file_count": 109,
   "excluded_file_count": 0,
   "files": [
     {
@@ -214,7 +214,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "d30a2014882117ec3310588165ccbb3c0c559aaec4976320735ae2480dccf0c5"
+      "sha256": "4008fd4c1d7b935c0aaf20767070ab848b93ec79ecb1ec5b17dd182c9b0bcec6"
     },
     {
       "path": "preprint/LICENCE_REVIEW.md",
@@ -312,7 +312,7 @@
       "category": "PROJECT_CODE",
       "licence": "MIT (LICENSE)",
       "in_public_release": true,
-      "sha256": "5a2973e18431012549dd16b160c2e31714d73cd13b7362bd2b950536c07511cc"
+      "sha256": "dae879b2be5ed65afaaaf7269597f52cffe705768b0838f5c686e41cc8aa9e2e"
     },
     {
       "path": "preprint/analysis/run_preprint_analysis.py",
@@ -438,7 +438,7 @@
       "category": "DERIVED_RESULT",
       "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
       "in_public_release": true,
-      "sha256": "dbe2796bcb2803a1bc710f09d253eb463c7c6a25ad32d4ba06cab861c4f6035d"
+      "sha256": "5b5591f755d014ca1afc1f67e43a13f06b63d196751ce2c63589cd945c98a113"
     },
     {
       "path": "preprint/results/frozen_input_manifest.json",
@@ -614,6 +614,13 @@
       "licence": "MIT (LICENSE)",
       "in_public_release": true,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "preprint/tests/test_archive_boundary.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "023155ad19c8dc377f7204c9fa602f42c94a22c980297d1556cba025cf61b292"
     },
     {
       "path": "preprint/tests/test_author_metadata.py",

@@ -152,6 +152,27 @@ def is_excluded(relative: str) -> bool:
     return any(fnmatch.fnmatch(relative, pattern) for pattern in EXCLUDED_PATTERNS)
 
 
+def archive_entry_is_excluded(name: str) -> bool:
+    """Is this archive member an excluded file, wherever it sits in the tree?
+
+    Published archives are not flat. ``git archive --prefix=``, GitHub's
+    auto-generated source tarballs and Zenodo's GitHub integration all wrap the
+    tree in a top-level directory, so a member arrives as
+    ``project-v1.0.0/validation/.../PPBR_AZ.csv``. Matching the exclusion
+    patterns against that whole string fails -- fnmatch's ``*`` does not cross
+    the leading segment -- so a prefix-naive check passes exactly the archives
+    that actually get published.
+
+    Every trailing path suffix is therefore tested, which catches the file at
+    any depth and under any wrapper name.
+    """
+    normalised = name.replace("\\", "/").lstrip("./")
+    if normalised.endswith("/"):
+        return False  # a directory entry
+    parts = normalised.split("/")
+    return any(is_excluded("/".join(parts[i:])) for i in range(len(parts)))
+
+
 def classify(relative: str) -> str | None:
     for pattern, category in CLASSIFICATION_RULES:
         if fnmatch.fnmatch(relative, pattern):
@@ -277,7 +298,12 @@ def check(archive: Path | None) -> int:
                 names = bundle.namelist()
             for name in names:
                 normalised = name.replace("\\", "/").lstrip("./")
-                if is_excluded(normalised) or any(normalised.endswith("/" + path) or normalised == path for path in excluded):
+                # The manifest's own excluded set is empty in a clean public
+                # clone, so it cannot be the only test here: the pattern check
+                # is what has to hold.
+                by_manifest = any(normalised.endswith("/" + path) or normalised == path
+                                  for path in excluded)
+                if archive_entry_is_excluded(name) or by_manifest:
                     failures.append(f"ARCHIVE CONTAINS EXCLUDED FILE: {name}")
 
     if failures:

@@ -51,7 +51,7 @@ Verified before the root commit was created, and again from a fresh clone:
 | Excluded files in the working tree | None |
 | Excluded files in the Git index | None |
 | Excluded files in `git archive` output | None |
-| Release scanner against a built archive | Clean; and correctly fails on a deliberately leaked archive |
+| Release scanner against a built archive | Clean; and correctly fails on a deliberately leaked archive (the control was originally run on an archive with no top-level prefix; see the correction below) |
 
 A negative control was run before the root commit: a forbidden file was planted,
 confirmed blocked by `.gitignore`, confirmed absent from the index, confirmed
@@ -210,3 +210,62 @@ Neither the other deposit's DOI nor this deposit's concept DOI is written out
 anywhere in the repository. The guard knows both, and any appearance of either
 in a released file is a release blocker — so naming them here would itself be
 one.
+
+---
+
+## RESOLVED — the archive scanner did not catch leaks in a prefixed archive
+
+**Status: found and fixed while building the v1.0.0-preprint package, before
+anything was published. Authorised by the author on 2026-09-15.**
+
+### The problem
+
+`release_package.py --check --archive` is the last gate between the excluded
+upstream tables and a published artefact. It did not work on the kind of
+archive that actually gets published.
+
+Published archives are never flat. `git archive --prefix=`, GitHub's
+auto-generated source tarballs and Zenodo's GitHub integration all wrap the
+tree in a top-level directory, so a member arrives as
+`project-v1.0.0/validation/.../PPBR_AZ.csv`. The scanner matched the exclusion
+patterns against that whole string, and `fnmatch`'s `*` does not cross the
+leading segment, so the match failed.
+
+The manifest-derived fallback could not compensate. It compared members against
+the set of files the manifest marks as excluded, and in a clean public clone
+that set is **empty by construction** — the excluded files are not present, so
+nothing is classified as excluded. The one check that had to hold was the
+pattern check, and that was the broken one.
+
+A release archive built from the tag, with one excluded table deliberately
+planted inside it, **passed with exit code 0**.
+
+The earlier control recorded in the table above was genuine but was run against
+an archive with no top-level prefix, which is not the shape of any archive that
+is actually distributed. That is why the gap survived.
+
+### The resolution
+
+`archive_entry_is_excluded()` now tests every trailing path suffix of each
+member, so an excluded file is caught under any wrapper directory and at any
+depth. The manifest-derived test is kept as a secondary signal and is explicitly
+documented as unable to stand alone.
+
+`preprint/tests/test_archive_boundary.py` pins this with 18 tests: the predicate
+under six prefix shapes, six allowed paths that must not be flagged (including
+`training_reference.py` and the derived summary, which *are* released), a clean
+prefixed archive that must pass, leaked archives at three prefix shapes that
+must all fail, and one archive per withheld table so the coverage is not resting
+on whichever file the control happened to pick.
+
+### Effect on the scientific record
+
+None. No number, cohort, figure, table or decision is involved. The results and
+compatibility block hashes are unchanged and Level 1 reports
+`ALL_PUBLISHED_METRICS_REPRODUCED`.
+
+Nothing had been published when this was found: the repository was still
+private, no GitHub Release existed, and the Zenodo record was still an
+unpublished draft. **No archive containing an excluded file was ever
+distributed** — the planted file existed only in a scratch copy used as the
+control, and the real package was verified clean both before and after the fix.
