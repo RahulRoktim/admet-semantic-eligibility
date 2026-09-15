@@ -1,0 +1,112 @@
+{
+  "artifact_id": "preprint-v1.0.0-final-audit",
+  "generated_at_utc": "2026-09-15T07:48:22Z",
+  "commit": "7b9c5b6a94cc562ef50a85dfa04717ded2754656",
+  "manuscript_words_excluding_references": 4820,
+  "checks_run": 16,
+  "checks_failed": 0,
+  "overall": "PASS",
+  "unresolved_author_fields": [
+    "ZENODO_DOI"
+  ],
+  "checks": [
+    {
+      "check": "every_number_matches_generated_artefacts",
+      "status": "PASS",
+      "detail": "115/115 numeric claims verified against preprint_analysis.json",
+      "evidence": null
+    },
+    {
+      "check": "every_citation_resolves_to_bibliography",
+      "status": "PASS",
+      "detail": "23 citations used, 23 references defined",
+      "evidence": null
+    },
+    {
+      "check": "no_uncited_references",
+      "status": "PASS",
+      "detail": "every reference is cited at least once",
+      "evidence": null
+    },
+    {
+      "check": "bibliography_complete",
+      "status": "PASS",
+      "detail": "23 references (expected 23)",
+      "evidence": null
+    },
+    {
+      "check": "placeholders_are_declared_author_fields",
+      "status": "PASS",
+      "detail": "1 unresolved author-supplied field(s); tracked in USER_INPUT_REQUIRED.md",
+      "evidence": [
+        "ZENODO_DOI"
+      ]
+    },
+    {
+      "check": "no_retired_or_outdated_values",
+      "status": "PASS",
+      "detail": "known-wrong values absent (245-vs-235 stereochemistry; 92.4% PPB median)",
+      "evidence": null
+    },
+    {
+      "check": "no_out_of_scope_claims",
+      "status": "PASS",
+      "detail": "no conflict-engine, comparability-engine, kappa, human-adjudication or platform-validation claim; no extrapolation to all ADMET-AI outputs",
+      "evidence": null
+    },
+    {
+      "check": "required_disclosures_present",
+      "status": "PASS",
+      "detail": "10 required disclosures checked",
+      "evidence": null
+    },
+    {
+      "check": "compatibility_not_claimed_validated",
+      "status": "PASS",
+      "detail": "compatibility decisions described as pre-specified/auditable/fail-closed, not validated",
+      "evidence": null
+    },
+    {
+      "check": "logd_assay_method_not_claimed_known",
+      "status": "PASS",
+      "detail": "logD recorded as eligible under the prespecified protocol with unresolved assay-method metadata",
+      "evidence": null
+    },
+    {
+      "check": "logd_status_wording_present",
+      "status": "PASS",
+      "detail": "required LogD status wording present verbatim",
+      "evidence": null
+    },
+    {
+      "check": "no_unsupported_causal_language",
+      "status": "PASS",
+      "detail": "no causal phrasing beyond what the analyses support",
+      "evidence": null
+    },
+    {
+      "check": "figure_and_table_artifacts_exist",
+      "status": "PASS",
+      "detail": "6 referenced artefacts present",
+      "evidence": null
+    },
+    {
+      "check": "scientific_results_unchanged",
+      "status": "PASS",
+      "detail": "results and compatibility blocks identical to the pre-preparation baseline",
+      "evidence": null
+    },
+    {
+      "check": "release_licence_check",
+      "status": "PASS",
+      "detail": "no excluded file has entered the release set",
+      "evidence": null
+    },
+    {
+      "check": "freeze_hashes_current",
+      "status": "PASS",
+      "detail": "manuscript, figure, table and compatibility-matrix hashes match the freeze record",
+      "evidence": null
+    }
+  ]
+}

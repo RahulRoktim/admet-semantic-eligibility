@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+venv/
+.venv/
+ENV/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Redistribution boundary (see DATA_LICENSES.md section 3).
+#
+# Reconstructed Therapeutics Data Commons reference tables. A reader following
+# preprint/REPRODUCE.md Level 2 will rebuild these locally from their official
+# upstream source. They must never be committed here: their upstream licensing
+# provenance is unresolved, and this repository does not redistribute them.
+# Rebuilt copies are verified against the hashes published in
+# preprint/results/training_reference_summary.json.
+# ---------------------------------------------------------------------------
+validation/external_prediction/training_reference/
+validation/external_prediction/training_reference/*.csv

@@ -1,0 +1,36 @@
+Machine-learning models for absorption, distribution, metabolism, excretion and
+toxicity (ADMET) are usually reported on benchmark splits drawn from the same
+curated collections used to train them. External validation is rarer, and when
+it is attempted, the assumption that a public dataset carrying a matching
+endpoint name is a valid comparator for a model output is seldom examined. We
+applied a pre-specified, fail-closed semantic eligibility screen — ten declared
+gates covering biological endpoint, matrix, species, assay family, measurement
+direction, result semantics, units, transformation, classification threshold
+and positive class — to twelve candidate pairings between three public
+experimental datasets and the outputs of ADMET-AI 2.0.1. The screen was
+executed before any metric was computed. Three pairings were accepted; nine
+were rejected, each with a recorded reason, and no classification endpoint
+qualified. On the three accepted pairings, after excluding exact structure
+overlap with the endpoint training source and with the reconstructed regression
+multitask universe, performance was poor to moderate: human liver microsomal
+clearance R² = −0.156 (95% CI −0.217 to −0.108; n = 366), logD at pH 7.4
+R² = 0.368 (0.261 to 0.456; n = 474), and human plasma protein binding
+R² = 0.642 (0.543 to 0.732; n = 178). The model nevertheless outperformed both
+a training-set-mean baseline and a 1-nearest-neighbour Morgan/Tanimoto baseline
+on every accepted endpoint, including microsomal clearance, where the mean
+baseline gave R² = −0.270 and the nearest-neighbour baseline R² = −0.278. Two
+mechanisms accounted for the pattern. Label-distribution shift between the
+reconstructed training labels and the external labels was severe for clearance
+(Kolmogorov–Smirnov D = 0.446) and mild for logD (D = 0.095). Prediction-range
+compression was extreme for clearance, where predictions had 9% of the observed
+standard deviation and a calibration slope of 0.037, and moderate for logD
+(0.781; slope 0.545) and plasma protein binding (0.725; slope 0.599). Chemical
+novelty explained little (Spearman ρ between maximum training similarity and
+absolute error, −0.13 to −0.28). Conclusions were unchanged by structure-level
+aggregation, a structure-clustered bootstrap, restriction to stereochemically
+unambiguous records, and the inclusion of low-clearance measurements that the
+original benchmark had excluded before inference. We conclude that assay
+semantics must be screened before external metrics are computed, and that under
+strong label-distribution shift R² alone misrepresents model utility; rank
+correlation, bias, calibration slope and baseline-relative performance should
+be reported alongside it.

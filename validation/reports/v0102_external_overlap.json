@@ -1,0 +1,100 @@
+{
+  "schema_version": "v0.10.2-overlap-1",
+  "exact_overlap_policy": "Headline cohort excludes exact endpoint-source overlap and exact exposure in any regression multitask source.",
+  "fingerprint": {
+    "type": "Morgan",
+    "radius": 2,
+    "n_bits": 2048,
+    "similarity": "Tanimoto"
+  },
+  "structurally_remote_definition": "No exact/parent/salt/stereo relation, unseen Murcko scaffold, maximum similarity < 0.60",
+  "endpoints": {
+    "Clearance_Microsome_AZ": {
+      "training_n": 1102,
+      "unique_external_structures": 318,
+      "external_n": 371,
+      "exact_endpoint_training_overlap_n": 4,
+      "exact_multitask_structure_exposure_n": 5,
+      "parent_or_salt_endpoint_overlap_n": 0,
+      "stereo_related_endpoint_n": 1,
+      "seen_scaffold_n": 7,
+      "unseen_scaffold_n": 364,
+      "median_maximum_similarity": 0.23958333333333334,
+      "similarity_distribution": {
+        "0.40-<0.60": 21,
+        "<0.40": 345,
+        ">=0.90": 5
+      },
+      "final_no_exact_overlap_n": 366,
+      "final_parent_form_free_n": 366,
+      "structurally_remote_n": 364
+    },
+    "Lipophilicity_AstraZeneca": {
+      "training_n": 4200,
+      "unique_external_structures": 417,
+      "external_n": 478,
+      "exact_endpoint_training_overlap_n": 4,
+      "exact_multitask_structure_exposure_n": 4,
+      "parent_or_salt_endpoint_overlap_n": 0,
+      "stereo_related_endpoint_n": 0,
+      "seen_scaffold_n": 8,
+      "unseen_scaffold_n": 470,
+      "median_maximum_similarity": 0.3068181818181818,
+      "similarity_distribution": {
+        "0.40-<0.60": 43,
+        "0.60-<0.80": 1,
+        "<0.40": 430,
+        ">=0.90": 4
+      },
+      "final_no_exact_overlap_n": 474,
+      "final_parent_form_free_n": 474,
+      "structurally_remote_n": 470
+    },
+    "PPBR_AZ": {
+      "training_n": 1614,
+      "unique_external_structures": 194,
+      "external_n": 194,
+      "exact_endpoint_training_overlap_n": 10,
+      "exact_multitask_structure_exposure_n": 16,
+      "parent_or_salt_endpoint_overlap_n": 0,
+      "stereo_related_endpoint_n": 0,
+      "seen_scaffold_n": 16,
+      "unseen_scaffold_n": 178,
+      "median_maximum_similarity": 0.2951631701631702,
+      "similarity_distribution": {
+        "0.40-<0.60": 19,
+        "0.60-<0.80": 4,
+        "0.80-<0.90": 1,
+        "<0.40": 161,
+        ">=0.90": 9
+      },
+      "final_no_exact_overlap_n": 178,
+      "final_parent_form_free_n": 178,
+      "structurally_remote_n": 168
+    },
+    "Caco2_Wang": {
+      "training_n": 906,
+      "dataset_id": "duke-caco2-2022-2023",
+      "endpoint": "Caco2_Wang",
+      "compatibility_decision": "INSUFFICIENT_METADATA",
+      "metrics_computed": false,
+      "reason": "Permeability direction and row-level assay context are not supplied.",
+      "external_n": 271,
+      "exact_endpoint_training_overlap_n": 0,
+      "exact_multitask_structure_exposure_n": 4,
+      "parent_or_salt_endpoint_overlap_n": 0,
+      "stereo_related_endpoint_n": 0,
+      "seen_scaffold_n": 2,
+      "unseen_scaffold_n": 269,
+      "median_maximum_similarity": 0.24705882352941178,
+      "similarity_distribution": {
+        "0.40-<0.60": 15,
+        "0.60-<0.80": 1,
+        "<0.40": 255
+      },
+      "final_no_exact_overlap_n": 267,
+      "final_parent_form_free_n": 267,
+      "structurally_remote_n": 266
+    }
+  }
+}

@@ -1,0 +1,31 @@
+Copyright (c) 2026 Md. Rahul Reza Roktim.
+
+This repository is not covered by a single blanket licence. Different kinds of
+material carry different terms, and third-party material is never relicensed by
+this project.
+
+  * Source code authored in this repository .......... MIT
+                                                       see LICENSE
+
+  * Manuscript, documentation, figures and tables
+    authored for this project ....................... CC BY 4.0
+                                                       see CONTENT_LICENSE.md
+
+  * Third-party software dependencies ............... their own licences
+                                                       see THIRD_PARTY_LICENSES.md
+
+  * External datasets ............................... their own licences,
+                                                       recorded individually
+                                                       see DATA_LICENSES.md
+
+Some external data is deliberately NOT redistributed because its upstream
+licensing provenance could not be established with confidence. Where that
+applies, DATA_LICENSES.md records what is excluded and preprint/REPRODUCE.md
+documents how to obtain the material from its official source and rebuild it.
+
+No statement in this repository should be read as a claim of ownership over, or
+a grant of rights in, material belonging to a third party.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.

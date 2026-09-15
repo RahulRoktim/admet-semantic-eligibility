@@ -1,0 +1,72 @@
+{
+  "_note": "Draft Zenodo deposition metadata. NOT uploaded. Double-bracketed fields require author input (see USER_INPUT_REQUIRED.md). Zenodo's GitHub integration populates most of this automatically from the release; this file is the authoritative text to paste or verify.",
+  "metadata": {
+    "upload_type": "software",
+    "title": "What survives? Semantic eligibility, distribution shift and metric interpretation in external validation of ADMET predictors",
+    "version": "v1.0.0-preprint",
+    "publication_date": "[[RELEASE_DATE]]",
+    "language": "eng",
+    "creators": [
+      {
+        "name": "Roktim, Rahul Reza",
+        "affiliation": "Department of Pharmacy, Daffodil International University, Dhaka, Bangladesh",
+        "orcid": "0009-0003-6518-0495"
+      }
+    ],
+    "description": "Analysis code, frozen result artefacts, figures, tables and manuscript for a study of assay-semantic eligibility in the external validation of ADMET predictors. A pre-specified, fail-closed screen of ten declared semantic gates was applied to twelve candidate pairings between three public experimental datasets and the outputs of ADMET-AI 2.0.1, before any metric was computed. Three pairings were accepted and nine rejected, each with a recorded reason; no classification endpoint qualified. On the accepted pairings, after excluding exact structure overlap with the endpoint training source and with the reconstructed regression multitask universe, external performance was R2 = -0.156 for human liver microsomal clearance (n = 366), 0.368 for logD at pH 7.4 (n = 474) and 0.642 for human plasma protein binding (n = 178). The model nevertheless outperformed training-mean and 1-nearest-neighbour baselines on every endpoint. Label-distribution shift (Kolmogorov-Smirnov D = 0.446 for clearance) and prediction-range compression (calibration slope 0.037; prediction standard deviation 9 percent of observed) account for the negative coefficient of determination, which therefore misrepresents model utility if reported alone. Reproduction is offered at two levels: Level 1 regenerates every reported number offline from committed redistributable artefacts; Level 2 documents how to obtain the upstream datasets and rebuild the reference tables that are deliberately not redistributed for licensing reasons.",
+    "keywords": [
+      "ADMET",
+      "external validation",
+      "semantic eligibility",
+      "distribution shift",
+      "model calibration",
+      "cheminformatics",
+      "machine learning",
+      "reproducibility",
+      "drug discovery",
+      "ADMET-AI"
+    ],
+    "license": "mit",
+    "_license_note": "Zenodo accepts one licence identifier. MIT covers the code, which is the primary deposit type. The manuscript, figures, tables and derived results are CC BY 4.0 (CONTENT_LICENSE.md); external datasets retain their own upstream licences and are not relicensed (DATA_LICENSES.md). State this in the description or in an additional-notes field if the deposit form allows one.",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/RahulRoktim/ADMET-Evidence-Graph",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "url"
+      },
+      {
+        "identifier": "10.1093/bioinformatics/btae416",
+        "relation": "references",
+        "resource_type": "publication-article",
+        "scheme": "doi",
+        "_note": "ADMET-AI, the model evaluated"
+      },
+      {
+        "identifier": "10.1021/acs.jcim.3c00160",
+        "relation": "references",
+        "resource_type": "publication-article",
+        "scheme": "doi",
+        "_note": "Biogen Computational-ADME public set"
+      },
+      {
+        "identifier": "10.1038/s41589-022-01131-2",
+        "relation": "references",
+        "resource_type": "publication-article",
+        "scheme": "doi",
+        "_note": "Therapeutics Data Commons"
+      },
+      {
+        "identifier": "10.1093/nar/gkad1004",
+        "relation": "references",
+        "resource_type": "publication-article",
+        "scheme": "doi",
+        "_note": "ChEMBL"
+      }
+    ],
+    "grants": [],
+    "_funding_note": "No funding recorded. If a grant applies, add it here and update the manuscript Funding section.",
+    "notes": "Ten reconstructed Therapeutics Data Commons reference tables are deliberately excluded from this deposit because their upstream licensing provenance could not be established with confidence. Their SHA-256 hashes and full reconstruction instructions are included so the excluded inputs can be rebuilt from their official source and verified. No reported result depends on their redistribution. See DATA_LICENSES.md and preprint/REPRODUCE.md."
+  }
+}

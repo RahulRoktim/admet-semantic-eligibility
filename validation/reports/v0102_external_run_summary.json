@@ -1,0 +1,7 @@
+{
+  "prediction_rows": 1043,
+  "metrics_path": "validation\\reports\\v0102_external_metrics.json",
+  "overlap_path": "validation\\reports\\v0102_external_overlap.json",
+  "stratification_path": "validation\\reports\\v0102_external_stratification.json",
+  "failure_rows": 30
+}

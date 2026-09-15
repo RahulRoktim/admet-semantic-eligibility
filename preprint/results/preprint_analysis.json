@@ -1,0 +1,1811 @@
+{
+  "analysis_id": "preprint-v1.0-external-validation-analysis",
+  "schema_version": 1,
+  "determinism": {
+    "bootstrap_seed": 20260828,
+    "bootstrap_replicates": 2000,
+    "confidence_level": 0.95,
+    "fingerprint": {
+      "type": "Morgan",
+      "radius": 2,
+      "n_bits": 2048,
+      "similarity": "Tanimoto"
+    },
+    "network_access_required": false,
+    "model_inference_in_this_script": false
+  },
+  "inputs": {
+    "level": 1,
+    "description": "Reproduced from redistributable committed artefacts only: the frozen prediction rows, the low-clearance sensitivity predictions, the compatibility matrix, and the derived training-reference summary. The upstream Therapeutics Data Commons reference tables are not required and are not redistributed; see DATA_LICENSES.md.",
+    "training_reference_summary": "preprint/results/training_reference_summary.json",
+    "training_reference_summary_sha256": "0bd9d4e2179787658416ed7b3ebb5eec1904873172c5b152787811fdb44f424b",
+    "upstream_training_tables_present_locally": false,
+    "frozen_inputs_verified": 10,
+    "frozen_inputs_absent_by_policy": [
+      "validation/external_prediction/training_reference/Caco2_Wang.csv",
+      "validation/external_prediction/training_reference/Clearance_Hepatocyte_AZ.csv",
+      "validation/external_prediction/training_reference/Clearance_Microsome_AZ.csv",
+      "validation/external_prediction/training_reference/Half_Life_Obach.csv",
+      "validation/external_prediction/training_reference/HydrationFreeEnergy_FreeSolv.csv",
+      "validation/external_prediction/training_reference/LD50_Zhu.csv",
+      "validation/external_prediction/training_reference/Lipophilicity_AstraZeneca.csv",
+      "validation/external_prediction/training_reference/PPBR_AZ.csv",
+      "validation/external_prediction/training_reference/Solubility_AqSolDB.csv",
+      "validation/external_prediction/training_reference/VDss_Lombardo.csv"
+    ]
+  },
+  "reproduction": {
+    "status": "ALL_PUBLISHED_METRICS_REPRODUCED",
+    "tolerance": 1e-09,
+    "source": "validation/reports/v0102_external_metrics.json",
+    "checks": {
+      "Clearance_Microsome_AZ::ALL_COMPATIBLE_DATA": {
+        "n": 371,
+        "status": "REPRODUCED"
+      },
+      "Clearance_Microsome_AZ::NO_EXACT_TRAINING_OVERLAP": {
+        "n": 366,
+        "status": "REPRODUCED"
+      },
+      "Clearance_Microsome_AZ::NO_PARENT_FORM_TRAINING_OVERLAP": {
+        "n": 366,
+        "status": "REPRODUCED"
+      },
+      "Clearance_Microsome_AZ::STRUCTURALLY_REMOTE_SUBSET": {
+        "n": 364,
+        "status": "REPRODUCED"
+      },
+      "Lipophilicity_AstraZeneca::ALL_COMPATIBLE_DATA": {
+        "n": 478,
+        "status": "REPRODUCED"
+      },
+      "Lipophilicity_AstraZeneca::NO_EXACT_TRAINING_OVERLAP": {
+        "n": 474,
+        "status": "REPRODUCED"
+      },
+      "Lipophilicity_AstraZeneca::NO_PARENT_FORM_TRAINING_OVERLAP": {
+        "n": 474,
+        "status": "REPRODUCED"
+      },
+      "Lipophilicity_AstraZeneca::STRUCTURALLY_REMOTE_SUBSET": {
+        "n": 470,
+        "status": "REPRODUCED"
+      },
+      "PPBR_AZ::ALL_COMPATIBLE_DATA": {
+        "n": 194,
+        "status": "REPRODUCED"
+      },
+      "PPBR_AZ::NO_EXACT_TRAINING_OVERLAP": {
+        "n": 178,
+        "status": "REPRODUCED"
+      },
+      "PPBR_AZ::NO_PARENT_FORM_TRAINING_OVERLAP": {
+        "n": 178,
+        "status": "REPRODUCED"
+      },
+      "PPBR_AZ::STRUCTURALLY_REMOTE_SUBSET": {
+        "n": 168,
+        "status": "REPRODUCED"
+      }
+    }
+  },
+  "cohort_definitions": {
+    "A_HEADLINE": "Frozen v0.10.2 headline cohort: semantically compatible rows with a valid exact experimental value, excluding exact structure overlap with the endpoint training source and with any reconstructed regression multitask source.",
+    "B_HEADLINE_PLUS_LOW_CLEARANCE": "Cohort A plus the ASAP human liver microsomal rows whose experimental value falls below the source's documented reliable exact bound of 10 uL/min/mg. These rows were excluded before inference in v0.10.2 and are predicted here by the same adapter and package version. HLM only.",
+    "C_STRUCTURE_AGGREGATED": "Cohort A collapsed to one record per unique InChIKey. The experimental value is the median of repeated measurements; the prediction is deterministic per structure.",
+    "D_STEREO_UNAMBIGUOUS": "Cohort A restricted to source records whose structure is not an OR/AND enhanced-stereo CXSMILES entry, i.e. excluding racemates and unknown single enantiomers that cannot be represented as the single drawn stereoisomer carried through the modelling path.",
+    "ALL_COMPATIBLE_DATA": "Frozen v0.10.2 transparency cohort including rows with known training exposure. Reported for completeness and never used as an external-generalisation claim.",
+    "NO_PARENT_FORM_TRAINING_OVERLAP": "Frozen v0.10.2 cohort additionally excluding parent and salt-form training overlap.",
+    "STRUCTURALLY_REMOTE_SUBSET": "Frozen v0.10.2 cohort additionally requiring no stereo relation, an unseen Murcko scaffold and maximum Morgan/Tanimoto similarity below 0.60."
+  },
+  "compatibility": {
+    "candidates": 12,
+    "accepted": 3,
+    "rejected": 9,
+    "accepted_mapping_ids": [
+      "ASAP_HLM_MICROSOME",
+      "ASAP_LOGD_LIPOPHILICITY",
+      "BIOGEN_HPPB_PPBR"
+    ],
+    "decision_counts": {
+      "COMPATIBLE_WITH_DOCUMENTED_TRANSFORM": 1,
+      "EXACTLY_COMPATIBLE": 2,
+      "INCOMPATIBLE": 5,
+      "INSUFFICIENT_METADATA": 1,
+      "RELATED_NOT_COMPARABLE": 3
+    },
+    "status": "PRE_SPECIFIED_EXPLICIT_AUDITABLE_FAIL_CLOSED; not externally validated"
+  },
+  "results": {
+    "Clearance_Microsome_AZ": {
+      "label": "Human liver microsomal clearance",
+      "evaluation_scale": "uL/min/mg",
+      "training_labels": {
+        "n": 1102,
+        "mean": 34.2216333938294,
+        "median": 12.735,
+        "sd": 44.78514326654119
+      },
+      "source_row_counts": {
+        "source_rows": 560,
+        "excluded_censoring_or_bound": 36,
+        "excluded_missing": 153,
+        "valid_exact": 371
+      },
+      "cohorts": {
+        "A_HEADLINE": {
+          "n": 366,
+          "unique_structures": 313,
+          "metrics": {
+            "n": 366,
+            "mae": 125.65485121319529,
+            "median_absolute_error": 34.224615478515624,
+            "rmse": 254.59442762424672,
+            "r2": -0.15552153955254067,
+            "pearson_r": 0.4277648401520986,
+            "spearman_rho": 0.445858350262893,
+            "mean_error_bias": -111.64041866358839,
+            "calibration_slope": 0.03709363481234864,
+            "calibration_intercept": 39.798443663347555,
+            "truth_sd": 236.84262792205968,
+            "prediction_sd": 20.53781218908518,
+            "sd_ratio": 0.0867150156594436
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 125.65485121319529,
+                "lower": 103.95726781379494,
+                "upper": 149.20686898418455,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 254.59442762424672,
+                "lower": 207.36795690870625,
+                "upper": 299.29247148495574,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": -0.15552153955254067,
+                "lower": -0.21715998040446263,
+                "upper": -0.10816909092980821,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.4277648401520986,
+                "lower": 0.3354275371323993,
+                "upper": 0.5118381924749836,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.445858350262893,
+                "lower": 0.35821173954391755,
+                "upper": 0.523575474246517,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": -111.64041866358839,
+                "lower": -135.94092145068475,
+                "upper": -89.4735912452858,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.03709363481234864,
+                "lower": 0.02915360759008199,
+                "upper": 0.046373043635687804,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.0867150156594436,
+                "lower": 0.07389898791678233,
+                "upper": 0.10485260767020471,
+                "valid_replicates": 2000
+              }
+            }
+          },
+          "baselines": {
+            "training_mean": {
+              "n": 366,
+              "mae": 133.33681473327184,
+              "median_absolute_error": 32.7283666061706,
+              "rmse": 266.9007116516932,
+              "r2": -0.26992981960782725,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": -123.05104420179899,
+              "calibration_slope": 0.0,
+              "calibration_intercept": 34.2216333938294,
+              "truth_sd": 236.84262792205968,
+              "prediction_sd": 0.0,
+              "sd_ratio": 0.0
+            },
+            "training_median": {
+              "n": 366,
+              "mae": 144.79040983606555,
+              "median_absolute_error": 54.215,
+              "rmse": 277.46273740047513,
+              "r2": -0.372428066305051,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": -144.5376775956284,
+              "calibration_slope": -7.77081665612635e-34,
+              "calibration_intercept": 12.734999999999996,
+              "truth_sd": 236.84262792205968,
+              "prediction_sd": 3.552713678800501e-15,
+              "sd_ratio": 1.5000313541401972e-17
+            },
+            "nearest_neighbour_morgan_tanimoto": {
+              "n": 366,
+              "mae": 137.54718579234975,
+              "median_absolute_error": 50.0,
+              "rmse": 267.77187559328024,
+              "r2": -0.27823345109553266,
+              "pearson_r": 0.0837576338492517,
+              "spearman_rho": 0.06656168152507039,
+              "mean_error_bias": -123.65128415300545,
+              "calibration_slope": 0.016446587614958954,
+              "calibration_intercept": 31.03479457110726,
+              "truth_sd": 236.84262792205968,
+              "prediction_sd": 46.50624488853178,
+              "sd_ratio": 0.19635926731836503
+            },
+            "nearest_neighbour_unresolved_rows": 0
+          },
+          "label_shift": {
+            "training_n": 1102,
+            "training_mean": 34.2216333938294,
+            "training_sd": 44.78514326654119,
+            "training_median": 12.735,
+            "external_n": 366,
+            "external_mean": 157.2726775956284,
+            "external_sd": 236.84262792205968,
+            "external_median": 66.95,
+            "ks_statistic": 0.4464411452599843,
+            "ks_p_value": 5.807687691292993e-50,
+            "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+            "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+          },
+          "similarity_error_association": {
+            "n": 366,
+            "median_maximum_similarity": 0.2389763014763015,
+            "spearman_rho": -0.13254902823195697,
+            "p_value": 0.011137734041710177,
+            "interpretation": "Descriptive association only; it does not establish an applicability domain."
+          },
+          "bootstrap_structures": {
+            "resampling_unit": "unique structure (InChIKey cluster)",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "clusters": 313,
+            "intervals": {
+              "mae": {
+                "point_estimate": 125.65485121319529,
+                "lower": 103.28595439684251,
+                "upper": 148.2733779517827,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 254.59442762424672,
+                "lower": 209.18586477080353,
+                "upper": 296.46586896668003,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": -0.15552153955254067,
+                "lower": -0.21692129578768324,
+                "upper": -0.10439182995130487,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.4277648401520986,
+                "lower": 0.3349580095372829,
+                "upper": 0.5188678903080652,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.445858350262893,
+                "lower": 0.3541319459928113,
+                "upper": 0.5310984255381134,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": -111.64041866358839,
+                "lower": -135.30517675301303,
+                "upper": -88.18906872905002,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.03709363481234864,
+                "lower": 0.028926514628077108,
+                "upper": 0.046703646428431084,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.0867150156594436,
+                "lower": 0.0741729166223136,
+                "upper": 0.10432656844699705,
+                "valid_replicates": 2000
+              }
+            }
+          }
+        },
+        "ALL_COMPATIBLE_DATA": {
+          "n": 371,
+          "unique_structures": 318,
+          "metrics": {
+            "n": 371,
+            "mae": 126.39760202800808,
+            "median_absolute_error": 34.16661529541015,
+            "rmse": 255.06010391137633,
+            "r2": -0.155416851449518,
+            "pearson_r": 0.4319729276817627,
+            "spearman_rho": 0.4409413920416896,
+            "mean_error_bias": -112.29000502344411,
+            "calibration_slope": 0.038165688477531774,
+            "calibration_intercept": 39.541374277334164,
+            "truth_sd": 237.28658366344624,
+            "prediction_sd": 20.964753232565155,
+            "sd_ratio": 0.08835203789819135
+          }
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "n": 366,
+          "unique_structures": 313,
+          "metrics": {
+            "n": 366,
+            "mae": 125.65485121319529,
+            "median_absolute_error": 34.224615478515624,
+            "rmse": 254.59442762424672,
+            "r2": -0.15552153955254067,
+            "pearson_r": 0.4277648401520986,
+            "spearman_rho": 0.445858350262893,
+            "mean_error_bias": -111.64041866358839,
+            "calibration_slope": 0.03709363481234864,
+            "calibration_intercept": 39.798443663347555,
+            "truth_sd": 236.84262792205968,
+            "prediction_sd": 20.53781218908518,
+            "sd_ratio": 0.0867150156594436
+          }
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "n": 364,
+          "unique_structures": 311,
+          "metrics": {
+            "n": 364,
+            "mae": 126.17637301658864,
+            "median_absolute_error": 34.29893341064453,
+            "rmse": 255.28261066444267,
+            "r2": -0.1577460781616844,
+            "pearson_r": 0.4282084540138973,
+            "spearman_rho": 0.4490388941942596,
+            "mean_error_bias": -112.42271702435318,
+            "calibration_slope": 0.03715818968465135,
+            "calibration_intercept": 39.76210208843249,
+            "truth_sd": 237.25456275152328,
+            "prediction_sd": 20.587986910655435,
+            "sd_ratio": 0.08677593666435504
+          }
+        },
+        "C_STRUCTURE_AGGREGATED": {
+          "n": 313,
+          "unique_structures": 313,
+          "metrics": {
+            "n": 313,
+            "mae": 114.52188796892335,
+            "median_absolute_error": 31.97505416870117,
+            "rmse": 238.69630927185412,
+            "r2": -0.11249335295319418,
+            "pearson_r": 0.4791914443445174,
+            "spearman_rho": 0.502424680221671,
+            "mean_error_bias": -99.56450034697976,
+            "calibration_slope": 0.044928589307289525,
+            "calibration_intercept": 39.321495980536575,
+            "truth_sd": 226.30648103447047,
+            "prediction_sd": 21.21830651188663,
+            "sd_ratio": 0.09375916418697133
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 114.52188796892335,
+                "lower": 92.59218015760422,
+                "upper": 138.20169551919727,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 238.69630927185412,
+                "lower": 190.44771948370672,
+                "upper": 286.7242691298464,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": -0.11249335295319418,
+                "lower": -0.17073912457008417,
+                "upper": -0.06605649560265817,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.4791914443445174,
+                "lower": 0.3890911864095797,
+                "upper": 0.5631140902529107,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.502424680221671,
+                "lower": 0.4144613733095487,
+                "upper": 0.5800096806087274,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": -99.56450034697976,
+                "lower": -124.10841547758483,
+                "upper": -76.11874349382694,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.044928589307289525,
+                "lower": 0.037181197738729715,
+                "upper": 0.055321244560470655,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.09375916418697133,
+                "lower": 0.07945271314685672,
+                "upper": 0.1156905820555146,
+                "valid_replicates": 2000
+              }
+            }
+          }
+        },
+        "D_STEREO_UNAMBIGUOUS": {
+          "n": 217,
+          "unique_structures": 217,
+          "metrics": {
+            "n": 217,
+            "mae": 121.29974931245026,
+            "median_absolute_error": 28.972373962402344,
+            "rmse": 253.2752003958367,
+            "r2": -0.10773069550536052,
+            "pearson_r": 0.5244981933536126,
+            "spearman_rho": 0.5475568596026484,
+            "mean_error_bias": -105.97332294792074,
+            "calibration_slope": 0.047137412762691885,
+            "calibration_intercept": 39.833095401075866,
+            "truth_sd": 240.64429625744873,
+            "prediction_sd": 21.62705165702501,
+            "sd_ratio": 0.08987144924427264
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 121.29974931245026,
+                "lower": 93.65737882308629,
+                "upper": 152.062063573066,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 253.2752003958367,
+                "lower": 191.36646440787598,
+                "upper": 312.34498854679373,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": -0.10773069550536052,
+                "lower": -0.17560661189794263,
+                "upper": -0.053715890186471556,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.5244981933536126,
+                "lower": 0.4233197771515117,
+                "upper": 0.6079243753255114,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.5475568596026484,
+                "lower": 0.44763277977689714,
+                "upper": 0.6342198426258904,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": -105.97332294792074,
+                "lower": -137.4874828881609,
+                "upper": -76.3938791131314,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.047137412762691885,
+                "lower": 0.03918176946261698,
+                "upper": 0.05894855585458133,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.08987144924427264,
+                "lower": 0.07419326598802772,
+                "upper": 0.11545193303711812,
+                "valid_replicates": 2000
+              }
+            }
+          },
+          "baselines": {
+            "training_mean": {
+              "n": 217,
+              "mae": 130.00365820000502,
+              "median_absolute_error": 24.0216333938294,
+              "rmse": 268.37022178650545,
+              "r2": -0.24370535760727496,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": -118.79772144488027,
+              "calibration_slope": 0.0,
+              "calibration_intercept": 34.2216333938294,
+              "truth_sd": 240.64429625744873,
+              "prediction_sd": 0.0,
+              "sd_ratio": 0.0
+            },
+            "training_median": {
+              "n": 217,
+              "mae": 140.5925115207373,
+              "median_absolute_error": 40.265,
+              "rmse": 278.5486986753946,
+              "r2": -0.3398343959567185,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": -140.28435483870965,
+              "calibration_slope": 0.0,
+              "calibration_intercept": 12.735,
+              "truth_sd": 240.64429625744873,
+              "prediction_sd": 0.0,
+              "sd_ratio": 0.0
+            },
+            "nearest_neighbour_morgan_tanimoto": {
+              "n": 217,
+              "mae": 139.7600921658986,
+              "median_absolute_error": 45.0,
+              "rmse": 276.34797587053527,
+              "r2": -0.3187468364588544,
+              "pearson_r": -0.06222135071862342,
+              "spearman_rho": -0.10264295440655231,
+              "mean_error_bias": -126.09188940092166,
+              "calibration_slope": -0.009770064741122879,
+              "calibration_intercept": 28.42247444120707,
+              "truth_sd": 240.64429625744873,
+              "prediction_sd": 37.786231363722536,
+              "sd_ratio": 0.1570210969110095
+            },
+            "nearest_neighbour_unresolved_rows": 0
+          },
+          "label_shift": {
+            "training_n": 1102,
+            "training_mean": 34.2216333938294,
+            "training_sd": 44.78514326654119,
+            "training_median": 12.735,
+            "external_n": 217,
+            "external_mean": 153.0193548387097,
+            "external_sd": 240.64429625744873,
+            "external_median": 53.0,
+            "ks_statistic": 0.4472973312034257,
+            "ks_p_value": 2.2389090195466674e-33,
+            "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+            "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+          },
+          "similarity_error_association": {
+            "n": 217,
+            "median_maximum_similarity": 0.2465753424657534,
+            "spearman_rho": -0.06291828823721231,
+            "p_value": 0.35631716562374993,
+            "interpretation": "Descriptive association only; it does not establish an applicability domain."
+          },
+          "rows_excluded_as_ambiguous": 149
+        },
+        "B_HEADLINE_PLUS_LOW_CLEARANCE": {
+          "n": 402,
+          "unique_structures": 346,
+          "metrics": {
+            "n": 402,
+            "mae": 116.19656529718074,
+            "median_absolute_error": 30.293617248535156,
+            "rmse": 243.044117503015,
+            "r2": -0.1152381595927019,
+            "pearson_r": 0.4423961443679968,
+            "spearman_rho": 0.513208321641258,
+            "mean_error_bias": -100.3472671055764,
+            "calibration_slope": 0.04192777443392067,
+            "calibration_intercept": 37.251232758720896,
+            "truth_sd": 230.14487255293673,
+            "prediction_sd": 21.811813747400727,
+            "sd_ratio": 0.09477427633059123
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 116.19656529718074,
+                "lower": 95.13920788204538,
+                "upper": 137.97140335840498,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 243.044117503015,
+                "lower": 197.69402049505484,
+                "upper": 284.6298197572161,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": -0.1152381595927019,
+                "lower": -0.16859226495299923,
+                "upper": -0.07537691121452555,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.4423961443679968,
+                "lower": 0.35777388680274314,
+                "upper": 0.5196799621437231,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.513208321641258,
+                "lower": 0.4346073080018622,
+                "upper": 0.5847745459756812,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": -100.3472671055764,
+                "lower": -122.91004056807267,
+                "upper": -78.53046118166961,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.04192777443392067,
+                "lower": 0.03362848269365887,
+                "upper": 0.0516341391592944,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.09477427633059123,
+                "lower": 0.081048489814097,
+                "upper": 0.11541381164677934,
+                "valid_replicates": 2000
+              }
+            }
+          },
+          "baselines": {
+            "training_mean": {
+              "n": 402,
+              "mae": 124.02921142924218,
+              "median_absolute_error": 31.0,
+              "rmse": 254.82288570195095,
+              "r2": -0.22595421688409534,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": -109.39854073552381,
+              "calibration_slope": 0.0,
+              "calibration_intercept": 34.2216333938294,
+              "truth_sd": 230.14487255293673,
+              "prediction_sd": 0.0,
+              "sd_ratio": 0.0
+            },
+            "training_median": {
+              "n": 402,
+              "mae": 132.53293532338307,
+              "median_absolute_error": 41.765,
+              "rmse": 264.7594968443599,
+              "r2": -0.32342851225282443,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": -130.88517412935323,
+              "calibration_slope": 6.164886641178384e-35,
+              "calibration_intercept": 12.734999999999998,
+              "truth_sd": 230.14487255293673,
+              "prediction_sd": 1.7763568394002505e-15,
+              "sd_ratio": 7.718428916949527e-18
+            },
+            "nearest_neighbour_morgan_tanimoto": {
+              "n": 402,
+              "mae": 127.86241293532339,
+              "median_absolute_error": 42.0,
+              "rmse": 256.06176582547755,
+              "r2": -0.23790371137671684,
+              "pearson_r": 0.07886564466903341,
+              "spearman_rho": 0.10843931798605654,
+              "mean_error_bias": -110.0608208955224,
+              "calibration_slope": 0.016014771735524472,
+              "calibration_intercept": 31.25930892853297,
+              "truth_sd": 230.14487255293673,
+              "prediction_sd": 46.73413392490597,
+              "sd_ratio": 0.2030639805549282
+            },
+            "nearest_neighbour_unresolved_rows": 0
+          },
+          "label_shift": {
+            "training_n": 1102,
+            "training_mean": 34.2216333938294,
+            "training_sd": 44.78514326654119,
+            "training_median": 12.735,
+            "external_n": 402,
+            "external_mean": 143.62017412935322,
+            "external_sd": 230.14487255293673,
+            "external_median": 54.5,
+            "ks_statistic": 0.3573782629502216,
+            "ks_p_value": 5.4019963604775874e-34,
+            "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+            "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+          },
+          "similarity_error_association": {
+            "n": 402,
+            "median_maximum_similarity": 0.24085229808121372,
+            "spearman_rho": -0.15530091114158487,
+            "p_value": 0.0017898951203302689,
+            "interpretation": "Descriptive association only; it does not establish an applicability domain."
+          },
+          "bootstrap_structures": {
+            "resampling_unit": "unique structure (InChIKey cluster)",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "clusters": 346,
+            "intervals": {
+              "mae": {
+                "point_estimate": 116.19656529718074,
+                "lower": 95.84233010265541,
+                "upper": 139.3066838320286,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 243.044117503015,
+                "lower": 200.03384622472342,
+                "upper": 285.3809516454397,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": -0.1152381595927019,
+                "lower": -0.1701916292631559,
+                "upper": -0.0696602700392916,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.4423961443679968,
+                "lower": 0.3556169548162196,
+                "upper": 0.5234927121036757,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.513208321641258,
+                "lower": 0.42765823419806165,
+                "upper": 0.5892617977809749,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": -100.3472671055764,
+                "lower": -124.08979543701435,
+                "upper": -79.15988520008565,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.04192777443392067,
+                "lower": 0.03332676650156795,
+                "upper": 0.05249798344041896,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.09477427633059123,
+                "lower": 0.08094949666845337,
+                "upper": 0.11426013910202776,
+                "valid_replicates": 2000
+              }
+            }
+          },
+          "rows_added": 36,
+          "rows_available_below_bound": 36,
+          "rows_below_bound_with_exact_training_overlap": 0
+        }
+      }
+    },
+    "Lipophilicity_AstraZeneca": {
+      "label": "LogD (pH 7.4)",
+      "evaluation_scale": "logD at pH 7.4",
+      "training_labels": {
+        "n": 4200,
+        "mean": 2.1863357142857143,
+        "median": 2.36,
+        "sd": 1.2028604901336188
+      },
+      "source_row_counts": {
+        "source_rows": 560,
+        "excluded_missing": 82,
+        "valid_exact": 478
+      },
+      "cohorts": {
+        "A_HEADLINE": {
+          "n": 474,
+          "unique_structures": 413,
+          "metrics": {
+            "n": 474,
+            "mae": 0.7292184190067781,
+            "median_absolute_error": 0.616797103881836,
+            "rmse": 0.9149281384203628,
+            "r2": 0.3684183561514348,
+            "pearson_r": 0.6981944571578872,
+            "spearman_rho": 0.684491047725416,
+            "mean_error_bias": 0.3857146132502406,
+            "calibration_slope": 0.5450788303638994,
+            "calibration_intercept": 1.354475962235438,
+            "truth_sd": 1.1512568699398045,
+            "prediction_sd": 0.8987836292336618,
+            "sd_ratio": 0.780697733669686
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 0.7292184190067781,
+                "lower": 0.6812691154339418,
+                "upper": 0.7792781622180409,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 0.9149281384203628,
+                "lower": 0.8589977618277188,
+                "upper": 0.9688919181338704,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": 0.3684183561514348,
+                "lower": 0.2605541694964111,
+                "upper": 0.4557020107020194,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.6981944571578872,
+                "lower": 0.6449127071333307,
+                "upper": 0.7436857095251308,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.684491047725416,
+                "lower": 0.6271885296047133,
+                "upper": 0.7361648807637505,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": 0.3857146132502406,
+                "lower": 0.3090951676184238,
+                "upper": 0.46082783428983926,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.5450788303638994,
+                "lower": 0.4899038633078063,
+                "upper": 0.5985780445082779,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.780697733669686,
+                "lower": 0.7347975076302453,
+                "upper": 0.8303021607557928,
+                "valid_replicates": 2000
+              }
+            }
+          },
+          "baselines": {
+            "training_mean": {
+              "n": 474,
+              "mae": 0.9432842073538275,
+              "median_absolute_error": 0.8136642857142857,
+              "rmse": 1.1526582323169656,
+              "r2": -0.002435972917736562,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": 0.05682094635322481,
+              "calibration_slope": 1.789338418527922e-32,
+              "calibration_intercept": 2.1863357142857147,
+              "truth_sd": 1.1512568699398045,
+              "prediction_sd": 4.440892098500626e-16,
+              "sd_ratio": 3.857429401253281e-16
+            },
+            "training_median": {
+              "n": 474,
+              "mae": 0.9626793248945148,
+              "median_absolute_error": 0.8400000000000003,
+              "rmse": 1.1741021347330947,
+              "r2": -0.0400812943996427,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": 0.23048523206751043,
+              "calibration_slope": 0.0,
+              "calibration_intercept": 2.36,
+              "truth_sd": 1.1512568699398045,
+              "prediction_sd": 0.0,
+              "sd_ratio": 0.0
+            },
+            "nearest_neighbour_morgan_tanimoto": {
+              "n": 474,
+              "mae": 1.2871940928270043,
+              "median_absolute_error": 1.0700000000000003,
+              "rmse": 1.6128405505040513,
+              "r2": -0.9626298441559082,
+              "pearson_r": 0.13396470456063034,
+              "spearman_rho": 0.17730964064252816,
+              "mean_error_bias": 0.3099367088607594,
+              "calibration_slope": 0.14560718508521847,
+              "calibration_intercept": 2.1293788258371973,
+              "truth_sd": 1.1512568699398045,
+              "prediction_sd": 1.2513092362032352,
+              "sd_ratio": 1.0869070742384905
+            },
+            "nearest_neighbour_unresolved_rows": 0
+          },
+          "label_shift": {
+            "training_n": 4200,
+            "training_mean": 2.1863357142857143,
+            "training_sd": 1.2028604901336188,
+            "training_median": 2.36,
+            "external_n": 474,
+            "external_mean": 2.1295147679324895,
+            "external_sd": 1.1512568699398045,
+            "external_median": 2.1,
+            "ks_statistic": 0.0951446654611211,
+            "ks_p_value": 0.0008269315358898401,
+            "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+            "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+          },
+          "similarity_error_association": {
+            "n": 474,
+            "median_maximum_similarity": 0.3066348973607038,
+            "spearman_rho": -0.28243467553744867,
+            "p_value": 3.8321811609353543e-10,
+            "interpretation": "Descriptive association only; it does not establish an applicability domain."
+          },
+          "bootstrap_structures": {
+            "resampling_unit": "unique structure (InChIKey cluster)",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "clusters": 413,
+            "intervals": {
+              "mae": {
+                "point_estimate": 0.7292184190067781,
+                "lower": 0.675603700633899,
+                "upper": 0.787746959258359,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 0.9149281384203628,
+                "lower": 0.8547027213454714,
+                "upper": 0.9802475664421166,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": 0.3684183561514348,
+                "lower": 0.2505284058739251,
+                "upper": 0.4631677090834033,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.6981944571578872,
+                "lower": 0.6410572212482615,
+                "upper": 0.7467197498595323,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.684491047725416,
+                "lower": 0.6194996239249937,
+                "upper": 0.740912974520486,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": 0.3857146132502406,
+                "lower": 0.3110985761052097,
+                "upper": 0.4661751714751758,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.5450788303638994,
+                "lower": 0.4881093495314057,
+                "upper": 0.5992019175915153,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.780697733669686,
+                "lower": 0.7278880278742139,
+                "upper": 0.8288162641574949,
+                "valid_replicates": 2000
+              }
+            }
+          }
+        },
+        "ALL_COMPATIBLE_DATA": {
+          "n": 478,
+          "unique_structures": 417,
+          "metrics": {
+            "n": 478,
+            "mae": 0.7267118988836879,
+            "median_absolute_error": 0.612535047531128,
+            "rmse": 0.912456175754906,
+            "r2": 0.37591661718679514,
+            "pearson_r": 0.7013606168954477,
+            "spearman_rho": 0.688286089137068,
+            "mean_error_bias": 0.3827244760757741,
+            "calibration_slope": 0.5471004922675181,
+            "calibration_intercept": 1.3525642399249187,
+            "truth_sd": 1.1550231942450597,
+            "prediction_sd": 0.9009826655922332,
+            "sd_ratio": 0.7800559071726078
+          }
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "n": 474,
+          "unique_structures": 413,
+          "metrics": {
+            "n": 474,
+            "mae": 0.7292184190067781,
+            "median_absolute_error": 0.616797103881836,
+            "rmse": 0.9149281384203628,
+            "r2": 0.3684183561514348,
+            "pearson_r": 0.6981944571578872,
+            "spearman_rho": 0.684491047725416,
+            "mean_error_bias": 0.3857146132502406,
+            "calibration_slope": 0.5450788303638994,
+            "calibration_intercept": 1.354475962235438,
+            "truth_sd": 1.1512568699398045,
+            "prediction_sd": 0.8987836292336618,
+            "sd_ratio": 0.780697733669686
+          }
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "n": 470,
+          "unique_structures": 409,
+          "metrics": {
+            "n": 470,
+            "mae": 0.7310926654198545,
+            "median_absolute_error": 0.616797103881836,
+            "rmse": 0.9167112069635784,
+            "r2": 0.3566402264780537,
+            "pearson_r": 0.6928740232180571,
+            "spearman_rho": 0.6799060351978462,
+            "mean_error_bias": 0.38999178178331,
+            "calibration_slope": 0.5380230683163885,
+            "calibration_intercept": 1.3758702125889746,
+            "truth_sd": 1.1428930434767393,
+            "prediction_sd": 0.8874669873650213,
+            "sd_ratio": 0.7765092214274935
+          }
+        },
+        "C_STRUCTURE_AGGREGATED": {
+          "n": 413,
+          "unique_structures": 413,
+          "metrics": {
+            "n": 413,
+            "mae": 0.7627255809695863,
+            "median_absolute_error": 0.6957210540771483,
+            "rmse": 0.9438969686454556,
+            "r2": 0.3527060251764883,
+            "pearson_r": 0.6868915729070331,
+            "spearman_rho": 0.6792623818937817,
+            "mean_error_bias": 0.3892177252050209,
+            "calibration_slope": 0.5371721139158118,
+            "calibration_intercept": 1.3447836094305088,
+            "truth_sd": 1.1732047403500687,
+            "prediction_sd": 0.9174852266169714,
+            "sd_ratio": 0.7820333442764696
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 0.7627255809695863,
+                "lower": 0.7098724779477186,
+                "upper": 0.8176518762397148,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 0.9438969686454556,
+                "lower": 0.8859140013206623,
+                "upper": 1.0021025439448574,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": 0.3527060251764883,
+                "lower": 0.23438679935030857,
+                "upper": 0.4478093080062831,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.6868915729070331,
+                "lower": 0.6312733915893799,
+                "upper": 0.7359515281083175,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.6792623818937817,
+                "lower": 0.6171308639968045,
+                "upper": 0.7364832868337097,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": 0.3892177252050209,
+                "lower": 0.3102890037114577,
+                "upper": 0.4710209800348037,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.5371721139158118,
+                "lower": 0.47995856992836905,
+                "upper": 0.5922817156601685,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.7820333442764696,
+                "lower": 0.7274138351086409,
+                "upper": 0.833192793799783,
+                "valid_replicates": 2000
+              }
+            }
+          }
+        },
+        "D_STEREO_UNAMBIGUOUS": {
+          "n": 274,
+          "unique_structures": 274,
+          "metrics": {
+            "n": 274,
+            "mae": 0.7925203118558947,
+            "median_absolute_error": 0.8207478150725365,
+            "rmse": 0.9367641043095531,
+            "r2": 0.33524072719668063,
+            "pearson_r": 0.6672465975222631,
+            "spearman_rho": 0.6760407964599671,
+            "mean_error_bias": 0.3720655617940437,
+            "calibration_slope": 0.49291249189598846,
+            "calibration_intercept": 1.4284731945529192,
+            "truth_sd": 1.1489418232106892,
+            "prediction_sd": 0.8487533383089381,
+            "sd_ratio": 0.7387261227353689
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 0.7925203118558947,
+                "lower": 0.7341252879135949,
+                "upper": 0.8493299205479666,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 0.9367641043095531,
+                "lower": 0.877959676340389,
+                "upper": 0.9904809979319935,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": 0.33524072719668063,
+                "lower": 0.19540135031625722,
+                "upper": 0.44656882092600114,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.6672465975222631,
+                "lower": 0.596450322882387,
+                "upper": 0.734495686220785,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.6760407964599671,
+                "lower": 0.5993655818518061,
+                "upper": 0.7461155040486074,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": 0.3720655617940437,
+                "lower": 0.2663054441595382,
+                "upper": 0.4691976122137458,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.49291249189598846,
+                "lower": 0.42695426534142406,
+                "upper": 0.5582477415461865,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.7387261227353689,
+                "lower": 0.6778994770007357,
+                "upper": 0.8032139997912044,
+                "valid_replicates": 2000
+              }
+            }
+          },
+          "baselines": {
+            "training_mean": {
+              "n": 274,
+              "mae": 0.9401002606882168,
+              "median_absolute_error": 0.8136642857142857,
+              "rmse": 1.1535539998349258,
+              "r2": -0.008044678712127329,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": 0.10305104275286751,
+              "calibration_slope": 0.0,
+              "calibration_intercept": 2.1863357142857143,
+              "truth_sd": 1.1489418232106892,
+              "prediction_sd": 0.0,
+              "sd_ratio": 0.0
+            },
+            "training_median": {
+              "n": 274,
+              "mae": 0.9860583941605837,
+              "median_absolute_error": 0.8599999999999999,
+              "rmse": 1.1817946886542463,
+              "r2": -0.058005657929329546,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": 0.27671532846715313,
+              "calibration_slope": 0.0,
+              "calibration_intercept": 2.36,
+              "truth_sd": 1.1489418232106892,
+              "prediction_sd": 0.0,
+              "sd_ratio": 0.0
+            },
+            "nearest_neighbour_morgan_tanimoto": {
+              "n": 274,
+              "mae": 1.2231386861313869,
+              "median_absolute_error": 0.915,
+              "rmse": 1.5995690569285252,
+              "r2": -0.9382505289299468,
+              "pearson_r": 0.11455127908954583,
+              "spearman_rho": 0.09402260241575476,
+              "mean_error_bias": 0.06372262773722628,
+              "calibration_slope": 0.12467262219169915,
+              "calibration_intercept": 1.8872787364983004,
+              "truth_sd": 1.1489418232106892,
+              "prediction_sd": 1.2504582313167796,
+              "sd_ratio": 1.088356438990449
+            },
+            "nearest_neighbour_unresolved_rows": 0
+          },
+          "label_shift": {
+            "training_n": 4200,
+            "training_mean": 2.1863357142857143,
+            "training_sd": 1.2028604901336188,
+            "training_median": 2.36,
+            "external_n": 274,
+            "external_mean": 2.0832846715328466,
+            "external_sd": 1.1489418232106892,
+            "external_median": 1.92,
+            "ks_statistic": 0.17988703510601312,
+            "ks_p_value": 9.386217104968998e-08,
+            "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+            "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+          },
+          "similarity_error_association": {
+            "n": 274,
+            "median_maximum_similarity": 0.2928205128205128,
+            "spearman_rho": -0.24149069866733686,
+            "p_value": 5.366875312344832e-05,
+            "interpretation": "Descriptive association only; it does not establish an applicability domain."
+          },
+          "rows_excluded_as_ambiguous": 200
+        }
+      }
+    },
+    "PPBR_AZ": {
+      "label": "Human plasma protein binding",
+      "evaluation_scale": "% bound",
+      "training_labels": {
+        "n": 1614,
+        "mean": 88.0729491945477,
+        "median": 95.43,
+        "sd": 16.733033785866667
+      },
+      "source_row_counts": {
+        "source_rows": 3521,
+        "excluded_missing": 3327,
+        "valid_exact": 194
+      },
+      "cohorts": {
+        "A_HEADLINE": {
+          "n": 178,
+          "unique_structures": 178,
+          "metrics": {
+            "n": 178,
+            "mae": 10.537728929665484,
+            "median_absolute_error": 5.220047146961928,
+            "rmse": 17.435787885260833,
+            "r2": 0.6415875529708555,
+            "pearson_r": 0.8263140775678244,
+            "spearman_rho": 0.8073683333822503,
+            "mean_error_bias": 5.118420077031135,
+            "calibration_slope": 0.5988490799110457,
+            "calibration_intercept": 36.390873905170395,
+            "truth_sd": 29.123933800125105,
+            "prediction_sd": 21.106793933525314,
+            "sd_ratio": 0.7247233178862207
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 10.537728929665484,
+                "lower": 8.70490364439239,
+                "upper": 12.65579130568777,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 17.435787885260833,
+                "lower": 14.250079495415175,
+                "upper": 20.754835993129795,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": 0.6415875529708555,
+                "lower": 0.543396356068429,
+                "upper": 0.7315165817692612,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.8263140775678244,
+                "lower": 0.7758059996060902,
+                "upper": 0.8742687807934082,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.8073683333822503,
+                "lower": 0.7381953908127784,
+                "upper": 0.8590344826259484,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": 5.118420077031135,
+                "lower": 2.7838597196765034,
+                "upper": 7.576755798233968,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.5988490799110457,
+                "lower": 0.49935052425675935,
+                "upper": 0.7012458678569653,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.7247233178862207,
+                "lower": 0.6269395059008268,
+                "upper": 0.8212391330146549,
+                "valid_replicates": 2000
+              }
+            }
+          },
+          "baselines": {
+            "training_mean": {
+              "n": 178,
+              "mae": 19.87851193882763,
+              "median_absolute_error": 10.545050805436915,
+              "rmse": 30.830819002124176,
+              "r2": -0.1206501481488631,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": 10.116119826676224,
+              "calibration_slope": -2.421022920511398e-31,
+              "calibration_intercept": 88.07294919454772,
+              "truth_sd": 29.123933800125105,
+              "prediction_sd": 1.4210854715202004e-14,
+              "sd_ratio": 4.879442046781798e-16
+            },
+            "training_median": {
+              "n": 178,
+              "mae": 19.81388686079404,
+              "median_absolute_error": 4.504250000002763,
+              "rmse": 33.96343934193869,
+              "r2": -0.3599509843364168,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": 17.47317063212853,
+              "calibration_slope": -2.421022920511398e-31,
+              "calibration_intercept": 95.43000000000002,
+              "truth_sd": 29.123933800125105,
+              "prediction_sd": 1.4210854715202004e-14,
+              "sd_ratio": 4.879442046781798e-16
+            },
+            "nearest_neighbour_morgan_tanimoto": {
+              "n": 178,
+              "mae": 20.45592056775568,
+              "median_absolute_error": 7.458249991922557,
+              "rmse": 33.297945998861145,
+              "r2": -0.30717826748800214,
+              "pearson_r": 0.11882005581192696,
+              "spearman_rho": 0.1505979625570406,
+              "mean_error_bias": 11.827384115274588,
+              "calibration_slope": 0.061104732761763016,
+              "calibration_intercept": 85.02068225766791,
+              "truth_sd": 29.123933800125105,
+              "prediction_sd": 14.977355292988227,
+              "sd_ratio": 0.5142627845460866
+            },
+            "nearest_neighbour_unresolved_rows": 0
+          },
+          "label_shift": {
+            "training_n": 1614,
+            "training_mean": 88.0729491945477,
+            "training_sd": 16.733033785866667,
+            "training_median": 95.43,
+            "external_n": 178,
+            "external_mean": 77.95682936787146,
+            "external_sd": 29.123933800125105,
+            "external_median": 91.76350000254095,
+            "ks_statistic": 0.15549336563496374,
+            "ks_p_value": 0.0007459548829759517,
+            "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+            "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+          },
+          "similarity_error_association": {
+            "n": 178,
+            "median_maximum_similarity": 0.290994623655914,
+            "spearman_rho": -0.13828921375796294,
+            "p_value": 0.06564141098747507,
+            "interpretation": "Descriptive association only; it does not establish an applicability domain."
+          },
+          "bootstrap_structures": {
+            "resampling_unit": "unique structure (InChIKey cluster)",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "clusters": 178,
+            "intervals": {
+              "mae": {
+                "point_estimate": 10.537728929665484,
+                "lower": 8.70490364439239,
+                "upper": 12.65579130568777,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 17.435787885260833,
+                "lower": 14.250079495415175,
+                "upper": 20.754835993129795,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": 0.6415875529708555,
+                "lower": 0.543396356068429,
+                "upper": 0.7315165817692612,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.8263140775678244,
+                "lower": 0.7758059996060902,
+                "upper": 0.8742687807934082,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.8073683333822503,
+                "lower": 0.7381953908127784,
+                "upper": 0.8590344826259484,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": 5.118420077031135,
+                "lower": 2.7838597196765034,
+                "upper": 7.576755798233968,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.5988490799110457,
+                "lower": 0.49935052425675935,
+                "upper": 0.7012458678569653,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.7247233178862207,
+                "lower": 0.6269395059008268,
+                "upper": 0.8212391330146549,
+                "valid_replicates": 2000
+              }
+            }
+          }
+        },
+        "ALL_COMPATIBLE_DATA": {
+          "n": 194,
+          "unique_structures": 194,
+          "metrics": {
+            "n": 194,
+            "mae": 10.115716974164602,
+            "median_absolute_error": 5.095109902948238,
+            "rmse": 16.914043400224386,
+            "r2": 0.6584388914124424,
+            "pearson_r": 0.836690639917348,
+            "spearman_rho": 0.8148046187412643,
+            "mean_error_bias": 4.911405585721705,
+            "calibration_slope": 0.6053430824276044,
+            "calibration_intercept": 36.00690757447817,
+            "truth_sd": 28.94098001854157,
+            "prediction_sd": 20.938709263713395,
+            "sd_ratio": 0.7234968978347874
+          }
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "n": 178,
+          "unique_structures": 178,
+          "metrics": {
+            "n": 178,
+            "mae": 10.537728929665484,
+            "median_absolute_error": 5.220047146961928,
+            "rmse": 17.435787885260833,
+            "r2": 0.6415875529708555,
+            "pearson_r": 0.8263140775678244,
+            "spearman_rho": 0.8073683333822503,
+            "mean_error_bias": 5.118420077031135,
+            "calibration_slope": 0.5988490799110457,
+            "calibration_intercept": 36.390873905170395,
+            "truth_sd": 29.123933800125105,
+            "prediction_sd": 21.106793933525314,
+            "sd_ratio": 0.7247233178862207
+          }
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "n": 168,
+          "unique_structures": 168,
+          "metrics": {
+            "n": 168,
+            "mae": 10.333164158168236,
+            "median_absolute_error": 4.825721924495845,
+            "rmse": 16.935051437895986,
+            "r2": 0.6607792963924661,
+            "pearson_r": 0.8364959286797504,
+            "spearman_rho": 0.8146524571050073,
+            "mean_error_bias": 4.987527553841391,
+            "calibration_slope": 0.6180926146203386,
+            "calibration_intercept": 34.720378340743345,
+            "truth_sd": 29.076715342044416,
+            "prediction_sd": 21.484985633703058,
+            "sd_ratio": 0.7389069013113785
+          }
+        },
+        "C_STRUCTURE_AGGREGATED": {
+          "n": 178,
+          "unique_structures": 178,
+          "metrics": {
+            "n": 178,
+            "mae": 10.537728929665484,
+            "median_absolute_error": 5.220047146961928,
+            "rmse": 17.435787885260833,
+            "r2": 0.6415875529708555,
+            "pearson_r": 0.8263140775678244,
+            "spearman_rho": 0.8073683333822503,
+            "mean_error_bias": 5.118420077031135,
+            "calibration_slope": 0.5988490799110457,
+            "calibration_intercept": 36.390873905170395,
+            "truth_sd": 29.123933800125105,
+            "prediction_sd": 21.106793933525314,
+            "sd_ratio": 0.7247233178862207
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 10.537728929665484,
+                "lower": 8.70490364439239,
+                "upper": 12.65579130568777,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 17.435787885260833,
+                "lower": 14.250079495415175,
+                "upper": 20.754835993129795,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": 0.6415875529708555,
+                "lower": 0.543396356068429,
+                "upper": 0.7315165817692612,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.8263140775678244,
+                "lower": 0.7758059996060902,
+                "upper": 0.8742687807934082,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.8073683333822503,
+                "lower": 0.7381953908127784,
+                "upper": 0.8590344826259484,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": 5.118420077031135,
+                "lower": 2.7838597196765034,
+                "upper": 7.576755798233968,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.5988490799110457,
+                "lower": 0.49935052425675935,
+                "upper": 0.7012458678569653,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.7247233178862207,
+                "lower": 0.6269395059008268,
+                "upper": 0.8212391330146549,
+                "valid_replicates": 2000
+              }
+            }
+          }
+        },
+        "D_STEREO_UNAMBIGUOUS": {
+          "n": 178,
+          "unique_structures": 178,
+          "metrics": {
+            "n": 178,
+            "mae": 10.537728929665484,
+            "median_absolute_error": 5.220047146961928,
+            "rmse": 17.435787885260833,
+            "r2": 0.6415875529708555,
+            "pearson_r": 0.8263140775678244,
+            "spearman_rho": 0.8073683333822503,
+            "mean_error_bias": 5.118420077031135,
+            "calibration_slope": 0.5988490799110457,
+            "calibration_intercept": 36.390873905170395,
+            "truth_sd": 29.123933800125105,
+            "prediction_sd": 21.106793933525314,
+            "sd_ratio": 0.7247233178862207
+          },
+          "bootstrap_rows": {
+            "resampling_unit": "external source row",
+            "seed": 20260828,
+            "replicates": 2000,
+            "confidence_level": 0.95,
+            "intervals": {
+              "mae": {
+                "point_estimate": 10.537728929665484,
+                "lower": 8.70490364439239,
+                "upper": 12.65579130568777,
+                "valid_replicates": 2000
+              },
+              "rmse": {
+                "point_estimate": 17.435787885260833,
+                "lower": 14.250079495415175,
+                "upper": 20.754835993129795,
+                "valid_replicates": 2000
+              },
+              "r2": {
+                "point_estimate": 0.6415875529708555,
+                "lower": 0.543396356068429,
+                "upper": 0.7315165817692612,
+                "valid_replicates": 2000
+              },
+              "pearson_r": {
+                "point_estimate": 0.8263140775678244,
+                "lower": 0.7758059996060902,
+                "upper": 0.8742687807934082,
+                "valid_replicates": 2000
+              },
+              "spearman_rho": {
+                "point_estimate": 0.8073683333822503,
+                "lower": 0.7381953908127784,
+                "upper": 0.8590344826259484,
+                "valid_replicates": 2000
+              },
+              "mean_error_bias": {
+                "point_estimate": 5.118420077031135,
+                "lower": 2.7838597196765034,
+                "upper": 7.576755798233968,
+                "valid_replicates": 2000
+              },
+              "calibration_slope": {
+                "point_estimate": 0.5988490799110457,
+                "lower": 0.49935052425675935,
+                "upper": 0.7012458678569653,
+                "valid_replicates": 2000
+              },
+              "sd_ratio": {
+                "point_estimate": 0.7247233178862207,
+                "lower": 0.6269395059008268,
+                "upper": 0.8212391330146549,
+                "valid_replicates": 2000
+              }
+            }
+          },
+          "baselines": {
+            "training_mean": {
+              "n": 178,
+              "mae": 19.87851193882763,
+              "median_absolute_error": 10.545050805436915,
+              "rmse": 30.830819002124176,
+              "r2": -0.1206501481488631,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": 10.116119826676224,
+              "calibration_slope": -2.421022920511398e-31,
+              "calibration_intercept": 88.07294919454772,
+              "truth_sd": 29.123933800125105,
+              "prediction_sd": 1.4210854715202004e-14,
+              "sd_ratio": 4.879442046781798e-16
+            },
+            "training_median": {
+              "n": 178,
+              "mae": 19.81388686079404,
+              "median_absolute_error": 4.504250000002763,
+              "rmse": 33.96343934193869,
+              "r2": -0.3599509843364168,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "mean_error_bias": 17.47317063212853,
+              "calibration_slope": -2.421022920511398e-31,
+              "calibration_intercept": 95.43000000000002,
+              "truth_sd": 29.123933800125105,
+              "prediction_sd": 1.4210854715202004e-14,
+              "sd_ratio": 4.879442046781798e-16
+            },
+            "nearest_neighbour_morgan_tanimoto": {
+              "n": 178,
+              "mae": 20.45592056775568,
+              "median_absolute_error": 7.458249991922557,
+              "rmse": 33.297945998861145,
+              "r2": -0.30717826748800214,
+              "pearson_r": 0.11882005581192696,
+              "spearman_rho": 0.1505979625570406,
+              "mean_error_bias": 11.827384115274588,
+              "calibration_slope": 0.061104732761763016,
+              "calibration_intercept": 85.02068225766791,
+              "truth_sd": 29.123933800125105,
+              "prediction_sd": 14.977355292988227,
+              "sd_ratio": 0.5142627845460866
+            },
+            "nearest_neighbour_unresolved_rows": 0
+          },
+          "label_shift": {
+            "training_n": 1614,
+            "training_mean": 88.0729491945477,
+            "training_sd": 16.733033785866667,
+            "training_median": 95.43,
+            "external_n": 178,
+            "external_mean": 77.95682936787146,
+            "external_sd": 29.123933800125105,
+            "external_median": 91.76350000254095,
+            "ks_statistic": 0.15549336563496374,
+            "ks_p_value": 0.0007459548829759517,
+            "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+            "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+          },
+          "similarity_error_association": {
+            "n": 178,
+            "median_maximum_similarity": 0.290994623655914,
+            "spearman_rho": -0.13828921375796294,
+            "p_value": 0.06564141098747507,
+            "interpretation": "Descriptive association only; it does not establish an applicability domain."
+          },
+          "rows_excluded_as_ambiguous": 0
+        }
+      }
+    }
+  }
+}

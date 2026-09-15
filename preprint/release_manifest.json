@@ -1,0 +1,752 @@
+{
+  "artifact_id": "preprint-v1.0-public-release-manifest",
+  "schema_version": 1,
+  "purpose": "Classifies every file considered for the GitHub release, the Zenodo archive and the supplementary-data package. No third-party material is relicensed.",
+  "categories": {
+    "PROJECT_CODE": "MIT (LICENSE)",
+    "ORIGINAL_CONTENT": "CC BY 4.0 (CONTENT_LICENSE.md)",
+    "THIRD_PARTY_REDISTRIBUTABLE": "upstream licence (DATA_LICENSES.md)",
+    "DERIVED_RESULT": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+    "UPSTREAM_REFERENCE_ONLY": "CC BY 4.0 (describes upstream material; contains none of it)",
+    "EXCLUDED_FROM_REDISTRIBUTION": "not released"
+  },
+  "package_metadata_files": {
+    "note": "Released alongside the classified files. They are generated last and describe each other, so they are not hashed inside this manifest; each is self-describing.",
+    "files": [
+      "preprint/release_manifest.json",
+      "preprint/results/checksums.sha256",
+      "preprint/results/checksums.json"
+    ],
+    "category": "DERIVED_RESULT",
+    "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md"
+  },
+  "excluded_patterns": [
+    "validation/external_prediction/training_reference/*.csv"
+  ],
+  "exclusion_reason": "Reconstructed Therapeutics Data Commons reference table. Upstream licensing provenance is ambiguous (TDC pages indicate CC BY 4.0; several endpoints originate from AstraZeneca depositions that ChEMBL distributes under CC BY-SA 3.0). Not redistributed. Rebuild instructions are in preprint/REPRODUCE.md Level 2; the exact file hashes used in this study are published in preprint/results/training_reference_summary.json.",
+  "counts": {
+    "DERIVED_RESULT": 22,
+    "ORIGINAL_CONTENT": 35,
+    "PROJECT_CODE": 41,
+    "THIRD_PARTY_REDISTRIBUTABLE": 2,
+    "UPSTREAM_REFERENCE_ONLY": 2
+  },
+  "public_release_file_count": 102,
+  "excluded_file_count": 0,
+  "files": [
+    {
+      "path": "CONTENT_LICENSE.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "3f8694a18c93eaa85f5112622c361557bd60c5650f4a0e3d16630306d7e362a9"
+    },
+    {
+      "path": "COPYRIGHT",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "c31571d1ff31796f4aa61b80069235c0b147e8832ab3597d70ba081e19d97b44"
+    },
+    {
+      "path": "DATA_LICENSES.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "55c1eab8aeba84a7a214f74fb5d09dbd3c59211b49e5d6e7a1077f14bbe779e4"
+    },
+    {
+      "path": "LICENSE",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "80dd110820afb73dc7507818a0a0b402031462ffbee92b5a0a0150d4fa049a51"
+    },
+    {
+      "path": "README.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "ab0f9195ed9a8bece47cc09cbd92d4ac8353c4d5f16ffbf2c375bf5a46e14076"
+    },
+    {
+      "path": "RELEASE_NOTES_v1.0.0-preprint.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "c2b25c464b92b7bbda908cd8fcc14d98f5768897cd6018811b0ef3f3f412807f"
+    },
+    {
+      "path": "THIRD_PARTY_LICENSES.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "b596de9885f0163d858d072f83736a4a6ccd93cad1ff6c53f52e97f0cdae439a"
+    },
+    {
+      "path": "USER_INPUT_REQUIRED.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "c2e9851d259ddd89d072213c368c2e0e7502652bf1acd0021096505b3157cd7e"
+    },
+    {
+      "path": "backend/app/__init__.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/db/__init__.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/db/session.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "93031d7f1040782fa00ccfedb3d690ee026238997f6945acaa09be29d3fb26e7"
+    },
+    {
+      "path": "backend/app/models/__init__.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "3a099f43124c1c107422bcbca25ea0a1b2a358f08919929aadf509592e85ae7b"
+    },
+    {
+      "path": "backend/app/models/assessment.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "8feaf0b2f8fbbb529c4ef922a69e9bad5b899068c3a51a8d710aa359cab506f0"
+    },
+    {
+      "path": "backend/app/models/audit.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "837c83d02ff6bf2b4031e3ff5ae8b196f72d6415e8853657bdf40150000056a2"
+    },
+    {
+      "path": "backend/app/models/evidence.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "057cabdf864176aeb7f371c41864cbd68fbf441a68ea02b5643baacc66ea35a1"
+    },
+    {
+      "path": "backend/app/models/job.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "af66d05834352ad98b87121505210dbbc0c5ff7af2b68d62fd818510bde05ca0"
+    },
+    {
+      "path": "backend/app/models/molecule.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "421013562006a00c54c81580cf05fa9e3ccd2a015b3e066af0940ebdb93a8eac"
+    },
+    {
+      "path": "backend/app/models/prediction.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "1248c8e29f066cc5ff25208add05e743fabfc42257fe6a2b03ca2eed12105941"
+    },
+    {
+      "path": "backend/app/models/reference.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "8afc94932db6dd00a05a9f9b5f29dcec5e44c68be482f0feef527c0232a6de4f"
+    },
+    {
+      "path": "backend/app/services/__init__.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/services/prediction/admet_ai_provider.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "80177b6d7a96b4335792586bed629d14a640a5793f2e1ec87845f911e07def20"
+    },
+    {
+      "path": "backend/app/services/prediction/base.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "a01657885c5d6a38c2a8fa6aa9c8d817de2f42e6fdb3b3ee7bc8f8036db5c0a4"
+    },
+    {
+      "path": "backend/app/services/prediction/validation_metadata.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "3e4f72f7093eb56ec7a4ca1e5a769ef898d0a2905ba875cb24b24c3c68d54f94"
+    },
+    {
+      "path": "preprint/CITATION.cff",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "a380c7cca0e6d2481c6b063e9959db2237e4e3a917368c911279a5232dc86994"
+    },
+    {
+      "path": "preprint/DEVIATIONS.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "aca5a514172bec3dcfaad7309409c97efcd0bb9c0dc11c49d04aae2b44e0c734"
+    },
+    {
+      "path": "preprint/FINAL_AUDIT.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "bdf6a65db8aec51cd615b073bad2851a1a9ce034089afc502159982571b26a54"
+    },
+    {
+      "path": "preprint/LICENCE_REVIEW.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "28e404794c26df06721d4e4c01e1833deaf63b98ced4ba7651ef2d3e0edb1344"
+    },
+    {
+      "path": "preprint/RELEASE_CHECKLIST.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "650661b721b74b3ae81dc4ee81d149078e9e54ae4bcdf1cfd10146c88551c221"
+    },
+    {
+      "path": "preprint/REPRODUCE.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "75649e62769632d83c21df317f98ae8fc341c0cd598196263cc62593e0ba7657"
+    },
+    {
+      "path": "preprint/SCIENTIFIC_FREEZE.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "3910e7e1c8b46429672e4c1aa6b1be4f8deb802678c0fa07d86e3d544ec867fb"
+    },
+    {
+      "path": "preprint/__init__.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "preprint/analysis/__init__.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "preprint/analysis/build_training_reference_summary.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "c6f23704579abbcaf73a3f09ec22aa116e2a8009d5a4bfc7d0decb8115ebce9b"
+    },
+    {
+      "path": "preprint/analysis/core.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "b54dafb8cf37c80d66b8dfe291cc914ce458281a9d74f8639178b87d22a7b8bf"
+    },
+    {
+      "path": "preprint/analysis/final_audit.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "1e862bd00f46b8addfefde09fdadbe62a7ab421d5a71cdae20b2f2e88bf06b56"
+    },
+    {
+      "path": "preprint/analysis/hlm_low_clearance_sensitivity.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "043eaa1447710e9139f7c35e0625edb5a3e4cbcd514ce410ecff073322696266"
+    },
+    {
+      "path": "preprint/analysis/release_package.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "5a2973e18431012549dd16b160c2e31714d73cd13b7362bd2b950536c07511cc"
+    },
+    {
+      "path": "preprint/analysis/run_preprint_analysis.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "372cb5f8fd2a8f179adefa5e28bef9b08e7775fab4d26b5fa38c4fbba8b92910"
+    },
+    {
+      "path": "preprint/analysis/verify_manuscript_claims.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "e2956ff2484b53ad2df66b1e53de43ea2850a7bcef74345fed0c07de1fbb86c3"
+    },
+    {
+      "path": "preprint/analysis/write_checksums.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "f34ec41cbbaebe46982ef8d32438898f7a7e9ec420f8a1b2b85b39ac642b29a5"
+    },
+    {
+      "path": "preprint/analysis/write_scientific_freeze.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "da3dafdca449973e2ba9ef42471ed7e7630e37bf48a1a78d7824dd4d318e72a1"
+    },
+    {
+      "path": "preprint/figures/figure1_eligibility_funnel.pdf",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "6def12ec2858a8146b6742e26fb0e915cd1cfa8dafb84db1b2d361b8bf923c60"
+    },
+    {
+      "path": "preprint/figures/figure1_eligibility_funnel.png",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "f81c113c1e34c6651c4fd698f97dbd821829d59515c17597f4f18a54ff93fedc"
+    },
+    {
+      "path": "preprint/figures/figure2_shift_and_compression.pdf",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "c735963b403967cf94994f2b4a068a8ab6fd5ace7d48f1bd6abd67c120c40ae7"
+    },
+    {
+      "path": "preprint/figures/figure2_shift_and_compression.png",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "cd108224d36e0148d2a1997148a3ad448f56340cb2ee7c90dfd66215e8c5b7d9"
+    },
+    {
+      "path": "preprint/figures/figure3_baseline_relative.pdf",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "33130fc6bdb08d444e1b4af13e604ed7e624b491873269880ec503ec965627d4"
+    },
+    {
+      "path": "preprint/figures/figure3_baseline_relative.png",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "68410d0c6dd6589ee52500e1080ff5177bf2bf2116ba9e71bc81b669ce70c6b6"
+    },
+    {
+      "path": "preprint/figures/make_figures.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "692f9f987a1b0de79f6d57ee7bf352bbd1d1829578d9e5d625fe05914370d714"
+    },
+    {
+      "path": "preprint/manuscript/CLAIM_AUDIT.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "f1d5cf5f3c42814341ab4acc3808d28bd7c7ecb082d09a3f0a1d2a0064f87ff2"
+    },
+    {
+      "path": "preprint/manuscript/manuscript.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "a313cae085cca1c8e69970088ba26a002e0bfa99404824069375458a4633885e"
+    },
+    {
+      "path": "preprint/requirements-analysis.txt",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "98d4a89757b478c39a1125424f5331079d47b8bc8b8d441dee3687eb8ffe6d13"
+    },
+    {
+      "path": "preprint/results/analysis_manifest.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "38ef222bef45fbe3d5b7a1e863f18a1daec58e3dc03838e4702e9b9c8e9d0232"
+    },
+    {
+      "path": "preprint/results/analysis_summary.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "8f587c31367f6e227322071b0ba86e3b2acb435bbfcb2de491d715118b3fc205"
+    },
+    {
+      "path": "preprint/results/figure_manifest.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "a7917fd0879591572ecdf00d13ea46ee5c4ccff0c3721763d26884880218dc95"
+    },
+    {
+      "path": "preprint/results/final_audit.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "df620531f9a14ab8e2fd55a29eaac073efc1735d188f207237bf763ca81ebfd1"
+    },
+    {
+      "path": "preprint/results/frozen_input_manifest.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "0940bb616e0e886a594f37027fa73a347f9ff93288c722a765da006b1aec7ff5"
+    },
+    {
+      "path": "preprint/results/hlm_low_clearance_manifest.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "1440806155b41c8897862cc65250e6668929618770c288916dacacd3054e28d4"
+    },
+    {
+      "path": "preprint/results/hlm_low_clearance_predictions.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "6bdc7d5ab87f75831cea7fa510b730e9cda03248b128de75b201f97f877e2591"
+    },
+    {
+      "path": "preprint/results/preprint_analysis.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "845fb55aaad707544678a37d8e2bd350e46b6cc7b13c67849af0d675c3ca6d30"
+    },
+    {
+      "path": "preprint/results/scientific_freeze.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "223dd19dcb0caec921b5a3b1f0a31fe9edbee8c20825da74be0af43b7861385a"
+    },
+    {
+      "path": "preprint/results/training_reference_summary.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "0bd9d4e2179787658416ed7b3ebb5eec1904873172c5b152787811fdb44f424b"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/CLAIM_AUDIT.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "f1d5cf5f3c42814341ab4acc3808d28bd7c7ecb082d09a3f0a1d2a0064f87ff2"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/SUBMISSION_CHECKLIST.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "2002364b2c9a83e5fb40d038121a853b2a7a131d0c77d54a1c608f746c37fd60"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/abstract.txt",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "475a2edcfda4d4b19161799bd9588242dd11febbeef3c06ac4f7138109424b4d"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/ai_assistance_note.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "81d2a002c08030d861890e04ae681249e63bb7a5a000de0f708a9ba8607c2741"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/cover_note.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "79b5407b16bf722f7182d846f2f6e1cea536e035cf7b93a3215ed2197f6a9506"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/figure1_eligibility_funnel.pdf",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "6def12ec2858a8146b6742e26fb0e915cd1cfa8dafb84db1b2d361b8bf923c60"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/figure2_shift_and_compression.pdf",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "c735963b403967cf94994f2b4a068a8ab6fd5ace7d48f1bd6abd67c120c40ae7"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/figure3_baseline_relative.pdf",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "33130fc6bdb08d444e1b4af13e604ed7e624b491873269880ec503ec965627d4"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/keywords.txt",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "1234deea1f216e18fc8ec08d6af9ffb60feaf5b67b5f91b28b7c225e8ba328a2"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/manuscript.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "a313cae085cca1c8e69970088ba26a002e0bfa99404824069375458a4633885e"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/statements.md",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "c7cefa0ed4b0b8b088c160ea6693d8065fb75ec674566334d10348f74390e5c0"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/supplementary_sensitivity.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "0b51d6400e8bb97a7b14d28549e7a525defaea2285c55c0126d53d9daf733f59"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/table1_compatibility.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "d66f93ed04e3d6c0fe2541f329d7e8bfff19ee10b99116c76b859c7d7b206102"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/table2_external_results.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "bdcc99317ae6fc955d2f9aa19392d9969a43d60e9a953743ac26e78235060c89"
+    },
+    {
+      "path": "preprint/submission/chemrxiv/zenodo_metadata.json",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "6f0e4862259341437507f9038c558c1e2b5038eba9f817114d2e0e35ae56e2be"
+    },
+    {
+      "path": "preprint/tables/supplementary_sensitivity.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "59e02de82564475d94ed76bfe5e83f4f495b027494ee2479f64335f314843c53"
+    },
+    {
+      "path": "preprint/tables/table1_compatibility.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "2007daf131054b9c6bb3d1800eae175f106f1ae9ae7faa7962f301fa9a2c64bc"
+    },
+    {
+      "path": "preprint/tables/table2_external_results.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "cd30f3e31fec636f05e720e1e7a4d681fdf76a6c33626a375e62d79da73241fa"
+    },
+    {
+      "path": "preprint/tests/__init__.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "preprint/tests/test_preprint_analysis.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "18128db1e4479345a0783237a612d7777014240ddd00e76afef1fb9546260e61"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "1a6a67c9e0f704374ccccf7228e892e9ef5bc097684e0fa5f32fb7f5b4a0bba4"
+    },
+    {
+      "path": "requirements.txt",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "908e02e627b26c766dc77c72b257208e2728f51022bafe632b26a27417b13ce9"
+    },
+    {
+      "path": "validation/external_prediction/__init__.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "90fe9fff24eb2670cc772d8ff78fc903c8ae26c25b1c33a3c67b79ef441fa697"
+    },
+    {
+      "path": "validation/external_prediction/admet_ai_training_manifest.json",
+      "category": "UPSTREAM_REFERENCE_ONLY",
+      "licence": "CC BY 4.0 (describes upstream material; contains none of it)",
+      "in_public_release": true,
+      "sha256": "8d3c12299018dae117eb836661dbb5260d552bb299138310cb629e4ff7a5d135"
+    },
+    {
+      "path": "validation/external_prediction/benchmark_core.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "53f8f5ac5ee7114ca3ecbf800b6af6a78f8d60b8e48914aad2eafa91eeb7b046"
+    },
+    {
+      "path": "validation/external_prediction/benchmark_data.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "ff33845503ccced89d5b49726dcdf36bf98eaaa12ed7e6527fe9f5c7d0edb7b8"
+    },
+    {
+      "path": "validation/external_prediction/compatibility.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "d1fb6f82db8314c0ec6a6292b2475cdf1d4d6ab28e7a61e70e3f63d9be03ca79"
+    },
+    {
+      "path": "validation/external_prediction/endpoint_compatibility.csv",
+      "category": "ORIGINAL_CONTENT",
+      "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
+      "in_public_release": true,
+      "sha256": "0c6a02781d777b664077373b76121b7f252121524056d66bf53c84fc21c5f959"
+    },
+    {
+      "path": "validation/external_prediction/external_dataset_manifest.json",
+      "category": "UPSTREAM_REFERENCE_ONLY",
+      "licence": "CC BY 4.0 (describes upstream material; contains none of it)",
+      "in_public_release": true,
+      "sha256": "36fbdc3afc2c99e2be7a6f2b48682e53590f7dcf32c8c6b8c9b0c6640b3ab03a"
+    },
+    {
+      "path": "validation/external_prediction/failure_analysis.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "55099e427fa1da6d16c7a349fec77bd223f3af23160fdcc2db068f046a4ff7a1"
+    },
+    {
+      "path": "validation/external_prediction/provenance.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "514ff888362dacfd3abd96376a87a23e3a2a43ea34770782fd25f77d22d9ed88"
+    },
+    {
+      "path": "validation/external_prediction/results/asap_processed_predictions.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "34d64ec55f256dbd96d96a181be8a6c1625deb683271182d0ef68ba84240317c"
+    },
+    {
+      "path": "validation/external_prediction/results/biogen_hppb_processed_predictions.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "7e973935eec880ad4af1de7d08734b053556c166b15c930630df737ab944965e"
+    },
+    {
+      "path": "validation/external_prediction/run_external_validation.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "06210a5014850177251f3f68edc6f4497f98da90dc7b719a72599ea626f3ef8e"
+    },
+    {
+      "path": "validation/external_prediction/source_snapshots/asap_antiviral_admet_2025_unblinded.csv",
+      "category": "THIRD_PARTY_REDISTRIBUTABLE",
+      "licence": "upstream licence (DATA_LICENSES.md)",
+      "in_public_release": true,
+      "sha256": "07e7c68d59a720338ff44277625f0ff52be5e0a1afd556134807ba7530213582"
+    },
+    {
+      "path": "validation/external_prediction/source_snapshots/biogen_ADME_public_set_3521.csv",
+      "category": "THIRD_PARTY_REDISTRIBUTABLE",
+      "licence": "upstream licence (DATA_LICENSES.md)",
+      "in_public_release": true,
+      "sha256": "2cfabc2667740c224487876c33b23124159ef43294e0f9e4d926cb6276c95a3b"
+    },
+    {
+      "path": "validation/external_prediction/training_reference.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "f85e03cb93e7af35574387dc5b00af603f592478fa2e736ebe572454afa4ea93"
+    },
+    {
+      "path": "validation/reports/v0102_external_metrics.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "b7fa0fe4de56ed33f1b96fbf8ecaaeb8d9e17b5762a4402faa99251763ae6cac"
+    },
+    {
+      "path": "validation/reports/v0102_external_overlap.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "bc10f0f82c38da4b18bda1688ff7da132704a16c889fc44508607755c854aae1"
+    },
+    {
+      "path": "validation/reports/v0102_external_run_summary.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "6ef882cafd563951b0ea4d00c1d6422fcb4968ff5cd1c21299ccdc29924f7d82"
+    },
+    {
+      "path": "validation/reports/v0102_external_stratification.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "6f388cc1ca0b015ce1e3990cf200c2ca21fed437b170bcd2334ff5dc428efff0"
+    }
+  ]
+}

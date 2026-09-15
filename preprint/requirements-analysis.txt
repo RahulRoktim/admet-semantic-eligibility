@@ -1,0 +1,7 @@
+# Additional pins for the external-validation preprint analysis and figures.
+# requirements-dev.txt (repository root) supplies rdkit, pandas and admet-ai.
+# admet-ai==2.0.1 is required only for preprint/analysis/hlm_low_clearance_sensitivity.py,
+# whose output is already committed as a frozen artefact.
+numpy==2.5.2
+scipy==1.18.1
+matplotlib==3.11.1

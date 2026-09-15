@@ -1,0 +1,929 @@
+{
+  "schema_version": "v0.10.2-external-metrics-1",
+  "model_run_id": "V0102-EXTERNAL-20260828-ADMETAI-2.0.1",
+  "bootstrap": {
+    "seed": 20260828,
+    "replicates": 2000,
+    "confidence_level": 0.95,
+    "resampling_unit": "external source row",
+    "interpretation": "Aggregate benchmark interval; not per-molecule prediction uncertainty"
+  },
+  "endpoints": {
+    "Clearance_Microsome_AZ": {
+      "evaluation_scale": "uL/min/mg",
+      "cohorts": {
+        "ALL_COMPATIBLE_DATA": {
+          "metrics": {
+            "n": 371,
+            "mae": 126.39760202800808,
+            "median_absolute_error": 34.16661529541015,
+            "rmse": 255.06010391137633,
+            "r2": -0.155416851449518,
+            "pearson_r": 0.4319729276817627,
+            "spearman_rho": 0.4409413920416896,
+            "mean_error_bias": -112.29000502344411
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 126.39760202800808,
+              "lower": 105.79686959531792,
+              "upper": 149.30005510756865,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 34.16661529541015,
+              "lower": 27.752827453613282,
+              "upper": 38.6981201171875,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 255.06010391137633,
+              "lower": 211.9633270742272,
+              "upper": 299.91915250843306,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": -0.155416851449518,
+              "lower": -0.2118161313873718,
+              "upper": -0.10680597177408173,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.4319729276817627,
+              "lower": 0.3416464444038163,
+              "upper": 0.514607727993311,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.4409413920416896,
+              "lower": 0.3577094217409311,
+              "upper": 0.5187976967094289,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": -112.29000502344411,
+              "lower": -135.74553422169745,
+              "upper": -90.6019037248817,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "NO_EXACT_TRAINING_OVERLAP": {
+          "metrics": {
+            "n": 366,
+            "mae": 125.65485121319529,
+            "median_absolute_error": 34.224615478515624,
+            "rmse": 254.59442762424672,
+            "r2": -0.15552153955254067,
+            "pearson_r": 0.4277648401520986,
+            "spearman_rho": 0.445858350262893,
+            "mean_error_bias": -111.64041866358839
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 125.65485121319529,
+              "lower": 103.95726781379494,
+              "upper": 149.20686898418455,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 34.224615478515624,
+              "lower": 27.752827453613282,
+              "upper": 39.02512519836424,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 254.59442762424672,
+              "lower": 207.36795690870625,
+              "upper": 299.29247148495574,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": -0.15552153955254067,
+              "lower": -0.21715998040446263,
+              "upper": -0.10816909092980821,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.4277648401520986,
+              "lower": 0.3354275371323993,
+              "upper": 0.5118381924749836,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.445858350262893,
+              "lower": 0.35821173954391755,
+              "upper": 0.523575474246517,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": -111.64041866358839,
+              "lower": -135.94092145068475,
+              "upper": -89.4735912452858,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "metrics": {
+            "n": 366,
+            "mae": 125.65485121319529,
+            "median_absolute_error": 34.224615478515624,
+            "rmse": 254.59442762424672,
+            "r2": -0.15552153955254067,
+            "pearson_r": 0.4277648401520986,
+            "spearman_rho": 0.445858350262893,
+            "mean_error_bias": -111.64041866358839
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 125.65485121319529,
+              "lower": 103.95726781379494,
+              "upper": 149.20686898418455,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 34.224615478515624,
+              "lower": 27.752827453613282,
+              "upper": 39.02512519836424,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 254.59442762424672,
+              "lower": 207.36795690870625,
+              "upper": 299.29247148495574,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": -0.15552153955254067,
+              "lower": -0.21715998040446263,
+              "upper": -0.10816909092980821,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.4277648401520986,
+              "lower": 0.3354275371323993,
+              "upper": 0.5118381924749836,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.445858350262893,
+              "lower": 0.35821173954391755,
+              "upper": 0.523575474246517,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": -111.64041866358839,
+              "lower": -135.94092145068475,
+              "upper": -89.4735912452858,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "metrics": {
+            "n": 364,
+            "mae": 126.17637301658864,
+            "median_absolute_error": 34.29893341064453,
+            "rmse": 255.28261066444267,
+            "r2": -0.1577460781616844,
+            "pearson_r": 0.4282084540138973,
+            "spearman_rho": 0.4490388941942596,
+            "mean_error_bias": -112.42271702435318
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 126.17637301658864,
+              "lower": 103.3280121406389,
+              "upper": 149.56392819863424,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 34.29893341064453,
+              "lower": 27.631204986572264,
+              "upper": 39.34679412841797,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 255.28261066444267,
+              "lower": 208.6296254976646,
+              "upper": 298.9459788217597,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": -0.1577460781616844,
+              "lower": -0.21868223753720675,
+              "upper": -0.10815603606018412,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.4282084540138973,
+              "lower": 0.3328503164813932,
+              "upper": 0.515348103669296,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.4490388941942596,
+              "lower": 0.35931108894966396,
+              "upper": 0.5264939267306022,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": -112.42271702435318,
+              "lower": -136.23460947685476,
+              "upper": -88.99203199745207,
+              "valid_replicates": 2000
+            }
+          }
+        }
+      },
+      "special_views": {
+        "ASAP_ALL_NONOVERLAP": {
+          "metrics": {
+            "n": 366,
+            "mae": 125.65485121319529,
+            "median_absolute_error": 34.224615478515624,
+            "rmse": 254.59442762424672,
+            "r2": -0.15552153955254067,
+            "pearson_r": 0.4277648401520986,
+            "spearman_rho": 0.445858350262893,
+            "mean_error_bias": -111.64041866358839
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 125.65485121319529,
+              "lower": 103.95726781379494,
+              "upper": 149.20686898418455,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 34.224615478515624,
+              "lower": 27.752827453613282,
+              "upper": 39.02512519836424,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 254.59442762424672,
+              "lower": 207.36795690870625,
+              "upper": 299.29247148495574,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": -0.15552153955254067,
+              "lower": -0.21715998040446263,
+              "upper": -0.10816909092980821,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.4277648401520986,
+              "lower": 0.3354275371323993,
+              "upper": 0.5118381924749836,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.445858350262893,
+              "lower": 0.35821173954391755,
+              "upper": 0.523575474246517,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": -111.64041866358839,
+              "lower": -135.94092145068475,
+              "upper": -89.4735912452858,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "ASAP_ORIGINAL_TEST_NONOVERLAP": {
+          "metrics": {
+            "n": 102,
+            "mae": 169.5418333268633,
+            "median_absolute_error": 47.346363449096685,
+            "rmse": 294.01032348748623,
+            "r2": -0.27754839512950547,
+            "pearson_r": 0.6212645199573649,
+            "spearman_rho": 0.6636716276230231,
+            "mean_error_bias": -157.67203681328718
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 169.5418333268633,
+              "lower": 125.74229772920702,
+              "upper": 216.83189973510943,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 47.346363449096685,
+              "lower": 30.287945556640622,
+              "upper": 72.63271617889404,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 294.01032348748623,
+              "lower": 229.35781573519333,
+              "upper": 359.2380517959724,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": -0.27754839512950547,
+              "lower": -0.41996787215162407,
+              "upper": -0.1605529678674179,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.6212645199573649,
+              "lower": 0.5103997301439562,
+              "upper": 0.7246607474009805,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.6636716276230231,
+              "lower": 0.5518201186835899,
+              "upper": 0.7496336189864935,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": -157.67203681328718,
+              "lower": -207.25702542143705,
+              "upper": -111.7552092571352,
+              "valid_replicates": 2000
+            }
+          }
+        }
+      }
+    },
+    "Lipophilicity_AstraZeneca": {
+      "evaluation_scale": "logD at pH 7.4",
+      "cohorts": {
+        "ALL_COMPATIBLE_DATA": {
+          "metrics": {
+            "n": 478,
+            "mae": 0.7267118988836879,
+            "median_absolute_error": 0.612535047531128,
+            "rmse": 0.912456175754906,
+            "r2": 0.37591661718679514,
+            "pearson_r": 0.7013606168954477,
+            "spearman_rho": 0.688286089137068,
+            "mean_error_bias": 0.3827244760757741
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 0.7267118988836879,
+              "lower": 0.6783954399686589,
+              "upper": 0.7747775151297902,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 0.612535047531128,
+              "lower": 0.5336728930473329,
+              "upper": 0.7003289991617201,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 0.912456175754906,
+              "lower": 0.8585889899837192,
+              "upper": 0.9638392410444104,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.37591661718679514,
+              "lower": 0.27382516629106457,
+              "upper": 0.46445487311237815,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.7013606168954477,
+              "lower": 0.6516707061441092,
+              "upper": 0.7464150945675992,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.688286089137068,
+              "lower": 0.6301503261092427,
+              "upper": 0.7398183485102062,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 0.3827244760757741,
+              "lower": 0.30778061036745896,
+              "upper": 0.4597983674700293,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "NO_EXACT_TRAINING_OVERLAP": {
+          "metrics": {
+            "n": 474,
+            "mae": 0.7292184190067781,
+            "median_absolute_error": 0.616797103881836,
+            "rmse": 0.9149281384203628,
+            "r2": 0.3684183561514348,
+            "pearson_r": 0.6981944571578872,
+            "spearman_rho": 0.684491047725416,
+            "mean_error_bias": 0.3857146132502406
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 0.7292184190067781,
+              "lower": 0.6812691154339418,
+              "upper": 0.7792781622180409,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 0.616797103881836,
+              "lower": 0.5346429824829102,
+              "upper": 0.707874009013176,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 0.9149281384203628,
+              "lower": 0.8589977618277188,
+              "upper": 0.9688919181338704,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.3684183561514348,
+              "lower": 0.2605541694964111,
+              "upper": 0.4557020107020194,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.6981944571578872,
+              "lower": 0.6449127071333307,
+              "upper": 0.7436857095251308,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.684491047725416,
+              "lower": 0.6271885296047133,
+              "upper": 0.7361648807637505,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 0.3857146132502406,
+              "lower": 0.3090951676184238,
+              "upper": 0.46082783428983926,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "metrics": {
+            "n": 474,
+            "mae": 0.7292184190067781,
+            "median_absolute_error": 0.616797103881836,
+            "rmse": 0.9149281384203628,
+            "r2": 0.3684183561514348,
+            "pearson_r": 0.6981944571578872,
+            "spearman_rho": 0.684491047725416,
+            "mean_error_bias": 0.3857146132502406
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 0.7292184190067781,
+              "lower": 0.6812691154339418,
+              "upper": 0.7792781622180409,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 0.616797103881836,
+              "lower": 0.5346429824829102,
+              "upper": 0.707874009013176,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 0.9149281384203628,
+              "lower": 0.8589977618277188,
+              "upper": 0.9688919181338704,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.3684183561514348,
+              "lower": 0.2605541694964111,
+              "upper": 0.4557020107020194,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.6981944571578872,
+              "lower": 0.6449127071333307,
+              "upper": 0.7436857095251308,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.684491047725416,
+              "lower": 0.6271885296047133,
+              "upper": 0.7361648807637505,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 0.3857146132502406,
+              "lower": 0.3090951676184238,
+              "upper": 0.46082783428983926,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "metrics": {
+            "n": 470,
+            "mae": 0.7310926654198545,
+            "median_absolute_error": 0.616797103881836,
+            "rmse": 0.9167112069635784,
+            "r2": 0.3566402264780537,
+            "pearson_r": 0.6928740232180571,
+            "spearman_rho": 0.6799060351978462,
+            "mean_error_bias": 0.38999178178331
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 0.7310926654198545,
+              "lower": 0.682711721284535,
+              "upper": 0.7816179842169633,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 0.616797103881836,
+              "lower": 0.5371687555313112,
+              "upper": 0.707874009013176,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 0.9167112069635784,
+              "lower": 0.8628624350750275,
+              "upper": 0.9711615865272105,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.3566402264780537,
+              "lower": 0.24887821196529814,
+              "upper": 0.4468105374843729,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.6928740232180571,
+              "lower": 0.6375419672469953,
+              "upper": 0.7391246438897033,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.6799060351978462,
+              "lower": 0.6214108661848093,
+              "upper": 0.7314875533715522,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 0.38999178178331,
+              "lower": 0.31499153128679286,
+              "upper": 0.4636657595514795,
+              "valid_replicates": 2000
+            }
+          }
+        }
+      },
+      "special_views": {
+        "ASAP_ALL_NONOVERLAP": {
+          "metrics": {
+            "n": 474,
+            "mae": 0.7292184190067781,
+            "median_absolute_error": 0.616797103881836,
+            "rmse": 0.9149281384203628,
+            "r2": 0.3684183561514348,
+            "pearson_r": 0.6981944571578872,
+            "spearman_rho": 0.684491047725416,
+            "mean_error_bias": 0.3857146132502406
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 0.7292184190067781,
+              "lower": 0.6812691154339418,
+              "upper": 0.7792781622180409,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 0.616797103881836,
+              "lower": 0.5346429824829102,
+              "upper": 0.707874009013176,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 0.9149281384203628,
+              "lower": 0.8589977618277188,
+              "upper": 0.9688919181338704,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.3684183561514348,
+              "lower": 0.2605541694964111,
+              "upper": 0.4557020107020194,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.6981944571578872,
+              "lower": 0.6449127071333307,
+              "upper": 0.7436857095251308,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.684491047725416,
+              "lower": 0.6271885296047133,
+              "upper": 0.7361648807637505,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 0.3857146132502406,
+              "lower": 0.3090951676184238,
+              "upper": 0.46082783428983926,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "ASAP_ORIGINAL_TEST_NONOVERLAP": {
+          "metrics": {
+            "n": 126,
+            "mae": 0.6434976893758018,
+            "median_absolute_error": 0.4811569690704347,
+            "rmse": 0.822727969483026,
+            "r2": 0.17110180913461737,
+            "pearson_r": 0.7356137881387965,
+            "spearman_rho": 0.7409493090360795,
+            "mean_error_bias": 0.5391279551717971
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 0.6434976893758018,
+              "lower": 0.5503478605832374,
+              "upper": 0.7371253166312264,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 0.4811569690704347,
+              "lower": 0.35976995229721065,
+              "upper": 0.6930316925048827,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 0.822727969483026,
+              "lower": 0.7209839449954959,
+              "upper": 0.9173967643748651,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.17110180913461737,
+              "lower": -0.18858696283406928,
+              "upper": 0.4143220539409638,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.7356137881387965,
+              "lower": 0.6652970066877343,
+              "upper": 0.7984833364036569,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.7409493090360795,
+              "lower": 0.6444739076684654,
+              "upper": 0.8146621668372425,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 0.5391279551717971,
+              "lower": 0.42407903025784194,
+              "upper": 0.6521632705179471,
+              "valid_replicates": 2000
+            }
+          }
+        }
+      }
+    },
+    "PPBR_AZ": {
+      "evaluation_scale": "% bound",
+      "cohorts": {
+        "ALL_COMPATIBLE_DATA": {
+          "metrics": {
+            "n": 194,
+            "mae": 10.115716974164602,
+            "median_absolute_error": 5.095109902948238,
+            "rmse": 16.914043400224386,
+            "r2": 0.6584388914124424,
+            "pearson_r": 0.836690639917348,
+            "spearman_rho": 0.8148046187412643,
+            "mean_error_bias": 4.911405585721705
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 10.115716974164602,
+              "lower": 8.365108566468502,
+              "upper": 12.090323178994572,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 5.095109902948238,
+              "lower": 4.001867689474006,
+              "upper": 6.546017854524566,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 16.914043400224386,
+              "lower": 13.73101315961971,
+              "upper": 19.8778781612878,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.6584388914124424,
+              "lower": 0.5657210185099697,
+              "upper": 0.7485808001680644,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.836690639917348,
+              "lower": 0.7887794792340266,
+              "upper": 0.8830633061155923,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.8148046187412643,
+              "lower": 0.7520988442516608,
+              "upper": 0.8624601782172864,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 4.911405585721705,
+              "lower": 2.6485240816682682,
+              "upper": 7.206160900518965,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "NO_EXACT_TRAINING_OVERLAP": {
+          "metrics": {
+            "n": 178,
+            "mae": 10.537728929665484,
+            "median_absolute_error": 5.220047146961928,
+            "rmse": 17.435787885260833,
+            "r2": 0.6415875529708555,
+            "pearson_r": 0.8263140775678244,
+            "spearman_rho": 0.8073683333822503,
+            "mean_error_bias": 5.118420077031135
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 10.537728929665484,
+              "lower": 8.70490364439239,
+              "upper": 12.65579130568777,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 5.220047146961928,
+              "lower": 4.191467346531397,
+              "upper": 6.725266723350181,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 17.435787885260833,
+              "lower": 14.250079495415175,
+              "upper": 20.754835993129795,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.6415875529708555,
+              "lower": 0.543396356068429,
+              "upper": 0.7315165817692612,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.8263140775678244,
+              "lower": 0.7758059996060902,
+              "upper": 0.8742687807934082,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.8073683333822503,
+              "lower": 0.7381953908127784,
+              "upper": 0.8590344826259484,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 5.118420077031135,
+              "lower": 2.7838597196765034,
+              "upper": 7.576755798233968,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "metrics": {
+            "n": 178,
+            "mae": 10.537728929665484,
+            "median_absolute_error": 5.220047146961928,
+            "rmse": 17.435787885260833,
+            "r2": 0.6415875529708555,
+            "pearson_r": 0.8263140775678244,
+            "spearman_rho": 0.8073683333822503,
+            "mean_error_bias": 5.118420077031135
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 10.537728929665484,
+              "lower": 8.70490364439239,
+              "upper": 12.65579130568777,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 5.220047146961928,
+              "lower": 4.191467346531397,
+              "upper": 6.725266723350181,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 17.435787885260833,
+              "lower": 14.250079495415175,
+              "upper": 20.754835993129795,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.6415875529708555,
+              "lower": 0.543396356068429,
+              "upper": 0.7315165817692612,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.8263140775678244,
+              "lower": 0.7758059996060902,
+              "upper": 0.8742687807934082,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.8073683333822503,
+              "lower": 0.7381953908127784,
+              "upper": 0.8590344826259484,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 5.118420077031135,
+              "lower": 2.7838597196765034,
+              "upper": 7.576755798233968,
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "metrics": {
+            "n": 168,
+            "mae": 10.333164158168236,
+            "median_absolute_error": 4.825721924495845,
+            "rmse": 16.935051437895986,
+            "r2": 0.6607792963924661,
+            "pearson_r": 0.8364959286797504,
+            "spearman_rho": 0.8146524571050073,
+            "mean_error_bias": 4.987527553841391
+          },
+          "bootstrap": {
+            "mae": {
+              "point_estimate": 10.333164158168236,
+              "lower": 8.39225491633973,
+              "upper": 12.443050768522161,
+              "valid_replicates": 2000
+            },
+            "median_absolute_error": {
+              "point_estimate": 4.825721924495845,
+              "lower": 3.9146034556382716,
+              "upper": 6.684741182515566,
+              "valid_replicates": 2000
+            },
+            "rmse": {
+              "point_estimate": 16.935051437895986,
+              "lower": 13.618408188949498,
+              "upper": 20.081982573034093,
+              "valid_replicates": 2000
+            },
+            "r2": {
+              "point_estimate": 0.6607792963924661,
+              "lower": 0.5679740172897968,
+              "upper": 0.7519529774166056,
+              "valid_replicates": 2000
+            },
+            "pearson_r": {
+              "point_estimate": 0.8364959286797504,
+              "lower": 0.7870568439912623,
+              "upper": 0.8821799823386834,
+              "valid_replicates": 2000
+            },
+            "spearman_rho": {
+              "point_estimate": 0.8146524571050073,
+              "lower": 0.741388885410878,
+              "upper": 0.8660177376659643,
+              "valid_replicates": 2000
+            },
+            "mean_error_bias": {
+              "point_estimate": 4.987527553841391,
+              "lower": 2.56404422791243,
+              "upper": 7.603698536698993,
+              "valid_replicates": 2000
+            }
+          }
+        }
+      },
+      "special_views": {}
+    }
+  }
+}

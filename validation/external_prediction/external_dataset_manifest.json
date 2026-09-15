@@ -1,0 +1,95 @@
+{
+  "schema_version": "v0.10.2-external-provenance-1",
+  "retrieval_date": "2026-08-28",
+  "datasets": [
+    {
+      "dataset_id": "asap-antiviral-admet-2025-unblinded",
+      "dataset_name": "ASAP Discovery Antiviral ADMET 2025 Unblinded",
+      "dataset_version": "Polaris artifact created 2025-03-28; Zarr manifest md5 aaa74d41fc3483acb7fd24458d7375d3",
+      "source": "https://polarishub.io/datasets/asap-discovery/antiviral-admet-2025-unblinded",
+      "retrieval_date": "2026-08-28",
+      "license": "CC0-1.0",
+      "publication": "ASAP/OpenADMET blind prediction challenge and linked experimental protocols",
+      "raw_file": "validation\\external_prediction\\source_snapshots\\asap_antiviral_admet_2025_unblinded.csv",
+      "raw_file_hash": "07e7c68d59a720338ff44277625f0ff52be5e0a1afd556134807ba7530213582",
+      "processed_file_hash": "34d64ec55f256dbd96d96a181be8a6c1625deb683271182d0ef68ba84240317c",
+      "experimental_origin": "Experimentally measured HLM, MLM, KSOL, LogD and MDR1-MDCKII values supplied by the challenge organizers",
+      "number_of_rows_raw": 560,
+      "number_of_unique_structures": 499,
+      "invalid_structure_rows": 0,
+      "endpoint_list": [
+        "HLM",
+        "MLM",
+        "KSOL",
+        "LogD",
+        "MDR1-MDCKII"
+      ],
+      "known_limitations": [
+        "Sparse endpoint labels",
+        "HLM values below 10 uL/min/mg are not reliable exact measurements",
+        "Original Set field must be retained"
+      ],
+      "processed_file": "validation\\external_prediction\\results\\asap_processed_predictions.csv"
+    },
+    {
+      "dataset_id": "biogen-adme-fang-3521",
+      "dataset_name": "Computational-ADME public set",
+      "dataset_version": "Git commit b00df003de117ce9e5b381afd886095c5f2af2d5",
+      "source": "https://github.com/molecularinformatics/Computational-ADME/blob/b00df003de117ce9e5b381afd886095c5f2af2d5/ADME_public_set_3521.csv",
+      "retrieval_date": "2026-08-28",
+      "license": "MIT",
+      "publication": "https://doi.org/10.1021/acs.jcim.3c00160",
+      "raw_file": "validation\\external_prediction\\source_snapshots\\biogen_ADME_public_set_3521.csv",
+      "raw_file_hash": "2cfabc2667740c224487876c33b23124159ef43294e0f9e4d926cb6276c95a3b",
+      "processed_file_hash": "7e973935eec880ad4af1de7d08734b053556c166b15c930630df737ab944965e",
+      "experimental_origin": "Biogen experimental ADME assays disclosed with the publication",
+      "number_of_rows_raw": 3521,
+      "number_of_unique_structures": 3521,
+      "invalid_structure_rows": 0,
+      "endpoint_list": [
+        "HLM",
+        "RLM",
+        "MDR1-MDCK efflux ratio",
+        "solubility pH 6.8",
+        "human PPB",
+        "rat PPB"
+      ],
+      "known_limitations": [
+        "Endpoint coverage is sparse",
+        "Human and rat measurements must remain distinct",
+        "Several units/assay definitions are not compatible with ADMET-AI targets"
+      ],
+      "processed_file": "validation\\external_prediction\\results\\biogen_hppb_processed_predictions.csv"
+    },
+    {
+      "dataset_id": "duke-caco2-2022-2023",
+      "dataset_name": "Temporal ChEMBL Caco-2 Papp external set",
+      "dataset_version": "Git commit a8eb8cf3c8841ceb5c545d403e35d7b3ade9ba0a",
+      "source": "https://github.com/Duke-W91/Caco2_prediction/tree/a8eb8cf3c8841ceb5c545d403e35d7b3ade9ba0a/curated_caco2_data/external_set",
+      "retrieval_date": "2026-08-28",
+      "license": "NOT_STATED_IN_REPOSITORY",
+      "publication": "https://doi.org/10.1186/s13321-025-00947-z",
+      "raw_file": "validation\\outputs\\v0102_external\\raw\\caco2\\chembl_Papp_2022_2023_raw.txt",
+      "raw_file_hash": "2caf3a0805ae1c50a45144fee8d19dba9bd6a4c25b8636ef63cb70b34d146cf6",
+      "processed_file": "validation\\outputs\\v0102_external\\raw\\caco2\\logPapp_external_set.csv",
+      "processed_file_hash": "4f62e941808834376f1c6b2f92d030f398889e4446ccdd1d33d30e88e288c08a",
+      "experimental_origin": "ChEMBL Papp records with Document_Year 2022 or 2023",
+      "number_of_rows_raw": 485,
+      "number_of_unique_structures": 333,
+      "invalid_structure_rows": 0,
+      "number_of_rows_author_processed": 271,
+      "number_of_unique_structures_author_processed": 271,
+      "author_processed_invalid_structure_rows": 0,
+      "endpoint_list": [
+        "Papp",
+        "author-processed logPapp"
+      ],
+      "known_limitations": [
+        "Repository has no stated data/code license",
+        "Raw rows omit permeability direction and assay identifier/context",
+        "Author processing excludes high-variance duplicate groups"
+      ],
+      "redistribution_status": "NOT_COMMITTED; hash-pinned local audit copy only"
+    }
+  ]
+}

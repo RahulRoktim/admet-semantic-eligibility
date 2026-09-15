@@ -1,0 +1,14 @@
+{
+  "artifact_id": "preprint-v1.0-figures",
+  "generated_from": "preprint/results/preprint_analysis.json",
+  "generated_from_sha256": "845fb55aaad707544678a37d8e2bd350e46b6cc7b13c67849af0d675c3ca6d30",
+  "manual_post_editing": false,
+  "figures": {
+    "preprint/figures/figure1_eligibility_funnel.png": "f81c113c1e34c6651c4fd698f97dbd821829d59515c17597f4f18a54ff93fedc",
+    "preprint/figures/figure1_eligibility_funnel.pdf": "6def12ec2858a8146b6742e26fb0e915cd1cfa8dafb84db1b2d361b8bf923c60",
+    "preprint/figures/figure2_shift_and_compression.png": "cd108224d36e0148d2a1997148a3ad448f56340cb2ee7c90dfd66215e8c5b7d9",
+    "preprint/figures/figure2_shift_and_compression.pdf": "c735963b403967cf94994f2b4a068a8ab6fd5ace7d48f1bd6abd67c120c40ae7",
+    "preprint/figures/figure3_baseline_relative.png": "68410d0c6dd6589ee52500e1080ff5177bf2bf2116ba9e71bc81b669ce70c6b6",
+    "preprint/figures/figure3_baseline_relative.pdf": "33130fc6bdb08d444e1b4af13e604ed7e624b491873269880ec503ec965627d4"
+  }
+}

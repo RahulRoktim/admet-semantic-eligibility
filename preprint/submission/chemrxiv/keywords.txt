@@ -1,0 +1,8 @@
+ADMET
+external validation
+semantic eligibility
+distribution shift
+model calibration
+cheminformatics
+machine learning
+reproducibility

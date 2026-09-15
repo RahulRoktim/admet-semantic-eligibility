@@ -1,0 +1,627 @@
+{
+  "artifact_id": "preprint-v1.0.0-scientific-freeze",
+  "schema_version": 1,
+  "frozen_at_utc": "2026-09-15T07:48:21Z",
+  "status": "FROZEN",
+  "deviation_policy": "The scientific content recorded here is frozen. Any change to cohort definitions, compatibility decisions, statistical methods, figures, tables or reported results after this freeze requires a documented deviation recorded in preprint/DEVIATIONS.md, stating what changed, why, which hashes below are invalidated, and who authorised it. Editorial changes that do not alter a number (typography, wording, author metadata) do not require a deviation but do invalidate the manuscript hash, which must be regenerated.",
+  "provenance": {
+    "public_export_statement": "The public repository is a clean, redistribution-safe export of a frozen private development repository. The public Git history intentionally begins at the release snapshot because certain upstream-derived reference tables used during development are not redistributed. The omitted tables are third-party material whose upstream licensing provenance could not be established with confidence; they are not proprietary to this project, and their contents are not included here. Their SHA-256 hashes and full reconstruction instructions are published so an independent rebuild can be verified.",
+    "private_scientific_base_commit": "48e6e0e423402cc4d79177c564538885b193ee65",
+    "private_scientific_base_commit_note": "State of the private development repository before any preprint work began; working tree was clean.",
+    "private_frozen_release_commit": "bba8a77e388985c5a38a346338f432e3e0f93d39",
+    "private_frozen_release_commit_note": "The frozen private state this public repository was exported from. It is not reachable from this repository's history, by design.",
+    "public_repository_history": "begins at the release snapshot; no parent relationship to the private history",
+    "public_branch": "main"
+  },
+  "software": {
+    "model": {
+      "name": "ADMET-AI",
+      "package_version": "2.0.1",
+      "adapter_version": "v2",
+      "weights_modified": false
+    },
+    "python": "3.12.10",
+    "key_libraries": {
+      "admet-ai": "2.0.1",
+      "chemprop": "2.3.1",
+      "rdkit": "2026.3.5",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "pandas": "3.0.5",
+      "matplotlib": "3.11.1",
+      "torch": "2.13.0"
+    }
+  },
+  "datasets": [
+    {
+      "dataset_id": "asap-antiviral-admet-2025-unblinded",
+      "dataset_version": "Polaris artifact created 2025-03-28; Zarr manifest md5 aaa74d41fc3483acb7fd24458d7375d3",
+      "retrieval_date": "2026-08-28",
+      "license": "CC0-1.0",
+      "rows_raw": 560,
+      "unique_structures": 499,
+      "raw_file_hash": "07e7c68d59a720338ff44277625f0ff52be5e0a1afd556134807ba7530213582"
+    },
+    {
+      "dataset_id": "biogen-adme-fang-3521",
+      "dataset_version": "Git commit b00df003de117ce9e5b381afd886095c5f2af2d5",
+      "retrieval_date": "2026-08-28",
+      "license": "MIT",
+      "rows_raw": 3521,
+      "unique_structures": 3521,
+      "raw_file_hash": "2cfabc2667740c224487876c33b23124159ef43294e0f9e4d926cb6276c95a3b"
+    },
+    {
+      "dataset_id": "duke-caco2-2022-2023",
+      "dataset_version": "Git commit a8eb8cf3c8841ceb5c545d403e35d7b3ade9ba0a",
+      "retrieval_date": "2026-08-28",
+      "license": "NOT_STATED_IN_REPOSITORY",
+      "rows_raw": 485,
+      "unique_structures": 333,
+      "raw_file_hash": "2caf3a0805ae1c50a45144fee8d19dba9bd6a4c25b8636ef63cb70b34d146cf6"
+    }
+  ],
+  "upstream_tables_not_redistributed": {
+    "Caco2_Wang.csv": "8007e68c055a578a48c4905d666bea119148054d6372617d54f4aaf441429686",
+    "Clearance_Hepatocyte_AZ.csv": "3ffb1a0a99b0d8497578c481ffb0c20c1eca79275d2aa50f68c57ef72faa2c52",
+    "Clearance_Microsome_AZ.csv": "d3e607e1ad6b044d762d8ef0b909d36f0983669bc58d52ed15b682ba706568ed",
+    "Half_Life_Obach.csv": "ed8ae2fdc27e348570cf892cf5e4e92c1534ea5d06f609995e597c114b57f6f7",
+    "HydrationFreeEnergy_FreeSolv.csv": "b59116e3dc79cdd9e3af851345467eb09913f8dbf91e0c3063516758f2f857b9",
+    "LD50_Zhu.csv": "95bcbcb4a6f522ce23643027bb4a369f3ffd14fc86796964675fe9fd96e2c03b",
+    "Lipophilicity_AstraZeneca.csv": "645197d7cbcf2c8097b2c50055ffffd719b9f91cea20f400d9b4434dc7459938",
+    "PPBR_AZ.csv": "d95d02091410ad93128531e170d5932657f926a064f28bc1a8fb5394ed54aa59",
+    "Solubility_AqSolDB.csv": "7afc852ad298a93ceea3c9c28aedbdb6cd512c6d341f72bc094865d69a50e468",
+    "VDss_Lombardo.csv": "8affb8021ef3ee84d5460936babf5c9372764773cef52acba69807923cfcae92"
+  },
+  "seeds_and_parameters": {
+    "bootstrap_seed": 20260828,
+    "bootstrap_replicates": 2000,
+    "confidence_level": 0.95,
+    "fingerprint": {
+      "type": "Morgan",
+      "radius": 2,
+      "n_bits": 2048,
+      "similarity": "Tanimoto"
+    },
+    "structurally_remote_similarity_threshold": 0.6,
+    "reproduction_tolerance": 1e-09,
+    "summary_histogram_bins": 42
+  },
+  "cohort_definitions": {
+    "A_HEADLINE": "Frozen v0.10.2 headline cohort: semantically compatible rows with a valid exact experimental value, excluding exact structure overlap with the endpoint training source and with any reconstructed regression multitask source.",
+    "B_HEADLINE_PLUS_LOW_CLEARANCE": "Cohort A plus the ASAP human liver microsomal rows whose experimental value falls below the source's documented reliable exact bound of 10 uL/min/mg. These rows were excluded before inference in v0.10.2 and are predicted here by the same adapter and package version. HLM only.",
+    "C_STRUCTURE_AGGREGATED": "Cohort A collapsed to one record per unique InChIKey. The experimental value is the median of repeated measurements; the prediction is deterministic per structure.",
+    "D_STEREO_UNAMBIGUOUS": "Cohort A restricted to source records whose structure is not an OR/AND enhanced-stereo CXSMILES entry, i.e. excluding racemates and unknown single enantiomers that cannot be represented as the single drawn stereoisomer carried through the modelling path.",
+    "ALL_COMPATIBLE_DATA": "Frozen v0.10.2 transparency cohort including rows with known training exposure. Reported for completeness and never used as an external-generalisation claim.",
+    "NO_PARENT_FORM_TRAINING_OVERLAP": "Frozen v0.10.2 cohort additionally excluding parent and salt-form training overlap.",
+    "STRUCTURALLY_REMOTE_SUBSET": "Frozen v0.10.2 cohort additionally requiring no stereo relation, an unseen Murcko scaffold and maximum Morgan/Tanimoto similarity below 0.60."
+  },
+  "compatibility_screening": {
+    "candidates": 12,
+    "accepted": 3,
+    "rejected": 9,
+    "accepted_mapping_ids": [
+      "ASAP_HLM_MICROSOME",
+      "ASAP_LOGD_LIPOPHILICITY",
+      "BIOGEN_HPPB_PPBR"
+    ],
+    "decision_counts": {
+      "COMPATIBLE_WITH_DOCUMENTED_TRANSFORM": 1,
+      "EXACTLY_COMPATIBLE": 2,
+      "INCOMPATIBLE": 5,
+      "INSUFFICIENT_METADATA": 1,
+      "RELATED_NOT_COMPARABLE": 3
+    },
+    "status": "PRE_SPECIFIED_EXPLICIT_AUDITABLE_FAIL_CLOSED; not externally validated"
+  },
+  "headline_results": {
+    "Clearance_Microsome_AZ": {
+      "label": "Human liver microsomal clearance",
+      "evaluation_scale": "uL/min/mg",
+      "cohorts": {
+        "A_HEADLINE": {
+          "n": 366,
+          "unique_structures": 313,
+          "mae": 125.65485121319529,
+          "rmse": 254.59442762424672,
+          "r2": -0.15552153955254067,
+          "pearson_r": 0.4277648401520986,
+          "spearman_rho": 0.445858350262893,
+          "mean_error_bias": -111.64041866358839,
+          "calibration_slope": 0.03709363481234864,
+          "truth_sd": 236.84262792205968,
+          "prediction_sd": 20.53781218908518,
+          "sd_ratio": 0.0867150156594436
+        },
+        "ALL_COMPATIBLE_DATA": {
+          "n": 371,
+          "unique_structures": 318,
+          "mae": 126.39760202800808,
+          "rmse": 255.06010391137633,
+          "r2": -0.155416851449518,
+          "pearson_r": 0.4319729276817627,
+          "spearman_rho": 0.4409413920416896,
+          "mean_error_bias": -112.29000502344411,
+          "calibration_slope": 0.038165688477531774,
+          "truth_sd": 237.28658366344624,
+          "prediction_sd": 20.964753232565155,
+          "sd_ratio": 0.08835203789819135
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "n": 366,
+          "unique_structures": 313,
+          "mae": 125.65485121319529,
+          "rmse": 254.59442762424672,
+          "r2": -0.15552153955254067,
+          "pearson_r": 0.4277648401520986,
+          "spearman_rho": 0.445858350262893,
+          "mean_error_bias": -111.64041866358839,
+          "calibration_slope": 0.03709363481234864,
+          "truth_sd": 236.84262792205968,
+          "prediction_sd": 20.53781218908518,
+          "sd_ratio": 0.0867150156594436
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "n": 364,
+          "unique_structures": 311,
+          "mae": 126.17637301658864,
+          "rmse": 255.28261066444267,
+          "r2": -0.1577460781616844,
+          "pearson_r": 0.4282084540138973,
+          "spearman_rho": 0.4490388941942596,
+          "mean_error_bias": -112.42271702435318,
+          "calibration_slope": 0.03715818968465135,
+          "truth_sd": 237.25456275152328,
+          "prediction_sd": 20.587986910655435,
+          "sd_ratio": 0.08677593666435504
+        },
+        "C_STRUCTURE_AGGREGATED": {
+          "n": 313,
+          "unique_structures": 313,
+          "mae": 114.52188796892335,
+          "rmse": 238.69630927185412,
+          "r2": -0.11249335295319418,
+          "pearson_r": 0.4791914443445174,
+          "spearman_rho": 0.502424680221671,
+          "mean_error_bias": -99.56450034697976,
+          "calibration_slope": 0.044928589307289525,
+          "truth_sd": 226.30648103447047,
+          "prediction_sd": 21.21830651188663,
+          "sd_ratio": 0.09375916418697133
+        },
+        "D_STEREO_UNAMBIGUOUS": {
+          "n": 217,
+          "unique_structures": 217,
+          "mae": 121.29974931245026,
+          "rmse": 253.2752003958367,
+          "r2": -0.10773069550536052,
+          "pearson_r": 0.5244981933536126,
+          "spearman_rho": 0.5475568596026484,
+          "mean_error_bias": -105.97332294792074,
+          "calibration_slope": 0.047137412762691885,
+          "truth_sd": 240.64429625744873,
+          "prediction_sd": 21.62705165702501,
+          "sd_ratio": 0.08987144924427264
+        },
+        "B_HEADLINE_PLUS_LOW_CLEARANCE": {
+          "n": 402,
+          "unique_structures": 346,
+          "mae": 116.19656529718074,
+          "rmse": 243.044117503015,
+          "r2": -0.1152381595927019,
+          "pearson_r": 0.4423961443679968,
+          "spearman_rho": 0.513208321641258,
+          "mean_error_bias": -100.3472671055764,
+          "calibration_slope": 0.04192777443392067,
+          "truth_sd": 230.14487255293673,
+          "prediction_sd": 21.811813747400727,
+          "sd_ratio": 0.09477427633059123
+        }
+      },
+      "label_shift": {
+        "training_n": 1102,
+        "training_mean": 34.2216333938294,
+        "training_sd": 44.78514326654119,
+        "training_median": 12.735,
+        "external_n": 366,
+        "external_mean": 157.2726775956284,
+        "external_sd": 236.84262792205968,
+        "external_median": 66.95,
+        "ks_statistic": 0.4464411452599843,
+        "ks_p_value": 5.807687691292993e-50,
+        "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+        "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+      },
+      "baselines": {
+        "training_mean": {
+          "n": 366,
+          "mae": 133.33681473327184,
+          "median_absolute_error": 32.7283666061706,
+          "rmse": 266.9007116516932,
+          "r2": -0.26992981960782725,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "mean_error_bias": -123.05104420179899,
+          "calibration_slope": 0.0,
+          "calibration_intercept": 34.2216333938294,
+          "truth_sd": 236.84262792205968,
+          "prediction_sd": 0.0,
+          "sd_ratio": 0.0
+        },
+        "training_median": {
+          "n": 366,
+          "mae": 144.79040983606555,
+          "median_absolute_error": 54.215,
+          "rmse": 277.46273740047513,
+          "r2": -0.372428066305051,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "mean_error_bias": -144.5376775956284,
+          "calibration_slope": -7.77081665612635e-34,
+          "calibration_intercept": 12.734999999999996,
+          "truth_sd": 236.84262792205968,
+          "prediction_sd": 3.552713678800501e-15,
+          "sd_ratio": 1.5000313541401972e-17
+        },
+        "nearest_neighbour_morgan_tanimoto": {
+          "n": 366,
+          "mae": 137.54718579234975,
+          "median_absolute_error": 50.0,
+          "rmse": 267.77187559328024,
+          "r2": -0.27823345109553266,
+          "pearson_r": 0.0837576338492517,
+          "spearman_rho": 0.06656168152507039,
+          "mean_error_bias": -123.65128415300545,
+          "calibration_slope": 0.016446587614958954,
+          "calibration_intercept": 31.03479457110726,
+          "truth_sd": 236.84262792205968,
+          "prediction_sd": 46.50624488853178,
+          "sd_ratio": 0.19635926731836503
+        }
+      }
+    },
+    "Lipophilicity_AstraZeneca": {
+      "label": "LogD (pH 7.4)",
+      "evaluation_scale": "logD at pH 7.4",
+      "cohorts": {
+        "A_HEADLINE": {
+          "n": 474,
+          "unique_structures": 413,
+          "mae": 0.7292184190067781,
+          "rmse": 0.9149281384203628,
+          "r2": 0.3684183561514348,
+          "pearson_r": 0.6981944571578872,
+          "spearman_rho": 0.684491047725416,
+          "mean_error_bias": 0.3857146132502406,
+          "calibration_slope": 0.5450788303638994,
+          "truth_sd": 1.1512568699398045,
+          "prediction_sd": 0.8987836292336618,
+          "sd_ratio": 0.780697733669686
+        },
+        "ALL_COMPATIBLE_DATA": {
+          "n": 478,
+          "unique_structures": 417,
+          "mae": 0.7267118988836879,
+          "rmse": 0.912456175754906,
+          "r2": 0.37591661718679514,
+          "pearson_r": 0.7013606168954477,
+          "spearman_rho": 0.688286089137068,
+          "mean_error_bias": 0.3827244760757741,
+          "calibration_slope": 0.5471004922675181,
+          "truth_sd": 1.1550231942450597,
+          "prediction_sd": 0.9009826655922332,
+          "sd_ratio": 0.7800559071726078
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "n": 474,
+          "unique_structures": 413,
+          "mae": 0.7292184190067781,
+          "rmse": 0.9149281384203628,
+          "r2": 0.3684183561514348,
+          "pearson_r": 0.6981944571578872,
+          "spearman_rho": 0.684491047725416,
+          "mean_error_bias": 0.3857146132502406,
+          "calibration_slope": 0.5450788303638994,
+          "truth_sd": 1.1512568699398045,
+          "prediction_sd": 0.8987836292336618,
+          "sd_ratio": 0.780697733669686
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "n": 470,
+          "unique_structures": 409,
+          "mae": 0.7310926654198545,
+          "rmse": 0.9167112069635784,
+          "r2": 0.3566402264780537,
+          "pearson_r": 0.6928740232180571,
+          "spearman_rho": 0.6799060351978462,
+          "mean_error_bias": 0.38999178178331,
+          "calibration_slope": 0.5380230683163885,
+          "truth_sd": 1.1428930434767393,
+          "prediction_sd": 0.8874669873650213,
+          "sd_ratio": 0.7765092214274935
+        },
+        "C_STRUCTURE_AGGREGATED": {
+          "n": 413,
+          "unique_structures": 413,
+          "mae": 0.7627255809695863,
+          "rmse": 0.9438969686454556,
+          "r2": 0.3527060251764883,
+          "pearson_r": 0.6868915729070331,
+          "spearman_rho": 0.6792623818937817,
+          "mean_error_bias": 0.3892177252050209,
+          "calibration_slope": 0.5371721139158118,
+          "truth_sd": 1.1732047403500687,
+          "prediction_sd": 0.9174852266169714,
+          "sd_ratio": 0.7820333442764696
+        },
+        "D_STEREO_UNAMBIGUOUS": {
+          "n": 274,
+          "unique_structures": 274,
+          "mae": 0.7925203118558947,
+          "rmse": 0.9367641043095531,
+          "r2": 0.33524072719668063,
+          "pearson_r": 0.6672465975222631,
+          "spearman_rho": 0.6760407964599671,
+          "mean_error_bias": 0.3720655617940437,
+          "calibration_slope": 0.49291249189598846,
+          "truth_sd": 1.1489418232106892,
+          "prediction_sd": 0.8487533383089381,
+          "sd_ratio": 0.7387261227353689
+        }
+      },
+      "label_shift": {
+        "training_n": 4200,
+        "training_mean": 2.1863357142857143,
+        "training_sd": 1.2028604901336188,
+        "training_median": 2.36,
+        "external_n": 474,
+        "external_mean": 2.1295147679324895,
+        "external_sd": 1.1512568699398045,
+        "external_median": 2.1,
+        "ks_statistic": 0.0951446654611211,
+        "ks_p_value": 0.0008269315358898401,
+        "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+        "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+      },
+      "baselines": {
+        "training_mean": {
+          "n": 474,
+          "mae": 0.9432842073538275,
+          "median_absolute_error": 0.8136642857142857,
+          "rmse": 1.1526582323169656,
+          "r2": -0.002435972917736562,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "mean_error_bias": 0.05682094635322481,
+          "calibration_slope": 1.789338418527922e-32,
+          "calibration_intercept": 2.1863357142857147,
+          "truth_sd": 1.1512568699398045,
+          "prediction_sd": 4.440892098500626e-16,
+          "sd_ratio": 3.857429401253281e-16
+        },
+        "training_median": {
+          "n": 474,
+          "mae": 0.9626793248945148,
+          "median_absolute_error": 0.8400000000000003,
+          "rmse": 1.1741021347330947,
+          "r2": -0.0400812943996427,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "mean_error_bias": 0.23048523206751043,
+          "calibration_slope": 0.0,
+          "calibration_intercept": 2.36,
+          "truth_sd": 1.1512568699398045,
+          "prediction_sd": 0.0,
+          "sd_ratio": 0.0
+        },
+        "nearest_neighbour_morgan_tanimoto": {
+          "n": 474,
+          "mae": 1.2871940928270043,
+          "median_absolute_error": 1.0700000000000003,
+          "rmse": 1.6128405505040513,
+          "r2": -0.9626298441559082,
+          "pearson_r": 0.13396470456063034,
+          "spearman_rho": 0.17730964064252816,
+          "mean_error_bias": 0.3099367088607594,
+          "calibration_slope": 0.14560718508521847,
+          "calibration_intercept": 2.1293788258371973,
+          "truth_sd": 1.1512568699398045,
+          "prediction_sd": 1.2513092362032352,
+          "sd_ratio": 1.0869070742384905
+        }
+      }
+    },
+    "PPBR_AZ": {
+      "label": "Human plasma protein binding",
+      "evaluation_scale": "% bound",
+      "cohorts": {
+        "A_HEADLINE": {
+          "n": 178,
+          "unique_structures": 178,
+          "mae": 10.537728929665484,
+          "rmse": 17.435787885260833,
+          "r2": 0.6415875529708555,
+          "pearson_r": 0.8263140775678244,
+          "spearman_rho": 0.8073683333822503,
+          "mean_error_bias": 5.118420077031135,
+          "calibration_slope": 0.5988490799110457,
+          "truth_sd": 29.123933800125105,
+          "prediction_sd": 21.106793933525314,
+          "sd_ratio": 0.7247233178862207
+        },
+        "ALL_COMPATIBLE_DATA": {
+          "n": 194,
+          "unique_structures": 194,
+          "mae": 10.115716974164602,
+          "rmse": 16.914043400224386,
+          "r2": 0.6584388914124424,
+          "pearson_r": 0.836690639917348,
+          "spearman_rho": 0.8148046187412643,
+          "mean_error_bias": 4.911405585721705,
+          "calibration_slope": 0.6053430824276044,
+          "truth_sd": 28.94098001854157,
+          "prediction_sd": 20.938709263713395,
+          "sd_ratio": 0.7234968978347874
+        },
+        "NO_PARENT_FORM_TRAINING_OVERLAP": {
+          "n": 178,
+          "unique_structures": 178,
+          "mae": 10.537728929665484,
+          "rmse": 17.435787885260833,
+          "r2": 0.6415875529708555,
+          "pearson_r": 0.8263140775678244,
+          "spearman_rho": 0.8073683333822503,
+          "mean_error_bias": 5.118420077031135,
+          "calibration_slope": 0.5988490799110457,
+          "truth_sd": 29.123933800125105,
+          "prediction_sd": 21.106793933525314,
+          "sd_ratio": 0.7247233178862207
+        },
+        "STRUCTURALLY_REMOTE_SUBSET": {
+          "n": 168,
+          "unique_structures": 168,
+          "mae": 10.333164158168236,
+          "rmse": 16.935051437895986,
+          "r2": 0.6607792963924661,
+          "pearson_r": 0.8364959286797504,
+          "spearman_rho": 0.8146524571050073,
+          "mean_error_bias": 4.987527553841391,
+          "calibration_slope": 0.6180926146203386,
+          "truth_sd": 29.076715342044416,
+          "prediction_sd": 21.484985633703058,
+          "sd_ratio": 0.7389069013113785
+        },
+        "C_STRUCTURE_AGGREGATED": {
+          "n": 178,
+          "unique_structures": 178,
+          "mae": 10.537728929665484,
+          "rmse": 17.435787885260833,
+          "r2": 0.6415875529708555,
+          "pearson_r": 0.8263140775678244,
+          "spearman_rho": 0.8073683333822503,
+          "mean_error_bias": 5.118420077031135,
+          "calibration_slope": 0.5988490799110457,
+          "truth_sd": 29.123933800125105,
+          "prediction_sd": 21.106793933525314,
+          "sd_ratio": 0.7247233178862207
+        },
+        "D_STEREO_UNAMBIGUOUS": {
+          "n": 178,
+          "unique_structures": 178,
+          "mae": 10.537728929665484,
+          "rmse": 17.435787885260833,
+          "r2": 0.6415875529708555,
+          "pearson_r": 0.8263140775678244,
+          "spearman_rho": 0.8073683333822503,
+          "mean_error_bias": 5.118420077031135,
+          "calibration_slope": 0.5988490799110457,
+          "truth_sd": 29.123933800125105,
+          "prediction_sd": 21.106793933525314,
+          "sd_ratio": 0.7247233178862207
+        }
+      },
+      "label_shift": {
+        "training_n": 1614,
+        "training_mean": 88.0729491945477,
+        "training_sd": 16.733033785866667,
+        "training_median": 95.43,
+        "external_n": 178,
+        "external_mean": 77.95682936787146,
+        "external_sd": 29.123933800125105,
+        "external_median": 91.76350000254095,
+        "ks_statistic": 0.15549336563496374,
+        "ks_p_value": 0.0007459548829759517,
+        "test": "two-sample Kolmogorov-Smirnov on endpoint label values",
+        "interpretation": "Describes label-distribution difference between reconstructed training labels and external labels. It is not a causal statement."
+      },
+      "baselines": {
+        "training_mean": {
+          "n": 178,
+          "mae": 19.87851193882763,
+          "median_absolute_error": 10.545050805436915,
+          "rmse": 30.830819002124176,
+          "r2": -0.1206501481488631,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "mean_error_bias": 10.116119826676224,
+          "calibration_slope": -2.421022920511398e-31,
+          "calibration_intercept": 88.07294919454772,
+          "truth_sd": 29.123933800125105,
+          "prediction_sd": 1.4210854715202004e-14,
+          "sd_ratio": 4.879442046781798e-16
+        },
+        "training_median": {
+          "n": 178,
+          "mae": 19.81388686079404,
+          "median_absolute_error": 4.504250000002763,
+          "rmse": 33.96343934193869,
+          "r2": -0.3599509843364168,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "mean_error_bias": 17.47317063212853,
+          "calibration_slope": -2.421022920511398e-31,
+          "calibration_intercept": 95.43000000000002,
+          "truth_sd": 29.123933800125105,
+          "prediction_sd": 1.4210854715202004e-14,
+          "sd_ratio": 4.879442046781798e-16
+        },
+        "nearest_neighbour_morgan_tanimoto": {
+          "n": 178,
+          "mae": 20.45592056775568,
+          "median_absolute_error": 7.458249991922557,
+          "rmse": 33.297945998861145,
+          "r2": -0.30717826748800214,
+          "pearson_r": 0.11882005581192696,
+          "spearman_rho": 0.1505979625570406,
+          "mean_error_bias": 11.827384115274588,
+          "calibration_slope": 0.061104732761763016,
+          "calibration_intercept": 85.02068225766791,
+          "truth_sd": 29.123933800125105,
+          "prediction_sd": 14.977355292988227,
+          "sd_ratio": 0.5142627845460866
+        }
+      }
+    }
+  },
+  "artifact_hashes": {
+    "manuscript": {
+      "preprint/manuscript/manuscript.md": "a313cae085cca1c8e69970088ba26a002e0bfa99404824069375458a4633885e",
+      "preprint/manuscript/CLAIM_AUDIT.md": "f1d5cf5f3c42814341ab4acc3808d28bd7c7ecb082d09a3f0a1d2a0064f87ff2"
+    },
+    "figures": {
+      "preprint/figures/figure1_eligibility_funnel.png": "f81c113c1e34c6651c4fd698f97dbd821829d59515c17597f4f18a54ff93fedc",
+      "preprint/figures/figure1_eligibility_funnel.pdf": "6def12ec2858a8146b6742e26fb0e915cd1cfa8dafb84db1b2d361b8bf923c60",
+      "preprint/figures/figure2_shift_and_compression.png": "cd108224d36e0148d2a1997148a3ad448f56340cb2ee7c90dfd66215e8c5b7d9",
+      "preprint/figures/figure2_shift_and_compression.pdf": "c735963b403967cf94994f2b4a068a8ab6fd5ace7d48f1bd6abd67c120c40ae7",
+      "preprint/figures/figure3_baseline_relative.png": "68410d0c6dd6589ee52500e1080ff5177bf2bf2116ba9e71bc81b669ce70c6b6",
+      "preprint/figures/figure3_baseline_relative.pdf": "33130fc6bdb08d444e1b4af13e604ed7e624b491873269880ec503ec965627d4"
+    },
+    "tables": {
+      "preprint/tables/table1_compatibility.csv": "2007daf131054b9c6bb3d1800eae175f106f1ae9ae7faa7962f301fa9a2c64bc",
+      "preprint/tables/table2_external_results.csv": "cd30f3e31fec636f05e720e1e7a4d681fdf76a6c33626a375e62d79da73241fa",
+      "preprint/tables/supplementary_sensitivity.csv": "59e02de82564475d94ed76bfe5e83f4f495b027494ee2479f64335f314843c53"
+    },
+    "compatibility_matrix": {
+      "validation/external_prediction/endpoint_compatibility.csv": "0c6a02781d777b664077373b76121b7f252121524056d66bf53c84fc21c5f959"
+    },
+    "sensitivity_inputs": {
+      "preprint/results/hlm_low_clearance_predictions.csv": "6bdc7d5ab87f75831cea7fa510b730e9cda03248b128de75b201f97f877e2591",
+      "preprint/results/hlm_low_clearance_manifest.json": "1440806155b41c8897862cc65250e6668929618770c288916dacacd3054e28d4",
+      "preprint/results/training_reference_summary.json": "0bd9d4e2179787658416ed7b3ebb5eec1904873172c5b152787811fdb44f424b"
+    },
+    "analysis_outputs": {
+      "preprint/results/preprint_analysis.json": "845fb55aaad707544678a37d8e2bd350e46b6cc7b13c67849af0d675c3ca6d30",
+      "preprint/results/analysis_summary.md": "8f587c31367f6e227322071b0ba86e3b2acb435bbfcb2de491d715118b3fc205",
+      "preprint/results/analysis_manifest.json": "38ef222bef45fbe3d5b7a1e863f18a1daec58e3dc03838e4702e9b9c8e9d0232",
+      "preprint/results/frozen_input_manifest.json": "0940bb616e0e886a594f37027fa73a347f9ff93288c722a765da006b1aec7ff5"
+    },
+    "frozen_prediction_rows": {
+      "validation/external_prediction/results/asap_processed_predictions.csv": "34d64ec55f256dbd96d96a181be8a6c1625deb683271182d0ef68ba84240317c",
+      "validation/external_prediction/results/biogen_hppb_processed_predictions.csv": "7e973935eec880ad4af1de7d08734b053556c166b15c930630df737ab944965e"
+    },
+    "source_snapshots": {
+      "validation/external_prediction/source_snapshots/asap_antiviral_admet_2025_unblinded.csv": "07e7c68d59a720338ff44277625f0ff52be5e0a1afd556134807ba7530213582",
+      "validation/external_prediction/source_snapshots/biogen_ADME_public_set_3521.csv": "2cfabc2667740c224487876c33b23124159ef43294e0f9e4d926cb6276c95a3b"
+    }
+  }
+}

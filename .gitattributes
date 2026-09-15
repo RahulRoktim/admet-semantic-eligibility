@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------------------
+# Byte preservation.
+#
+# This is a reproducibility package: preprint/results/checksums.sha256 is only
+# useful to a reader if every file checks out with exactly the bytes that were
+# hashed. Git's end-of-line translation would break that under Windows, or
+# anywhere core.autocrlf is enabled, and Level 1 verifies frozen inputs by
+# SHA-256, so the failure would look like a scientific problem when it is not.
+#
+# Everything is therefore checked out verbatim.
+# ---------------------------------------------------------------------------
+* -text
+
+# Binary containers, marked explicitly for clarity and for diff behaviour.
+*.png binary
+*.pdf binary
+
+# ---------------------------------------------------------------------------
+# Redistribution boundary (see DATA_LICENSES.md section 3).
+#
+# The reconstructed Therapeutics Data Commons reference tables are not
+# redistributed. They are absent from this repository and gitignored; these
+# rules are declared defensively so that no archive produced by `git archive`
+# -- the mechanism behind GitHub release assets and Zenodo archiving -- could
+# carry them if one were ever introduced locally.
+# ---------------------------------------------------------------------------
+validation/external_prediction/training_reference/ export-ignore
+validation/external_prediction/training_reference/*.csv export-ignore
