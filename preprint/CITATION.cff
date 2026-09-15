@@ -36,5 +36,4 @@ repository-code: "https://github.com/RahulRoktim/admet-semantic-eligibility"
 # licences and are not relicensed (DATA_LICENSES.md).
 doi: "10.5281/zenodo.22765692"
 # Reserved Zenodo version DOI for v1.0.0-preprint (deposition 22765692).
-# date-released is added at the moment of public release:
-#   date-released: "[[RELEASE_DATE]]"
+date-released: "2026-09-15"

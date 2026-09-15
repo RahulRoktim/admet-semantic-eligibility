@@ -16,6 +16,12 @@ from preprint.analysis import check_doi_consistency as guard
 MOLAUDIT_DOI = "10.5281/zenodo.22738114"
 CONCEPT_DOI = "10.5281/zenodo.22765691"
 
+#: A release-date placeholder appended to a file during the tolerance test.
+#: Built from parts so the literal never appears as a bare token here.
+SCRATCH_PLACEHOLDER_LINE = (
+    chr(10) + "# scratch: " + "[[" + "RELEASE_DATE" + "]]" + chr(10)
+)
+
 CARRIERS = [
     "preprint/CITATION.cff",
     "preprint/submission/chemrxiv/zenodo_metadata.json",
@@ -147,6 +153,20 @@ def test_guard_detects_a_missing_doi():
 
 
 def test_release_date_placeholder_is_not_treated_as_a_doi_failure():
-    """[[RELEASE_DATE]] is the one allowed pre-release placeholder."""
+    """The DOI guard must ignore the release-date placeholder entirely.
+
+    This tests the guard's behaviour, not the repository's current state: the
+    release date was resolved at v1.0.0-preprint, so no released file carries
+    the placeholder any more. Injecting one proves the tolerance directly, and
+    keeps the test meaningful both before and after a release.
+    """
     assert guard.run()["passed"] is True
-    assert any("[[RELEASE_DATE]]" in text for _, text in guard._scannable())
+    target = guard.REPO_ROOT / "preprint/CITATION.cff"
+    original = target.read_bytes()
+    try:
+        target.write_bytes(original + SCRATCH_PLACEHOLDER_LINE.encode())
+        assert any("[[RELEASE_DATE]]" in text for _, text in guard._scannable())
+        assert guard.run()["passed"] is True, "release-date placeholder wrongly failed the DOI guard"
+    finally:
+        target.write_bytes(original)
+    assert target.read_bytes() == original

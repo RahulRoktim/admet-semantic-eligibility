@@ -1,7 +1,7 @@
 {
   "artifact_id": "preprint-v1.0.0-scientific-freeze",
   "schema_version": 1,
-  "frozen_at_utc": "2026-09-15T10:15:17Z",
+  "frozen_at_utc": "2026-09-15T10:36:26Z",
   "status": "FROZEN",
   "deviation_policy": "The scientific content recorded here is frozen. Any change to cohort definitions, compatibility decisions, statistical methods, figures, tables or reported results after this freeze requires a documented deviation recorded in preprint/DEVIATIONS.md, stating what changed, why, which hashes below are invalidated, and who authorised it. Editorial changes that do not alter a number (typography, wording, author metadata) do not require a deviation but do invalidate the manuscript hash, which must be regenerated.",
   "provenance": {

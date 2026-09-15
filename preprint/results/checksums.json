@@ -4,13 +4,13 @@
   "file_count": 72,
   "files_by_role": {
     "package": {
-      "preprint/CITATION.cff": "438d6821fb9bac0ef681da6de4320d5cba410e29585f853c69ef8cda909faed5",
-      "preprint/DEVIATIONS.md": "cf059624bc4dacdf0e3227cbb754ad4dd29909d03656c265c4be507c4afe7a91",
-      "preprint/FINAL_AUDIT.md": "d30a2014882117ec3310588165ccbb3c0c559aaec4976320735ae2480dccf0c5",
+      "preprint/CITATION.cff": "f2157bf8c6cc012e7c219be9a34b9aa53ade35bd7ee7a5045a8a089776aec6ec",
+      "preprint/DEVIATIONS.md": "f1d2d5d1ce94bd0cde63192dee067983b0bb024b6d5a7c6c165194d02252d719",
+      "preprint/FINAL_AUDIT.md": "4008fd4c1d7b935c0aaf20767070ab848b93ec79ecb1ec5b17dd182c9b0bcec6",
       "preprint/LICENCE_REVIEW.md": "28e404794c26df06721d4e4c01e1833deaf63b98ced4ba7651ef2d3e0edb1344",
-      "preprint/RELEASE_CHECKLIST.md": "d6fca5122de979ad3fb95fb5ec4de7ddb5f3d79d06705ce6c9f86bfe7a8fd099",
+      "preprint/RELEASE_CHECKLIST.md": "d417a867866ad6cae579bd39c8f93303fe0b66364f0b3183c2362b67f67c171d",
       "preprint/REPRODUCE.md": "75649e62769632d83c21df317f98ae8fc341c0cd598196263cc62593e0ba7657",
-      "preprint/SCIENTIFIC_FREEZE.md": "cc024a427e33b9f925ca7d49d6b110e64372f6208fac6e8f05c78d19f103f36e",
+      "preprint/SCIENTIFIC_FREEZE.md": "1f43eb33eee5b8fd8e5234cabe1b098006470c77034309cb98c37ba8cbe5cdb2",
       "preprint/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "preprint/requirements-analysis.txt": "98d4a89757b478c39a1125424f5331079d47b8bc8b8d441dee3687eb8ffe6d13",
       "preprint/submission/chemrxiv/CLAIM_AUDIT.md": "f1d5cf5f3c42814341ab4acc3808d28bd7c7ecb082d09a3f0a1d2a0064f87ff2",
@@ -27,7 +27,7 @@
       "preprint/submission/chemrxiv/supplementary_sensitivity.csv": "0b51d6400e8bb97a7b14d28549e7a525defaea2285c55c0126d53d9daf733f59",
       "preprint/submission/chemrxiv/table1_compatibility.csv": "d66f93ed04e3d6c0fe2541f329d7e8bfff19ee10b99116c76b859c7d7b206102",
       "preprint/submission/chemrxiv/table2_external_results.csv": "bdcc99317ae6fc955d2f9aa19392d9969a43d60e9a953743ac26e78235060c89",
-      "preprint/submission/chemrxiv/zenodo_metadata.json": "afe0ea62c37cc2c6331cb8e77b7fdbed1b6795d4db8f1cf79a5d8e17f02e0526"
+      "preprint/submission/chemrxiv/zenodo_metadata.json": "d63206e16222145f4689a186fd50fdff84427b740dc0a1c2a235b8fc0822231a"
     },
     "analysis_code": {
       "preprint/analysis/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -63,12 +63,12 @@
       "preprint/results/analysis_manifest.json": "38ef222bef45fbe3d5b7a1e863f18a1daec58e3dc03838e4702e9b9c8e9d0232",
       "preprint/results/analysis_summary.md": "8f587c31367f6e227322071b0ba86e3b2acb435bbfcb2de491d715118b3fc205",
       "preprint/results/figure_manifest.json": "a7917fd0879591572ecdf00d13ea46ee5c4ccff0c3721763d26884880218dc95",
-      "preprint/results/final_audit.json": "dbe2796bcb2803a1bc710f09d253eb463c7c6a25ad32d4ba06cab861c4f6035d",
+      "preprint/results/final_audit.json": "5b5591f755d014ca1afc1f67e43a13f06b63d196751ce2c63589cd945c98a113",
       "preprint/results/frozen_input_manifest.json": "0940bb616e0e886a594f37027fa73a347f9ff93288c722a765da006b1aec7ff5",
       "preprint/results/hlm_low_clearance_manifest.json": "1440806155b41c8897862cc65250e6668929618770c288916dacacd3054e28d4",
       "preprint/results/hlm_low_clearance_predictions.csv": "6bdc7d5ab87f75831cea7fa510b730e9cda03248b128de75b201f97f877e2591",
       "preprint/results/preprint_analysis.json": "845fb55aaad707544678a37d8e2bd350e46b6cc7b13c67849af0d675c3ca6d30",
-      "preprint/results/scientific_freeze.json": "c30d14967fab908e3215b09ad10f51fa35151546c0961164f29fa46252c66e29",
+      "preprint/results/scientific_freeze.json": "a96e4c094c25b500ca13f83f0999f7046e3b7ba57bb83316a8a6aa2d182d3aa4",
       "preprint/results/training_reference_summary.json": "0bd9d4e2179787658416ed7b3ebb5eec1904873172c5b152787811fdb44f424b"
     },
     "table": {
@@ -79,7 +79,7 @@
     "test": {
       "preprint/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "preprint/tests/test_author_metadata.py": "9cc59d1ca4165d6b779dc7fd1506f5b332bdd936e2e94e90ef84f0bf33515502",
-      "preprint/tests/test_doi_consistency.py": "02b889514a2267264e546ca97ded412a59b62c1bf360be6bf79d3423a1c786c9",
+      "preprint/tests/test_doi_consistency.py": "a9dc4127e159a79af4eef35efdc6936b0290d0c5e6d2619c655c6ba6917b35cd",
       "preprint/tests/test_preprint_analysis.py": "18128db1e4479345a0783237a612d7777014240ddd00e76afef1fb9546260e61",
       "preprint/tests/test_repository_urls.py": "4b1d29d665bc8e2c752ca4024b940562aac2c018fd5b389c4f31d00bad31fd73"
     },

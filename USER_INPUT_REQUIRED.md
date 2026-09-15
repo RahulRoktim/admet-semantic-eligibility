@@ -6,12 +6,13 @@ remains.**
 | Placeholder | Status | Appears in |
 | --- | --- | --- |
 | Zenodo DOI | **Resolved** to `10.5281/zenodo.22765692` | recorded; the placeholder is gone |
-| `[[RELEASE_DATE]]` | Outstanding until public release | `CITATION.cff`, Zenodo metadata draft, release checklist |
+| Release date | **Resolved** to `2026-09-15` | `CITATION.cff`, Zenodo metadata, release checklist |
 
 **The manuscript now contains no placeholder at all.** The DOI placeholder token
 is deliberately not written out anywhere in this repository any more, because
-`check_doi_consistency.py` treats any occurrence of it as a release blocker. `[[RELEASE_DATE]]` appears
-only in metadata templates and instructions, never in publication text, and is
+`check_doi_consistency.py` treats any occurrence of it as a release blocker. The
+release-date placeholder is likewise resolved, and appeared only in metadata
+templates and instructions, never in publication text. It was
 the single allowed pre-release placeholder.
 
 The GitHub release URL needs no placeholder: the repository URL is already

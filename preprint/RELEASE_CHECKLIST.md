@@ -32,8 +32,8 @@ regenerate; 66/66 byte-identical after regeneration; 26 tests pass; final audit
 ## ✅ Step 3a — Author metadata *(done)*
 
 Author, affiliation, corresponding email and ORCID are populated throughout. The
-only placeholder left anywhere is `[[RELEASE_DATE]]`, which cannot exist before
-the release itself. The Zenodo DOI is already inserted.
+Zenodo DOI and the release date are both inserted. No unresolved publication
+placeholder remains in any release-facing file.
 
 ---
 
@@ -100,7 +100,7 @@ Done: the reserved version DOI `10.5281/zenodo.22765692` is inserted in:
 - `preprint/submission/chemrxiv/statements.md`
 - `preprint/submission/chemrxiv/manuscript.md` (the submission copy)
 - `preprint/CITATION.cff` — also add `doi:` and `date-released:`
-- `preprint/submission/chemrxiv/zenodo_metadata.json` — `[[RELEASE_DATE]]`
+- `preprint/submission/chemrxiv/zenodo_metadata.json` — release date `2026-09-15`
 
 Commit as a metadata-only change. It alters no number, so it needs no deviation
 record — but it does invalidate the manuscript hash in `SCIENTIFIC_FREEZE.md`,

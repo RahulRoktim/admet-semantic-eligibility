@@ -185,8 +185,9 @@ negative controls:
 | `preprint/analysis/check_doi_consistency.py` | a DOI digit is altered, the placeholder returns, the concept DOI is substituted, the DOI of the author's other Zenodo deposit is used, a DOI URL points elsewhere, or the DOI is missing where it belongs |
 | `preprint/analysis/check_author_metadata.py` | the honorific is dropped, either citation-metadata file disagrees with the canonical values, or a foreign ORCID or corresponding email appears |
 
-The DOI guard ignores `[[RELEASE_DATE]]`, which is the single placeholder
-allowed before release.
+The DOI guard tolerates the release-date placeholder, which was the single
+placeholder allowed before release. It was resolved to 2026-09-15 when
+v1.0.0-preprint was released.
 
 ### Effect on the scientific record
 
