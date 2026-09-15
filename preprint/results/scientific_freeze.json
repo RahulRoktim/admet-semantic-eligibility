@@ -1,7 +1,7 @@
 {
   "artifact_id": "preprint-v1.0.0-scientific-freeze",
   "schema_version": 1,
-  "frozen_at_utc": "2026-09-15T07:48:21Z",
+  "frozen_at_utc": "2026-09-15T08:28:44Z",
   "status": "FROZEN",
   "deviation_policy": "The scientific content recorded here is frozen. Any change to cohort definitions, compatibility decisions, statistical methods, figures, tables or reported results after this freeze requires a documented deviation recorded in preprint/DEVIATIONS.md, stating what changed, why, which hashes below are invalidated, and who authorised it. Editorial changes that do not alter a number (typography, wording, author metadata) do not require a deviation but do invalidate the manuscript hash, which must be regenerated.",
   "provenance": {
@@ -585,7 +585,7 @@
   },
   "artifact_hashes": {
     "manuscript": {
-      "preprint/manuscript/manuscript.md": "a313cae085cca1c8e69970088ba26a002e0bfa99404824069375458a4633885e",
+      "preprint/manuscript/manuscript.md": "d28dcf86c6f29278f403a56d311c7ac0b5f4cf7fb9173c7550a0e4f402fc0b60",
       "preprint/manuscript/CLAIM_AUDIT.md": "f1d5cf5f3c42814341ab4acc3808d28bd7c7ecb082d09a3f0a1d2a0064f87ff2"
     },
     "figures": {

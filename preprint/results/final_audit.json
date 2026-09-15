@@ -1,9 +1,9 @@
 {
   "artifact_id": "preprint-v1.0.0-final-audit",
-  "generated_at_utc": "2026-09-15T07:48:22Z",
-  "commit": "7b9c5b6a94cc562ef50a85dfa04717ded2754656",
+  "generated_at_utc": "2026-09-15T08:29:25Z",
+  "commit": "5425a41e8c3055967b2c84353a6b37c88c6c3d19",
   "manuscript_words_excluding_references": 4820,
-  "checks_run": 16,
+  "checks_run": 17,
   "checks_failed": 0,
   "overall": "PASS",
   "unresolved_author_fields": [
@@ -100,6 +100,12 @@
       "check": "release_licence_check",
       "status": "PASS",
       "detail": "no excluded file has entered the release set",
+      "evidence": null
+    },
+    {
+      "check": "repository_urls_point_to_public_export",
+      "status": "PASS",
+      "detail": "107 released files scanned; repository-code is https://github.com/RahulRoktim/admet-semantic-eligibility",
       "evidence": null
     },
     {

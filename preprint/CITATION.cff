@@ -28,8 +28,8 @@ keywords:
   - reproducibility
 version: 1.0.0-preprint
 license: MIT
-license-url: "https://github.com/RahulRoktim/ADMET-Evidence-Graph/blob/main/LICENSE"
-repository-code: "https://github.com/RahulRoktim/ADMET-Evidence-Graph"
+license-url: "https://github.com/RahulRoktim/admet-semantic-eligibility/blob/main/LICENSE"
+repository-code: "https://github.com/RahulRoktim/admet-semantic-eligibility"
 # Code is MIT. The manuscript, figures, tables and derived result artefacts are
 # CC BY 4.0 (CONTENT_LICENSE.md). External datasets keep their own upstream
 # licences and are not relicensed (DATA_LICENSES.md).

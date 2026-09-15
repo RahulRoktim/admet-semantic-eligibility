@@ -21,7 +21,12 @@ for candidate in (str(REPO_ROOT), str(REPO_ROOT / "backend")):
     if candidate not in sys.path:
         sys.path.insert(0, candidate)
 
-from preprint.analysis import core, release_package, verify_manuscript_claims  # noqa: E402
+from preprint.analysis import (  # noqa: E402
+    check_repository_urls,
+    core,
+    release_package,
+    verify_manuscript_claims,
+)
 
 MANUSCRIPT = REPO_ROOT / "preprint/manuscript/manuscript.md"
 ANALYSIS = REPO_ROOT / "preprint/results/preprint_analysis.json"
@@ -185,6 +190,18 @@ def run(audit: Audit) -> dict[str, Any]:
     # 14. Release licence boundary.
     audit.add("release_licence_check", release_package.check(None) == 0,
               "no excluded file has entered the release set")
+
+    # 14b. Repository URLs. Released files must not name the private
+    # development repository, must not point at an undeclared repository, and
+    # must declare this public repository as repository-code.
+    url_report = check_repository_urls.run()
+    url_failures = (url_report["private_repo_references"]
+                    + url_report["undeclared_repo_references"]
+                    + url_report["declared_metadata_problems"])
+    audit.add("repository_urls_point_to_public_export", url_report["passed"],
+              f"{url_report['files_scanned']} released files scanned; "
+              f"repository-code is {url_report['public_repository_url']}",
+              url_failures or None)
 
     # 15. Freeze record consistency.
     freeze = json.loads((REPO_ROOT / "preprint/results/scientific_freeze.json").read_text(encoding="utf-8"))

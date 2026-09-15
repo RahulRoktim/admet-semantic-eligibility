@@ -10,7 +10,7 @@
 
 **Version:** v1.0.0-preprint
 
-**Code and data:** https://github.com/RahulRoktim/ADMET-Evidence-Graph —
+**Code and data:** https://github.com/RahulRoktim/admet-semantic-eligibility —
 archived at [[ZENODO_DOI]]
 
 **Licences:** code MIT; manuscript, figures and tables CC BY 4.0; external

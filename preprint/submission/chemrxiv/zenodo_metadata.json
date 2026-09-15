@@ -31,7 +31,7 @@
     "access_right": "open",
     "related_identifiers": [
       {
-        "identifier": "https://github.com/RahulRoktim/ADMET-Evidence-Graph",
+        "identifier": "https://github.com/RahulRoktim/admet-semantic-eligibility",
         "relation": "isSupplementTo",
         "resource_type": "software",
         "scheme": "url"
