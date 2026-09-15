@@ -27,11 +27,11 @@
   "counts": {
     "DERIVED_RESULT": 22,
     "ORIGINAL_CONTENT": 35,
-    "PROJECT_CODE": 48,
+    "PROJECT_CODE": 49,
     "THIRD_PARTY_REDISTRIBUTABLE": 2,
     "UPSTREAM_REFERENCE_ONLY": 2
   },
-  "public_release_file_count": 109,
+  "public_release_file_count": 110,
   "excluded_file_count": 0,
   "files": [
     {
@@ -74,7 +74,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "c2b25c464b92b7bbda908cd8fcc14d98f5768897cd6018811b0ef3f3f412807f"
+      "sha256": "3bbfabfb6b17250cfd6ec5ef571cacd708e74e4b4052714da4eaa26929a9e305"
     },
     {
       "path": "THIRD_PARTY_LICENSES.md",
@@ -207,14 +207,14 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "f1d2d5d1ce94bd0cde63192dee067983b0bb024b6d5a7c6c165194d02252d719"
+      "sha256": "70b749bdf83c532d1898595c09548544515e680481fbb2c04f0aad5075c38bd0"
     },
     {
       "path": "preprint/FINAL_AUDIT.md",
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "4008fd4c1d7b935c0aaf20767070ab848b93ec79ecb1ec5b17dd182c9b0bcec6"
+      "sha256": "b784d2c399696be6adea42e76a2f5da86ac63cf1a8956428fad37dac78371baf"
     },
     {
       "path": "preprint/LICENCE_REVIEW.md",
@@ -228,21 +228,21 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "d417a867866ad6cae579bd39c8f93303fe0b66364f0b3183c2362b67f67c171d"
+      "sha256": "8a00792339f99ab83621d1010f427df0f5afb2e2cb4ff0262347c210ee7b9f01"
     },
     {
       "path": "preprint/REPRODUCE.md",
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "75649e62769632d83c21df317f98ae8fc341c0cd598196263cc62593e0ba7657"
+      "sha256": "ffa6cbe538760f448f5a0533264b9a658395e0e9c555360a5771a93398da5a5b"
     },
     {
       "path": "preprint/SCIENTIFIC_FREEZE.md",
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "1f43eb33eee5b8fd8e5234cabe1b098006470c77034309cb98c37ba8cbe5cdb2"
+      "sha256": "105aa9810690e47e6ba85cece60d4a94b312e9036fee58d355d5865d0702dd1a"
     },
     {
       "path": "preprint/__init__.py",
@@ -438,7 +438,7 @@
       "category": "DERIVED_RESULT",
       "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
       "in_public_release": true,
-      "sha256": "5b5591f755d014ca1afc1f67e43a13f06b63d196751ce2c63589cd945c98a113"
+      "sha256": "2f456ca9563c62ef069589ff803cee74e598ba863a1fa952e95ff464adeee23c"
     },
     {
       "path": "preprint/results/frozen_input_manifest.json",
@@ -473,7 +473,7 @@
       "category": "DERIVED_RESULT",
       "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
       "in_public_release": true,
-      "sha256": "a96e4c094c25b500ca13f83f0999f7046e3b7ba57bb83316a8a6aa2d182d3aa4"
+      "sha256": "0480df952800fb5d6e550fc9af7e0c3234c56a35cfc6ad9d7d9f1fd7b7df823a"
     },
     {
       "path": "preprint/results/training_reference_summary.json",
@@ -508,7 +508,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "81d2a002c08030d861890e04ae681249e63bb7a5a000de0f708a9ba8607c2741"
+      "sha256": "34918115a0cb4055e686b886fde10433baaa862655f6468aa3f82d9b6fea2797"
     },
     {
       "path": "preprint/submission/chemrxiv/cover_note.md",
@@ -628,6 +628,13 @@
       "licence": "MIT (LICENSE)",
       "in_public_release": true,
       "sha256": "9cc59d1ca4165d6b779dc7fd1506f5b332bdd936e2e94e90ef84f0bf33515502"
+    },
+    {
+      "path": "preprint/tests/test_documented_counts.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "f98f29d688b5607df4efe726f1cc1b672fe227de28e2f2016d1dfd54b6ce44f8"
     },
     {
       "path": "preprint/tests/test_doi_consistency.py",

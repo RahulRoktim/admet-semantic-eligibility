@@ -24,10 +24,10 @@ tree, the index, every Git object and every archive. All verified.
 
 Level 1 reproduced from a fresh clone with the excluded tables absent.
 
-**Gate:** 66/66 files byte-identical on checkout; every manuscript number,
+**Gate:** 74/74 files byte-identical on checkout; every manuscript number,
 Figures 1–3, Tables 1–2, the supplementary sensitivity table and the claim audit
-regenerate; 66/66 byte-identical after regeneration; 26 tests pass; final audit
-16/16.
+regenerate; 74/74 byte-identical after regeneration; 103 tests pass; final audit
+19/19.
 
 ## ✅ Step 3a — Author metadata *(done)*
 

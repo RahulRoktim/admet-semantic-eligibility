@@ -307,18 +307,18 @@ Observed result:
 
 | Check | Outcome in the fresh clone |
 | --- | --- |
-| Files checked out byte-identical to `checksums.sha256` | **66 / 66** |
+| Files checked out byte-identical to `checksums.sha256` | **74 / 74** |
 | Frozen inputs | 10 verified, 10 absent by redistribution policy (expected) |
 | Reproduction gate | `ALL_PUBLISHED_METRICS_REPRODUCED` |
 | Compatibility screening | 3/12 accepted |
 | Headline metrics | clearance n=366 R² −0.156; logD n=474 R² +0.368; PPB n=178 R² +0.642 |
 | Tables 1–2 and supplementary sensitivity | regenerated |
-| Figures 1–3 | regenerated, **9/9 image files byte-identical** |
-| Regenerated artefacts vs committed | **66 / 66 byte-identical** |
+| Figures 1–3 | regenerated, **6/6 image files byte-identical** |
+| Regenerated artefacts vs committed | **74 / 74 byte-identical** |
 | Manuscript claims | 115 verified, 16 forbidden phrases absent, 10 disclosures present |
 | Release check | passed; 10 files absent by redistribution policy |
-| Final audit | 16 checks, 0 failed |
-| Tests | 26 passed |
+| Final audit | 19 checks, 0 failed |
+| Tests | 103 passed |
 
 `preprint/analysis/build_training_reference_summary.py` correctly refuses to run
 in this environment, naming `DATA_LICENSES.md` and Level 2 of this document. That

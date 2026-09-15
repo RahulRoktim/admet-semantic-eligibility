@@ -47,7 +47,7 @@ checkable without trusting anyone's account of how it was produced:
 - a reproduction gate recomputes every previously published benchmark metric and
   aborts if any differs by more than 1e-9;
 - the full pipeline reproduces byte-for-byte across independent runs;
-- 294 tests, including negative controls that confirm the verifier and the
+- 103 tests, including negative controls that confirm the verifier and the
   release check actually fail when they should;
 - 23 references, each verified against an authoritative record.
 

@@ -159,7 +159,7 @@ terms (`LICENSE`, `CONTENT_LICENSE.md`, `THIRD_PARTY_LICENSES.md`,
 
 | Check | Result |
 | --- | --- |
-| Test suite | 294 passed |
+| Test suite | 103 passed |
 | Manuscript numeric claims verified against generated results | 115 |
 | Forbidden out-of-scope claims absent | 16 checked |
 | Required disclosures present | 10 checked |

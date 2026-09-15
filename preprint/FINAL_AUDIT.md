@@ -1,8 +1,8 @@
 # Final release audit
 
 **Overall:** PASS  
-**Generated:** 2026-09-15T10:43:09Z  
-**Commit:** `9b5e1673fe76800d4d72d63df2ab76120eff30d0`  
+**Generated:** 2026-09-15T11:01:14Z  
+**Commit:** `257440158a182685669cf878325100a411a4f358`  
 **Manuscript length:** 4822 words excluding references  
 **Checks:** 19 run, 0 failed
 
@@ -26,7 +26,7 @@ generated artefacts; nothing is asserted from memory.
 | 13 | `figure_and_table_artifacts_exist` | ✅ PASS | 6 referenced artefacts present |
 | 14 | `scientific_results_unchanged` | ✅ PASS | results and compatibility blocks identical to the pre-preparation baseline |
 | 15 | `release_licence_check` | ✅ PASS | no excluded file has entered the release set |
-| 16 | `repository_urls_point_to_public_export` | ✅ PASS | 113 released files scanned; repository-code is https://github.com/RahulRoktim/admet-semantic-eligibility |
+| 16 | `repository_urls_point_to_public_export` | ✅ PASS | 114 released files scanned; repository-code is https://github.com/RahulRoktim/admet-semantic-eligibility |
 | 17 | `author_metadata_consistent` | ✅ PASS | author recorded as Md. Rahul Reza Roktim (Roktim, Md. Rahul Reza), ORCID 0009-0003-6518-0495 |
 | 18 | `zenodo_doi_consistent` | ✅ PASS | reserved version DOI 10.5281/zenodo.22765692 used consistently; no placeholder, concept or foreign Zenodo DOI present |
 | 19 | `freeze_hashes_current` | ✅ PASS | manuscript, figure, table and compatibility-matrix hashes match the freeze record |
