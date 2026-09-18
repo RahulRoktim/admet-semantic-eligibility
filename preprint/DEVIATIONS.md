@@ -12,6 +12,12 @@ hashes in the freeze record are invalidated, and who authorised it.
 Two non-scientific corrections have been made since the freeze and are recorded
 below. Both changed the manuscript hash in the freeze record and nothing else.
 
+One **post-freeze analysis has been added**, recorded below under
+"POST-FREEZE ADDITION — evaluation-scale sensitivity". It is an addition, not a
+revision: it reads the frozen headline rows, writes a separately versioned
+artefact, and leaves every frozen number, cohort, hash and figure untouched. It
+is reported as post hoc and is not promoted to a headline result.
+
 ---
 
 ## RESOLVED — excluded data and Git history
@@ -144,8 +150,18 @@ object database.
 ### What changed
 
 A Zenodo draft deposition was created on production Zenodo (deposition 22765692)
-and a **version** DOI was reserved: `10.5281/zenodo.22765692`. The record remains
-an unpublished draft. Three publication-metadata changes follow from it.
+and a **version** DOI was reserved: `10.5281/zenodo.22765692`. Three
+publication-metadata changes follow from it.
+
+> **Updated 2026-09-18.** The record is no longer a draft: it was **published on
+> 2026-09-15** and the version DOI is registered and resolving. Verified against
+> the Zenodo public API (`status: published`, licence CC-BY-4.0; the concept DOI
+> is deliberately not written out here, per the guard described above). The
+> sentence that previously
+> said "the record remains an unpublished draft" described the state at the time
+> of writing and had become false; it is corrected here rather than deleted,
+> because a reader who took it at face value would conclude the DOI was not
+> citable.
 
 **1. The reserved DOI was inserted.** It replaces the former placeholder in the
 manuscript title page, the ChemRxiv manuscript copy, the ChemRxiv data and code
@@ -269,3 +285,99 @@ private, no GitHub Release existed, and the Zenodo record was still an
 unpublished draft. **No archive containing an excluded file was ever
 distributed** — the planted file existed only in a scratch copy used as the
 control, and the real package was verified clean both before and after the fix.
+
+---
+
+## POST-FREEZE ADDITION — evaluation-scale sensitivity
+
+**Status: added 2026-09-18, post hoc and declared as such. No frozen value,
+cohort, hash or figure changed. Not promoted to a headline result.**
+
+### Why it was added
+
+Every frozen sensitivity cohort varies *which rows* are evaluated —
+`ALL_COMPATIBLE_DATA`, `NO_PARENT_FORM_TRAINING_OVERLAP`,
+`STRUCTURALLY_REMOTE_SUBSET`, and cohorts A–D. None varies *which scale*.
+
+Human liver microsomal clearance is strongly right-skewed. The repository
+already acknowledges this: `build_training_reference_summary.py` bins the
+endpoint logarithmically for display. But every metric — R², calibration slope,
+bias, MAE — is computed on the native uL/min/mg scale only. A coefficient of
+determination computed on a heavily right-skewed target is dominated by a small
+number of high-clearance records, so the frozen artefacts could not by
+themselves establish that the reported **R² = −0.156** was a property of the
+model rather than of the scale.
+
+For a manuscript whose subject is *metric interpretation in external
+validation*, leaving the most consequential metric choice untested was a gap in
+its own argument.
+
+### What was run
+
+`preprint/analysis/hlm_scale_sensitivity.py` reads the frozen headline rows for
+`Clearance_Microsome_AZ` and recomputes the same metric set under monotone
+re-expressions of the same values. Three variants, because the handling of
+non-positive predictions is itself a researcher degree of freedom:
+
+| Variant | Transform | Non-positive handling |
+|---|---|---|
+| `V1_LOG10_POSITIVE_PAIRS` | log10(x) | drops the 3 rows with prediction ≤ 0 |
+| `V2_ASINH` | asinh(x / 1) | none needed; defined on all reals |
+| `V3_LOG10_FLOORED` | log10(max(x, 10)) | floors at the source's documented reliable bound |
+
+V1 is reported with an explicit caveat: the rows it drops are exactly the most
+severely under-predicted ones, so it is biased **in the model's favour**. V2 is
+the primary variant because it neither drops nor clips.
+
+Spearman's ρ is invariant under a strictly increasing transform, so V2 must
+reproduce the frozen ρ exactly. `assert_rank_invariance` enforces this as a
+correctness gate and the run passes.
+
+### Result
+
+| Variant | n | R² [95% CI] | Calibration slope [95% CI] | ρ | SD ratio |
+|---|---|---|---|---|---|
+| Frozen native | 366 | **−0.156** [−0.217, −0.108] | 0.037 [0.029, 0.046] | 0.446 | 0.087 |
+| V1 log10 | 363 | **0.005** [−0.094, 0.088] | 0.180 [0.141, 0.220] | 0.440 | 0.414 |
+| V2 asinh | 366 | **−0.186** [−0.488, 0.022] | 0.218 [0.160, 0.288] | 0.446 | 0.638 |
+| V3 log10 floored | 366 | **0.023** [−0.080, 0.105] | 0.175 [0.139, 0.210] | 0.446 | 0.388 |
+
+### What this does and does not change
+
+**The magnitude of the frozen R² is scale-dependent, and that must be stated.**
+On the native scale the model appears *worse* than the cohort mean
+(R² = −0.156). On a logarithmic re-expression it is not distinguishable from
+the cohort mean (R² ≈ 0.005 to 0.023). Reporting −0.156 without this context
+would overstate how badly the model performs.
+
+**The substantive conclusion is unchanged and is now better supported.** On
+every scale tested:
+
+- the R² confidence interval **includes zero and excludes any useful positive
+  value** — the model explains no meaningful variance on any re-expression;
+- the calibration slope remains far below 1 (0.037 native; 0.175–0.218 under
+  log-type transforms), every interval excluding 1 by a wide margin — the
+  under-dispersion is real and not a scale artefact;
+- Spearman ρ is unchanged at 0.446 — the ranking signal is genuine and was
+  never in question.
+
+The mechanism is visible directly in the frozen values and does not depend on
+any transform: observations span 10 to 1,620 uL/min/mg, while predictions span
+−27.9 to **102.8**. The model's maximum output is below the observations' 75th
+percentile (166.8). No choice of scale can make a predictor track a range it
+cannot express.
+
+### Consequence for the manuscript
+
+The Results and Discussion should report the native-scale R² **together with**
+the log-scale range, and should rest the conclusion on the calibration slope
+and the prediction-range ceiling rather than on the sign of R² alone. Draft
+wording is in `preprint/analysis/hlm_scale_sensitivity.py`'s module docstring
+and in this entry; the author decides the final text.
+
+### Artefacts
+
+- `preprint/analysis/hlm_scale_sensitivity.py`
+- `preprint/results/hlm_scale_sensitivity.csv`
+- `preprint/results/hlm_scale_sensitivity_manifest.json` — records input SHA-256,
+  bootstrap seed and replicate count, and the environment

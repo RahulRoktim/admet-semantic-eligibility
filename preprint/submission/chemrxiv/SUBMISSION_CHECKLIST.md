@@ -12,10 +12,10 @@ remains:
 
 | Field | Status | Source |
 | --- | --- | --- |
-| Author affiliation | **REQUIRED FROM YOU** | `USER_INPUT_REQUIRED.md` §1 |
-| Corresponding-author email | **REQUIRED FROM YOU** | `USER_INPUT_REQUIRED.md` §2 |
-| ORCID | **REQUIRED FROM YOU**, or tell me to remove the field | `USER_INPUT_REQUIRED.md` §3 |
-| Zenodo DOI | inserted at release checklist step 6 | not yet minted |
+| Author affiliation | **SUPPLIED** — Department of Pharmacy, Daffodil International University, Dhaka, Bangladesh | `preprint/CITATION.cff` |
+| Corresponding-author email | **SUPPLIED** — `roktim2311091058@diu.edu.bd` | `preprint/CITATION.cff` |
+| ORCID | **SUPPLIED** — `0009-0003-6518-0495` | `preprint/CITATION.cff` |
+| Zenodo DOI | **MINTED AND PUBLISHED** — `10.5281/zenodo.22765692`, published 2026-09-15 | release checklist step 6 |
 
 ## Fields prepared
 

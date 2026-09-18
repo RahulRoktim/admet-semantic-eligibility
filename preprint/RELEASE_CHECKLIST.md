@@ -37,7 +37,7 @@ placeholder remains in any release-facing file.
 
 ---
 
-## ⬜ Step 3b — Create the public GitHub repository and push
+## ✅ Step 3b — Create the public GitHub repository and push *(done)*
 
 Create an **empty** public repository named `admet-semantic-eligibility` under
 your account. Do not initialise it with a README, licence or `.gitignore` —
@@ -55,7 +55,7 @@ repository remains private and untouched.
 > reference tables in its history. Making it public would redistribute them and
 > defeat this entire boundary.
 
-## ⬜ Step 3c — Tag
+## ✅ Step 3c — Tag *(done)*
 
 ```
 git tag -a v1.0.0-preprint -m "Focused ADMET external-validation preprint"
@@ -69,7 +69,7 @@ git push origin v1.0.0-preprint
 > repository is switched on at <https://zenodo.org/account/settings/github/>.
 > Turning it on afterwards will not capture this release.
 
-## ⬜ Step 4 — GitHub release
+## ✅ Step 4 — GitHub release *(done)*
 
 Create the release from tag `v1.0.0-preprint`, using
 `RELEASE_NOTES_v1.0.0-preprint.md` as the body.
@@ -83,7 +83,7 @@ Verify by downloading it and running:
 This is the single most important check in the sequence. It exits non-zero if a
 non-redistributed file is present.
 
-## ⬜ Step 5 — Zenodo archive and DOI
+## ✅ Step 5 — Zenodo archive and DOI *(done)*
 
 Either automatic, if the integration was enabled at step 3, or manual upload.
 Metadata to use is in `preprint/submission/chemrxiv/zenodo_metadata.json`.
@@ -92,7 +92,7 @@ Metadata to use is in `preprint/submission/chemrxiv/zenodo_metadata.json`.
 contains no excluded file — re-run the archive check above against the Zenodo
 download.
 
-## ⬜ Step 6 — Insert the DOI and release URL
+## ✅ Step 6 — Insert the DOI and release URL *(done)*
 
 Done: the reserved version DOI `10.5281/zenodo.22765692` is inserted in:
 

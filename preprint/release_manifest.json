@@ -25,13 +25,13 @@
   ],
   "exclusion_reason": "Reconstructed Therapeutics Data Commons reference table. Upstream licensing provenance is ambiguous (TDC pages indicate CC BY 4.0; several endpoints originate from AstraZeneca depositions that ChEMBL distributes under CC BY-SA 3.0). Not redistributed. Rebuild instructions are in preprint/REPRODUCE.md Level 2; the exact file hashes used in this study are published in preprint/results/training_reference_summary.json.",
   "counts": {
-    "DERIVED_RESULT": 22,
+    "DERIVED_RESULT": 24,
     "ORIGINAL_CONTENT": 35,
-    "PROJECT_CODE": 49,
+    "PROJECT_CODE": 50,
     "THIRD_PARTY_REDISTRIBUTABLE": 2,
     "UPSTREAM_REFERENCE_ONLY": 2
   },
-  "public_release_file_count": 110,
+  "public_release_file_count": 113,
   "excluded_file_count": 0,
   "files": [
     {
@@ -74,7 +74,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "3bbfabfb6b17250cfd6ec5ef571cacd708e74e4b4052714da4eaa26929a9e305"
+      "sha256": "7446a7876d3d89f6c388a8ac7a9a0dbd5d1b8f2edff8e38e4169e4a637138b4e"
     },
     {
       "path": "THIRD_PARTY_LICENSES.md",
@@ -200,21 +200,21 @@
       "category": "PROJECT_CODE",
       "licence": "MIT (LICENSE)",
       "in_public_release": true,
-      "sha256": "f2157bf8c6cc012e7c219be9a34b9aa53ade35bd7ee7a5045a8a089776aec6ec"
+      "sha256": "a36c52b708c2255e87b846d63e83bf89f33cce5294280628497a71a17fd5a979"
     },
     {
       "path": "preprint/DEVIATIONS.md",
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "70b749bdf83c532d1898595c09548544515e680481fbb2c04f0aad5075c38bd0"
+      "sha256": "385a736cd9a3d549d41dc28c8722b5407db4b60b0b6f432004288372f40310d8"
     },
     {
       "path": "preprint/FINAL_AUDIT.md",
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "b784d2c399696be6adea42e76a2f5da86ac63cf1a8956428fad37dac78371baf"
+      "sha256": "f19e181041eda37de18332fa8358db7ca383206d5287e5c694c6384884bcd024"
     },
     {
       "path": "preprint/LICENCE_REVIEW.md",
@@ -228,21 +228,21 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "8a00792339f99ab83621d1010f427df0f5afb2e2cb4ff0262347c210ee7b9f01"
+      "sha256": "05102fddd455fd94d44c10c0a43494ffebbe3c32471d7429452b1e1c6c386093"
     },
     {
       "path": "preprint/REPRODUCE.md",
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "ffa6cbe538760f448f5a0533264b9a658395e0e9c555360a5771a93398da5a5b"
+      "sha256": "7eb35332ca6d4b183a39dbcdbbb1a0db62e26bf628a89ed29be61bb13f43bb43"
     },
     {
       "path": "preprint/SCIENTIFIC_FREEZE.md",
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "105aa9810690e47e6ba85cece60d4a94b312e9036fee58d355d5865d0702dd1a"
+      "sha256": "48f204a1c028cc5f43a8cbb6c630d9758dae5af3c1bd9edf66bb968a2a835303"
     },
     {
       "path": "preprint/__init__.py",
@@ -306,6 +306,13 @@
       "licence": "MIT (LICENSE)",
       "in_public_release": true,
       "sha256": "043eaa1447710e9139f7c35e0625edb5a3e4cbcd514ce410ecff073322696266"
+    },
+    {
+      "path": "preprint/analysis/hlm_scale_sensitivity.py",
+      "category": "PROJECT_CODE",
+      "licence": "MIT (LICENSE)",
+      "in_public_release": true,
+      "sha256": "6ebad7fc81246ef8d3e4dc79f7e49bac0a0ca518fc0741e327c6b7d508676086"
     },
     {
       "path": "preprint/analysis/release_package.py",
@@ -438,7 +445,7 @@
       "category": "DERIVED_RESULT",
       "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
       "in_public_release": true,
-      "sha256": "2f456ca9563c62ef069589ff803cee74e598ba863a1fa952e95ff464adeee23c"
+      "sha256": "d1dd06bedae5551845c66b26ea2b0e48b924d5eef894343bed9e39a512e40a69"
     },
     {
       "path": "preprint/results/frozen_input_manifest.json",
@@ -462,6 +469,20 @@
       "sha256": "6bdc7d5ab87f75831cea7fa510b730e9cda03248b128de75b201f97f877e2591"
     },
     {
+      "path": "preprint/results/hlm_scale_sensitivity.csv",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "0c63ff2b110dd2e9c20847ceaeeb94885f1a8c8c915dffe2ce4848f74c3001c4"
+    },
+    {
+      "path": "preprint/results/hlm_scale_sensitivity_manifest.json",
+      "category": "DERIVED_RESULT",
+      "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
+      "in_public_release": true,
+      "sha256": "481ced40bf6a94f348454ec4a0b3cc936cbe2063158a815de4afc2e4760ff916"
+    },
+    {
       "path": "preprint/results/preprint_analysis.json",
       "category": "DERIVED_RESULT",
       "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
@@ -473,7 +494,7 @@
       "category": "DERIVED_RESULT",
       "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
       "in_public_release": true,
-      "sha256": "0480df952800fb5d6e550fc9af7e0c3234c56a35cfc6ad9d7d9f1fd7b7df823a"
+      "sha256": "ad1773082640f8b15ea5a9543cc9707b90590f01db4061bcf11a0bbb10b91ed2"
     },
     {
       "path": "preprint/results/training_reference_summary.json",
@@ -494,7 +515,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "2002364b2c9a83e5fb40d038121a853b2a7a131d0c77d54a1c608f746c37fd60"
+      "sha256": "447023e04cd721d11f2656a75fa326aa31809baba80769b62e425e475155aa36"
     },
     {
       "path": "preprint/submission/chemrxiv/abstract.txt",
@@ -508,7 +529,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "34918115a0cb4055e686b886fde10433baaa862655f6468aa3f82d9b6fea2797"
+      "sha256": "f34712d03c34811d44ace650bbaa230b8512e783a4e045fcbaff8a7e6703ed5c"
     },
     {
       "path": "preprint/submission/chemrxiv/cover_note.md",

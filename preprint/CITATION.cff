@@ -35,5 +35,10 @@ repository-code: "https://github.com/RahulRoktim/admet-semantic-eligibility"
 # CC BY 4.0 (CONTENT_LICENSE.md). External datasets keep their own upstream
 # licences and are not relicensed (DATA_LICENSES.md).
 doi: "10.5281/zenodo.22765692"
-# Reserved Zenodo version DOI for v1.0.0-preprint (deposition 22765692).
+# Published Zenodo version DOI for v1.0.0-preprint (deposition 22765692),
+# published 2026-09-15. This deposit's concept DOI is deliberately not written
+# anywhere in this repository: `check_doi_consistency` treats any occurrence of
+# it in a released file as a release blocker, so that the manuscript can only
+# ever cite this specific version and a reader retrieves the exact artefact the
+# reported numbers came from.
 date-released: "2026-09-15"
