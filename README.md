@@ -111,9 +111,12 @@ compare the rebuild against the committed results. It requires network access
 and the datasets' own licence terms apply. **This repository never downloads
 anything automatically.**
 
-## Where the preprint will be
+## Archive and preprint status
 
-ChemRxiv — link added on posting. The archived release will carry a Zenodo DOI.
+The versioned reproducibility archive is published at
+[`10.5281/zenodo.22765692`](https://doi.org/10.5281/zenodo.22765692). A ChemRxiv link will be added
+only after posting is independently confirmed. Pre-publication wording in frozen audit and
+submission-history files is retained as provenance and is superseded by this status note.
 
 ## Licensing
 
@@ -169,7 +172,8 @@ versions are recorded in
 ## Citation
 
 See [`preprint/CITATION.cff`](preprint/CITATION.cff). Please cite the preprint;
-the Zenodo DOI will be added on deposit.
+for the archived software and reproducibility package, cite the published version DOI
+[`10.5281/zenodo.22765692`](https://doi.org/10.5281/zenodo.22765692).
 
 ## Contact
 

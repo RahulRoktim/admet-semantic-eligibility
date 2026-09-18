@@ -1,7 +1,7 @@
-# Outstanding items before submission
+# Author confirmations before preprint submission
 
-Author metadata is resolved. The Zenodo DOI is resolved. **One deferred field
-remains.**
+Author metadata and publication identifiers are resolved. The Zenodo version archive is
+published. **One author confirmation remains before a preprint submission.**
 
 | Placeholder | Status | Appears in |
 | --- | --- | --- |
@@ -26,10 +26,10 @@ This exits non-zero while any placeholder remains. Run it immediately before
 ChemRxiv submission; passing is the mechanical guarantee that no placeholder
 reaches the posted preprint.
 
-## Where the DOI went
+## Published archive DOI
 
-The reserved Zenodo **version** DOI `10.5281/zenodo.22765692` (deposition 22765692, still an
-unpublished draft) is now recorded in:
+The published Zenodo **version** DOI `10.5281/zenodo.22765692` (record 22765692, published
+2026-09-15) is recorded in:
 
 - `preprint/manuscript/manuscript.md` — title page
 - `preprint/submission/chemrxiv/manuscript.md` — submission copy

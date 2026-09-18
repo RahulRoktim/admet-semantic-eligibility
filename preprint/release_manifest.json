@@ -67,7 +67,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "ab0f9195ed9a8bece47cc09cbd92d4ac8353c4d5f16ffbf2c375bf5a46e14076"
+      "sha256": "8cb9a266ddbb47e1084dbef36348cb6e1a0fca2c246dcd4833b6eba2c96fd29d"
     },
     {
       "path": "RELEASE_NOTES_v1.0.0-preprint.md",
@@ -88,7 +88,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "af7748b28894bb7ab6d811d9512e90b5e25a4bd02d8620b989d98a1dfd362af1"
+      "sha256": "c382dd6a28eea3a53896bb8269e1f80442c7d64bbc87a1b1d451e1942df5854f"
     },
     {
       "path": "backend/app/__init__.py",
@@ -214,7 +214,7 @@
       "category": "ORIGINAL_CONTENT",
       "licence": "CC BY 4.0 (CONTENT_LICENSE.md)",
       "in_public_release": true,
-      "sha256": "f19e181041eda37de18332fa8358db7ca383206d5287e5c694c6384884bcd024"
+      "sha256": "bcc3bccc067bc481196ba95e056ab3b98d9ba0c015ac0a1ff97106093d8ceb05"
     },
     {
       "path": "preprint/LICENCE_REVIEW.md",
@@ -445,7 +445,7 @@
       "category": "DERIVED_RESULT",
       "licence": "CC BY 4.0 for this project's computation; underlying data per DATA_LICENSES.md",
       "in_public_release": true,
-      "sha256": "d1dd06bedae5551845c66b26ea2b0e48b924d5eef894343bed9e39a512e40a69"
+      "sha256": "32becbb20fe492a303fc92d02d5b364967c748e9df877290fd1cc0baa58be1dc"
     },
     {
       "path": "preprint/results/frozen_input_manifest.json",

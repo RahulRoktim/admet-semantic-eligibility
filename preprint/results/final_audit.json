@@ -1,7 +1,7 @@
 {
   "artifact_id": "preprint-v1.0.0-final-audit",
-  "generated_at_utc": "2026-09-18T09:40:38Z",
-  "commit": "25ce0668fadc1269399fa74116b0b771e7c04903",
+  "generated_at_utc": "2026-09-18T09:50:54Z",
+  "commit": "7b9ee9b76961912d78d96b6d9879c8fcdd8208eb",
   "manuscript_words_excluding_references": 4822,
   "checks_run": 19,
   "checks_failed": 0,
